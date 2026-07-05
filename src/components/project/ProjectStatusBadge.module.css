@@ -1,0 +1,28 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+/* Tinted pill colors reproduced from Color Foundation.dc.html §06 "Table"
+   component example (Shipped/In progress swatches) — not yet promoted to
+   named tokens in tokens.css, so quoted directly from the approved source. */
+.shipped {
+  background: #e7f0ea;
+  color: #3f6b4d;
+}
+
+.inProgress {
+  background: #fcf1d0;
+  color: #9e7c22;
+}
+
+.concept {
+  background: var(--color-bg-warm);
+  color: var(--color-text-secondary);
+}

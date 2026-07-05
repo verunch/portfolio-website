@@ -3,9 +3,9 @@ import HeroCollage from './HeroCollage';
 import IntroBlock from './IntroBlock';
 import StackSection from './StackSection';
 import AboutSection from './AboutSection';
+import SelectedProjectsSection from './SelectedProjectsSection';
 import styles from './HomePage.module.css';
 
-// ProjectsTable lands in a later milestone.
 export default function HomePage() {
   return (
     <div className={styles.page}>
@@ -15,6 +15,8 @@ export default function HomePage() {
       <StackSection />
       <Divider />
       <AboutSection />
+      <Divider />
+      <SelectedProjectsSection />
     </div>
   );
 }

@@ -35,9 +35,9 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
 
   return (
     <header className={headerClasses}>
-      <div className={styles.bar}>
+      <div className={`${styles.bar} ${styles.container}`}>
         <Link to="/" className={styles.wordmark}>
-          Your Name
+          Vera Bakerava
         </Link>
         <button
           ref={toggleRef}
@@ -54,7 +54,7 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
       <nav
         id="primary-navigation"
         aria-label="Primary"
-        className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}
+        className={`${styles.nav} ${styles.container} ${isMenuOpen ? styles.navOpen : ''}`}
       >
         <NavLinks items={navConfig} orientation="horizontal" onLinkClick={() => setIsMenuOpen(false)} />
       </nav>

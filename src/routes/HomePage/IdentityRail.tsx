@@ -18,8 +18,8 @@ const socials = [
 export default function IdentityRail() {
   return (
     <aside className={styles.rail} aria-label="Identity">
-      <Link to="/" className={styles.monogram} aria-label="Your Name — Home">
-        YN
+      <Link to="/" className={styles.monogram} aria-label="Vera Bakerava — Home">
+        VB
       </Link>
       <NavLinks items={navConfig} orientation="vertical" />
       <ul className={styles.socials}>

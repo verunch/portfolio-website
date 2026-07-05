@@ -9,6 +9,7 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 - `PROJECT_STATUS.md` simplified into a scannable dashboard, with detail moved out to the linked documents.
 - **Milestone 1**: `data/projects.ts`, `data/profile.ts`, `data/stack.ts` — typed, data-driven access layer per `ARCHITECTURE.md` §8/§16, seeded with placeholder content pending Phase 3 real copy.
 - **Milestone 2**: `StackGrid` (`components/project/`), `StackSection` and `AboutSection` (`routes/HomePage/`) — Home now renders My Stack (13 tool badges from `data/stack.ts`) and About (from `data/profile.ts`), separated by `Divider` hairlines.
+- **Milestone 3**: `ProjectStatusBadge` and `ProjectsTable` (`components/project/`), wired to `data/projects.ts` via a new `SelectedProjectsSection` (`routes/HomePage/`). Reshapes responsively (7-col table → condensed icon group → stacked cards) per `ARCHITECTURE.md` §6/§14's exact column fractions, using a `display: contents` technique so one DOM structure serves all three states without separate component trees.
 
 ### Changed
 - Seed project set decision resolved: **Ascendra** replaces **MedTech**; **DocAssistant** confirmed complete. Moved from open questions to [docs/architecture/DECISIONS.md](docs/architecture/DECISIONS.md).
@@ -20,6 +21,13 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
   - Hero→intro spacing and inter-section rhythm (Intro→Stack→About) rebalanced: previously both used the same flex `gap`, which combined with `Divider`'s own margin to roughly double the spacing around each divider.
   - Résumé button now shows a small "new tab" hint at desktop/laptop, matching the wireframe's detailed breakpoint mock.
   - Verified Button primary/outline against `Color Foundation.dc.html` (color, radius, padding, hover) — already compliant, no changes needed.
+- **Design-fidelity correction pass** (against `ARCHITECTURE.md`, `Portfolio Wireframes v2.dc.html`, `Color Foundation.dc.html`):
+  - `Header`'s bar and expanded nav now sit inside the same centered 1180px container as `HomePage` — previously stretched full viewport width on Portfolio/404 and on Home below 1024px.
+  - Real identity: "Vera Bakerava" / "VB" replaces "Your Name" / "YN" placeholders in `Header`, `Footer`, `IdentityRail`, and `data/profile.ts`. Email and LinkedIn URL remain placeholder pending real contact details.
+  - `IdentityRail`'s vertical gap tightened (`justify-content: flex-start` + `socials` pinned via `margin-top: auto`, replacing `justify-content: space-between`) — the rail is `position: fixed` spanning the full viewport, so the wireframe's `space-between` rule (sized for its own ~250–300px-tall rail) was stretching the nav far below the avatar.
+  - `IdentityRail`'s active nav item now uses color only (`brand.900`), no underline/border indicator, matching the wireframe's rail treatment.
+  - Résumé "new tab" hint tightened to ≥1440px only (previously ≥1024px) — the wireframe shows it at the 1440 desktop mock only.
+  - Several other requested changes were reviewed and **not** implemented because they contradict the approved wireframe or color system as written: removing the "View Portfolio →" arrow, removing the Résumé "new tab" hint entirely, removing the Twitter/Behance rail icons, and redesigning Tech Stack badges into icon-style marks with no text labels. See `docs/architecture/DECISIONS.md` Open Questions for each.
 
 ## 2026-07-05 — Documentation audit
 

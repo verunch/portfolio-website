@@ -7,7 +7,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* The wireframe's rail is bounded by the hero row's height (~250-300px),
+       where justify-content:space-between reads as a tight, balanced spread.
+       Our rail is position:fixed spanning the full viewport height, so the
+       same rule would push the nav far below the avatar — cluster monogram
+       + nav near the top instead, matching the wireframe's actual proportions. */
+    justify-content: flex-start;
+    gap: var(--space-8);
     position: fixed;
     top: 0;
     left: 0;
@@ -46,6 +52,7 @@
   gap: var(--space-3);
   list-style: none;
   margin: 0;
+  margin-top: auto;
   padding: 0;
 }
 

@@ -10,7 +10,7 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 
 - [x] **Milestone 1** — `data/` layer (`projects.ts`, `profile.ts`, `stack.ts`) + Home hero/intro composition fix
 - [x] **Milestone 2** — My Stack (`StackGrid`) + About section
-- [ ] **Milestone 3** — Selected Projects table (`ProjectStatusBadge`, `ProjectsTable`)
+- [x] **Milestone 3** — Selected Projects table (`ProjectStatusBadge`, `ProjectsTable`)
 - [ ] **Milestone 4** — Footer (real implementation, mounted globally)
 - [ ] **Milestone 5** — Portfolio hero + card gallery
 - [ ] **Milestone 6** — Case study section (reusable, ×4 projects)

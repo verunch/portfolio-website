@@ -125,7 +125,11 @@
     flex: none;
     width: auto;
   }
+}
 
+/* The wireframe shows "new tab" only at the 1440 desktop breakpoint, not at
+   1280 laptop — tightened from the earlier >=1024 rule to match exactly. */
+@media (min-width: 1440px) {
   .resumeHint {
     display: inline;
   }

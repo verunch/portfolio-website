@@ -48,6 +48,10 @@
   border-right: 2px solid transparent;
 }
 
+/* Rail active state: color only, no underline/border indicator — matches
+   the wireframe's rail treatment (color-only distinction, no rule beneath
+   the active label). Reuses the existing brand.900 token rather than a new
+   hardcoded value. */
 .vertical .active {
-  border-right-color: var(--color-brand-primary);
+  color: var(--color-brand-900);
 }

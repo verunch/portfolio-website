@@ -8,11 +8,11 @@ Living dashboard for the portfolio website. Full detail lives in the linked docu
 
 ## Current milestone
 
-None in progress. Milestone 2 complete, plus a visual-fidelity pass correcting Home against the approved wireframe. Awaiting approval to start Milestone 3.
+None in progress. Milestone 3 complete, plus a design-fidelity correction pass (container, identity, rail nav, buttons). Awaiting approval to start Milestone 4.
 
 ## Next milestone
 
-**Milestone 3 — Selected Projects table.** Build `ProjectStatusBadge` and `ProjectsTable` (table/condensed/cards variants), wire to `data/projects.ts`, assemble into `HomePage`.
+**Milestone 4 — Footer.** Real dark-panel implementation per Color Foundation §06, mounted in `RootLayout` for every route.
 
 ## Completed milestones
 
@@ -21,7 +21,9 @@ None in progress. Milestone 2 complete, plus a visual-fidelity pass correcting H
 - Documentation audit (`docs/reviews/`) and documentation restructure (this dashboard, `CHANGELOG.md`, `TODO.md`, `docs/architecture/DECISIONS.md`)
 - **Milestone 1** — Data layer (`data/projects.ts`, `data/profile.ts`, `data/stack.ts`) + `IntroBlock` desktop composition fix (side-by-side bio/CTA row, matching Home (A))
 - **Milestone 2** — `StackGrid` (`components/project/`) + `StackSection`/`AboutSection` wired to `data/stack.ts`/`data/profile.ts`, assembled into `HomePage` with `Divider` separators
-- **Visual fidelity pass** — `HeroCollage`'s featured card corrected to match the wireframe (text-only panel, no nested image, accent underline restored); hero name sizing resolved to the wireframe's literal per-breakpoint values (see `docs/architecture/DECISIONS.md`); hero→intro and inter-section spacing rebalanced; Résumé button's "new tab" hint added at desktop/laptop
+- **Milestone 3** — `ProjectStatusBadge` + `ProjectsTable` (`components/project/`), wired to `data/projects.ts`, assembled into `HomePage` as `SelectedProjectsSection`
+- **Visual fidelity pass (1)** — `HeroCollage`'s featured card corrected to match the wireframe (text-only panel, no nested image, accent underline restored); hero name sizing resolved to the wireframe's literal per-breakpoint values (see `docs/architecture/DECISIONS.md`); hero→intro and inter-section spacing rebalanced; Résumé button's "new tab" hint added at desktop/laptop
+- **Design-fidelity correction pass (2)** — `Header` given a centered 1180px container (previously stretched edge-to-edge); real identity ("Vera Bakerava" / "VB") replacing "Your Name" placeholders across `Header`, `Footer`, `IdentityRail`, `data/profile.ts`; `IdentityRail`'s vertical gap and active-item indicator corrected; Résumé "new tab" hint tightened to the correct breakpoint. Several other requested changes were **not** implemented because they'd contradict the approved wireframe/color system — see `docs/architecture/DECISIONS.md` Open Questions
 
 ## Status by area
 
