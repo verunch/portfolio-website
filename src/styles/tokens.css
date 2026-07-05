@@ -1,0 +1,77 @@
+/*
+ * CSS custom-property mirror of src/tokens/*.ts.
+ * Components (CSS Modules) reference these variables — never raw hex/px —
+ * per ARCHITECTURE.md §7 ("no component hardcodes a token value").
+ * Keep in sync with colors.ts / spacing.ts / typography.ts.
+ */
+:root {
+  /* color — bg */
+  --color-bg-paper: #fbfaf6;
+  --color-bg-surface: #ffffff;
+  --color-bg-warm: #f2efdf;
+  --color-bg-beige: #f2dac4;
+
+  /* color — brand */
+  --color-brand-primary: #8d9fa6;
+  --color-brand-light: #a4bfba;
+  --color-brand-hover: #7b9098;
+  --color-brand-active: #687c83;
+  --color-brand-900: #2f383c;
+
+  /* color — accent */
+  --color-accent-gold: #f2cb57;
+  --color-accent-light: #f6de97;
+  --color-accent-soft: #f8e8b9;
+  --color-accent-hover: #e0b63e;
+  --color-accent-active: #c49a2c;
+
+  /* color — text */
+  --color-text-primary: #403636;
+  --color-text-secondary: #6f6966;
+  --color-text-muted: #a6a19d;
+  --color-text-inverse: #ffffff;
+
+  /* color — border */
+  --color-border-base: #e5e0d6;
+  --color-border-divider: #ece8df;
+  --color-border-strong: #cfc8bb;
+
+  /* color — functional */
+  --color-functional-success: #8fb89a;
+  --color-functional-warning: #e5b64a;
+  --color-functional-error: #f29991;
+  --color-functional-info: #8d9fa6;
+  --color-functional-disabled: #d8d3c8;
+
+  --focus-ring: rgba(141, 159, 166, 0.45);
+  --overlay: rgba(64, 54, 54, 0.45);
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* radius */
+  --radius-card: 4px;
+  --radius-card-lg: 5px;
+  --radius-control: 8px;
+  --radius-control-lg: 10px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* typography */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* layout */
+  --container-max: 1180px;
+}

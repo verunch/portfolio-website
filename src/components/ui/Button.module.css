@@ -1,0 +1,62 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control-lg);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-5);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.md {
+  font-size: 14px;
+}
+
+.sm {
+  font-size: 13px;
+  min-height: 40px;
+  padding: var(--space-2) var(--space-4);
+}
+
+/* Filled brand background — ink text per ARCHITECTURE.md §13
+   (white-on-brand.primary fails contrast; text.primary is the approved pairing). */
+.primary {
+  background: var(--color-brand-primary);
+  color: var(--color-text-primary);
+}
+
+.primary:hover {
+  background: var(--color-brand-hover);
+}
+
+.primary:active {
+  background: var(--color-brand-active);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+.outline:hover {
+  border-color: var(--color-brand-primary);
+}
+
+.tile {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+  border-radius: var(--radius-control);
+  text-align: center;
+}

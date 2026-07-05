@@ -1,0 +1,107 @@
+.header {
+  background: var(--color-bg-paper);
+  border-bottom: 1px solid var(--color-border-divider);
+}
+
+@media (min-width: 1024px) {
+  .hiddenAboveRail {
+    display: none;
+  }
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+}
+
+.wordmark {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuToggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.hamburgerIcon,
+.hamburgerIcon::before,
+.hamburgerIcon::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--color-text-primary);
+}
+
+.hamburgerIcon {
+  position: relative;
+}
+
+.hamburgerIcon::before,
+.hamburgerIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburgerIcon::before {
+  top: -6px;
+}
+
+.hamburgerIcon::after {
+  top: 6px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav {
+  display: none;
+  padding: 0 var(--space-5) var(--space-4);
+}
+
+.navOpen {
+  display: block;
+}
+
+/* Standard bar (Portfolio, 404): full horizontal nav from tablet up, hamburger only below 768px. */
+.expandable .menuToggle {
+  display: inline-flex;
+}
+
+@media (min-width: 768px) {
+  .expandable .menuToggle {
+    display: none;
+  }
+
+  .expandable .nav {
+    display: block;
+    padding: 0 var(--space-5) var(--space-4);
+  }
+}

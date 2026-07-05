@@ -1,0 +1,53 @@
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.horizontal {
+  flex-direction: row;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.vertical {
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2);
+  border-bottom: 2px solid transparent;
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.active {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-brand-primary);
+}
+
+/* Rotated labels for the vertical IdentityRail treatment. */
+.vertical .link {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-orientation: mixed;
+  border-bottom: none;
+  border-right: 2px solid transparent;
+}
+
+.vertical .active {
+  border-right-color: var(--color-brand-primary);
+}

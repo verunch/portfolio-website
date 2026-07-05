@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; }
+</style>
+</helmet>
+
+<!-- ================= SECTION HEADER: HOME EXPLORATIONS ================= -->
+<div style="position:absolute;left:64px;top:30px;width:900px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Home — 3 layout explorations</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">LOW-FIDELITY · GRAYSCALE · STRUCTURE ONLY — NOT VISUAL DESIGN</div>
+</div>
+
+<!-- ============ HOME A — EDITORIAL INDEX ============ -->
+<div style="position:absolute;left:64px;top:108px;width:560px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">A · EDITORIAL INDEX</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px">
+      <div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com</div>
+    </div>
+    <div style="padding:30px 30px 34px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:40px">
+        <div style="font:700 14px system-ui;color:#2b2b2b">YN</div>
+        <div style="display:flex;gap:16px;font:500 12px system-ui;color:#9a9a9a">
+          <span style="color:#2b2b2b">Home</span><span>Portfolio</span><span>Dear Diary</span><span>Résumé ↗</span>
+        </div>
+      </div>
+      <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">PORTFOLIO — 2026</div>
+      <div style="font:700 40px/1.04 system-ui;letter-spacing:-.025em;color:#222">Designing calm,<br>useful software.</div>
+      <div style="display:flex;gap:20px;margin-top:30px;align-items:flex-start">
+        <div style="width:130px;height:160px;flex:none;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:3px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+        <div style="flex:1">
+          <div style="font:500 13px/1.7 system-ui;color:#7a7a7a">Product designer focused on health &amp; AI tools. Short two-line bio that sets tone and intent.</div>
+          <div style="display:flex;gap:14px;margin-top:16px;font:500 11px ui-monospace,monospace;color:#9a9a9a">
+            <span>email ↗</span><span>linkedin ↗</span><span>github ↗</span>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;border:1.5px solid #2b2b2b;border-radius:6px;padding:8px 14px;font:600 12px system-ui;color:#2b2b2b">Résumé ↗</div>
+          <div style="margin-top:6px;font:500 9px ui-monospace,monospace;color:#bdbdbd">// opens PDF in new tab</div>
+        </div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:34px 0 26px"></div>
+      <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">ABOUT</div>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+        <div style="height:8px;background:#dcdcdc;border-radius:2px;width:96%"></div>
+        <div style="height:8px;background:#dcdcdc;border-radius:2px;width:88%"></div>
+        <div style="height:8px;background:#e6e6e6;border-radius:2px;width:60%"></div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:30px 0 18px"></div>
+      <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">SELECTED PROJECTS</div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;gap:2px;font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#bdbdbd;padding-bottom:10px;border-bottom:1px solid #e6e6e6">
+        <div>PROJECT</div><div>STATUS</div><div style="text-align:right">OPEN</div>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">Social Radar</div><div style="font:500 11px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">BioQuest</div><div style="font:500 11px system-ui;color:#9a9a9a">In progress</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">DocAssistant</div><div style="font:500 11px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0"><div style="font:600 13px system-ui;color:#333">MedTech</div><div style="font:500 11px system-ui;color:#9a9a9a">Concept</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+      </div>
+      <div style="margin-top:10px;font:500 9px ui-monospace,monospace;color:#bdbdbd">// Open → portfolio#social-radar · #bioquest · #docassistant · #medtech</div>
+    </div>
+  </div>
+</div>
+
+<!-- post-it A -->
+<div style="position:absolute;left:656px;top:108px;width:208px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">A · EDITORIAL INDEX</div>
+  <div style="font:500 11px/1.6 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:8px;color:#555">Type-led hero; portrait integrated into a bio cluster, not a side photo.</div>
+    <div style="color:#2e2e2e">+ Distinctive &amp; memorable</div>
+    <div style="color:#2e2e2e">+ Premium / editorial feel</div>
+    <div style="color:#2e2e2e">+ Avoids photo-right cliché</div>
+    <div style="margin-top:6px;color:#8a8a8a">– Portrait reads secondary</div>
+    <div style="color:#8a8a8a">– Asymmetry harder to balance</div>
+    <div style="color:#8a8a8a">– Needs careful mobile reflow</div>
+  </div>
+</div>
+
+<!-- ============ HOME B — CENTERED STAGE ============ -->
+<div style="position:absolute;left:904px;top:108px;width:560px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">B · CENTERED STAGE</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px">
+      <div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com</div>
+    </div>
+    <div style="padding:30px 30px 34px">
+      <div style="display:flex;justify-content:center;gap:18px;font:500 12px system-ui;color:#9a9a9a;margin-bottom:44px">
+        <span style="color:#2b2b2b">Home</span><span>Portfolio</span><span>Dear Diary</span><span>Résumé ↗</span>
+      </div>
+      <div style="text-align:center">
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:22px">PRODUCT DESIGNER — 2026</div>
+        <div style="width:170px;height:200px;margin:0 auto;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 10px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+        <div style="font:700 34px/1.1 system-ui;letter-spacing:-.02em;color:#222;margin-top:26px">Your Name</div>
+        <div style="font:500 14px/1.7 system-ui;color:#7a7a7a;max-width:330px;margin:14px auto 0">A short, centered bio — one or two calm lines that say what you do.</div>
+        <div style="display:flex;justify-content:center;gap:16px;margin-top:18px;font:500 11px ui-monospace,monospace;color:#9a9a9a">
+          <span>email ↗</span><span>linkedin ↗</span><span>github ↗</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;border:1.5px solid #2b2b2b;border-radius:6px;padding:9px 18px;font:600 12px system-ui;color:#2b2b2b">Résumé ↗</div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:38px auto 26px;max-width:380px"></div>
+      <div style="max-width:380px;margin:0 auto">
+        <div style="text-align:center;font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:16px">ABOUT</div>
+        <div style="display:flex;flex-direction:column;gap:9px;align-items:center">
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:92%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:97%"></div>
+          <div style="height:8px;background:#e6e6e6;border-radius:2px;width:50%"></div>
+        </div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:34px 0 18px"></div>
+      <div style="text-align:center;font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:16px">SELECTED PROJECTS</div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;gap:2px;font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#bdbdbd;padding-bottom:10px;border-bottom:1px solid #e6e6e6">
+        <div>PROJECT</div><div>STATUS</div><div style="text-align:right">OPEN</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">Social Radar</div><div style="font:500 11px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">BioQuest</div><div style="font:500 11px system-ui;color:#9a9a9a">In progress</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#333">DocAssistant</div><div style="font:500 11px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+      <div style="display:grid;grid-template-columns:1fr auto 64px;align-items:center;gap:2px;padding:13px 0"><div style="font:600 13px system-ui;color:#333">MedTech</div><div style="font:500 11px system-ui;color:#9a9a9a">Concept</div><div style="text-align:right;font:600 11px system-ui;color:#2b2b2b">Open ↗</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- post-it B -->
+<div style="position:absolute;left:1496px;top:108px;width:208px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">B · CENTERED STAGE</div>
+  <div style="font:500 11px/1.6 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:8px;color:#555">Single centered column; portrait gets a clear hero moment.</div>
+    <div style="color:#2e2e2e">+ Calm, elegant, Apple-like</div>
+    <div style="color:#2e2e2e">+ Easiest responsive (1 col)</div>
+    <div style="color:#2e2e2e">+ Portrait is the focal point</div>
+    <div style="margin-top:6px;color:#8a8a8a">– Centered hero is common</div>
+    <div style="color:#8a8a8a">– Can feel template-like</div>
+    <div style="color:#8a8a8a">– Table feels detached below</div>
+  </div>
+</div>
+
+<!-- ============ HOME C — SPLIT SIDEBAR ============ -->
+<div style="position:absolute;left:1744px;top:108px;width:560px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">C · SPLIT SIDEBAR</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px">
+      <div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com</div>
+    </div>
+    <div style="display:flex;min-height:560px">
+      <div style="width:210px;flex:none;border-right:1px solid #ececec;padding:28px 22px;display:flex;flex-direction:column">
+        <div style="font:700 14px system-ui;color:#2b2b2b;margin-bottom:26px">YN</div>
+        <div style="width:120px;height:148px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:3px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+        <div style="font:700 19px system-ui;letter-spacing:-.01em;color:#222;margin-top:20px">Your Name</div>
+        <div style="font:500 12px system-ui;color:#9a9a9a;margin-top:4px">Product Designer</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:16px">
+          <div style="height:7px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:7px;background:#dcdcdc;border-radius:2px;width:84%"></div>
+          <div style="height:7px;background:#e6e6e6;border-radius:2px;width:64%"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;font:500 11px ui-monospace,monospace;color:#9a9a9a">
+          <span>email ↗</span><span>linkedin ↗</span><span>github ↗</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:18px;border:1.5px solid #2b2b2b;border-radius:6px;padding:8px 0;font:600 12px system-ui;color:#2b2b2b">Résumé ↗</div>
+      </div>
+      <div style="flex:1;padding:28px 26px">
+        <div style="display:flex;justify-content:flex-end;gap:16px;font:500 12px system-ui;color:#9a9a9a;margin-bottom:26px">
+          <span style="color:#2b2b2b">Home</span><span>Portfolio</span><span>Dear Diary</span>
+        </div>
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:12px">ABOUT</div>
+        <div style="font:700 24px/1.15 system-ui;letter-spacing:-.02em;color:#222">Designing calm, useful software.</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:18px">
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:94%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:88%"></div>
+          <div style="height:8px;background:#e6e6e6;border-radius:2px;width:55%"></div>
+        </div>
+        <div style="height:1px;background:#ececec;margin:26px 0 16px"></div>
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">PROJECTS</div>
+        <div style="display:grid;grid-template-columns:1fr auto 56px;gap:2px;font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#bdbdbd;padding-bottom:9px;border-bottom:1px solid #e6e6e6">
+          <div>PROJECT</div><div>STATUS</div><div style="text-align:right">OPEN</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto 56px;align-items:center;gap:2px;padding:12px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#333">Social Radar</div><div style="font:500 10px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 10px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 56px;align-items:center;gap:2px;padding:12px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#333">BioQuest</div><div style="font:500 10px system-ui;color:#9a9a9a">In progress</div><div style="text-align:right;font:600 10px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 56px;align-items:center;gap:2px;padding:12px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#333">DocAssistant</div><div style="font:500 10px system-ui;color:#9a9a9a">Shipped</div><div style="text-align:right;font:600 10px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="display:grid;grid-template-columns:1fr auto 56px;align-items:center;gap:2px;padding:12px 0"><div style="font:600 12px system-ui;color:#333">MedTech</div><div style="font:500 10px system-ui;color:#9a9a9a">Concept</div><div style="text-align:right;font:600 10px system-ui;color:#2b2b2b">Open ↗</div></div>
+        <div style="margin-top:10px;font:500 9px ui-monospace,monospace;color:#bdbdbd">// Open → portfolio#anchor</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- post-it C -->
+<div style="position:absolute;left:2336px;top:108px;width:208px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">C · SPLIT SIDEBAR</div>
+  <div style="font:500 11px/1.6 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:8px;color:#555">Identity, contacts &amp; résumé pinned left; content scrolls right.</div>
+    <div style="color:#2e2e2e">+ Identity always visible</div>
+    <div style="color:#2e2e2e">+ App-like, easy to scan</div>
+    <div style="color:#2e2e2e">+ Clear identity / work split</div>
+    <div style="margin-top:6px;color:#8a8a8a">– Reads as product UI</div>
+    <div style="color:#8a8a8a">– Less calm / editorial</div>
+    <div style="color:#8a8a8a">– Sidebar must collapse on mobile</div>
+  </div>
+</div>
+
+<!-- ============ RECOMMENDATION ============ -->
+<div style="position:absolute;left:64px;top:1360px;width:800px;background:#fff;border:1.5px solid #2b2b2b;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:24px 28px">
+  <div style="font:700 12px ui-monospace,monospace;letter-spacing:.06em;color:#2b2b2b;margin-bottom:14px">RECOMMENDATION → A · EDITORIAL INDEX</div>
+  <div style="font:500 14px/1.7 system-ui;color:#444">
+    <span style="color:#222;font-weight:600">A</span> best matches the brief — calm, elegant, memorable, premium typography — and is the only option that avoids the generic photo-right hero by weaving the portrait into a bio/contact cluster instead of a feature image. It reads as an editorial index, not a marketing page.
+  </div>
+  <div style="font:500 13px/1.7 system-ui;color:#777;margin-top:12px">
+    <span style="color:#444;font-weight:600">B</span> is the safest fallback if the portrait must be the hero (and is easiest to make responsive), but risks feeling template-like. <span style="color:#444;font-weight:600">C</span> is strongest for scannability and persistent contact/résumé access — borrow its idea of keeping résumé always reachable — but its sidebar leans product-UI over personal. <span style="color:#222;font-weight:600">Proposal:</span> build A, and pull B's clean single-column reflow for mobile + C's persistent résumé affordance.
+  </div>
+</div>
+
+<!-- ================= SECTION HEADER: HOME RESPONSIVE ================= -->
+<div style="position:absolute;left:64px;top:1640px;width:1100px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Home (A) — responsive breakpoints</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">1440 DESKTOP · 1280 LAPTOP · 768 TABLET · 390 MOBILE — same hierarchy, reflowed</div>
+</div>
+
+<!-- ============ HOME · DESKTOP 1440 ============ -->
+<div style="position:absolute;left:64px;top:1730px;width:680px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">DESKTOP · 1440</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px"><div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com</div></div>
+    <div style="padding:30px 36px 34px">
+      <!-- hero: rail + collage -->
+      <div style="display:flex;gap:22px;align-items:stretch">
+        <div style="width:54px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:space-between;border-right:1px solid #ececec;padding:2px 0 6px">
+          <div style="width:34px;height:34px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 11px system-ui;color:#2b2b2b">YN</div>
+          <div style="writing-mode:vertical-rl;transform:rotate(180deg);font:600 10px system-ui;letter-spacing:.22em;color:#9a9a9a"><span style="color:#2b2b2b">WORK</span>&nbsp;&nbsp;&nbsp;ABOUT&nbsp;&nbsp;&nbsp;CONTACT</div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:22px;height:22px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#9a9a9a">Tw</div>
+            <div style="width:22px;height:22px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#9a9a9a">Be</div>
+            <div style="width:22px;height:22px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#9a9a9a">in</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:12px">
+            <div style="height:210px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+            <div style="height:210px;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;display:flex;flex-direction:column;justify-content:center;padding:0 24px">
+              <div style="font:600 9px ui-monospace,monospace;letter-spacing:.1em;color:#b0b0b0;margin-bottom:10px">FEATURED PROJECT</div>
+              <div style="font:600 24px Georgia,serif;letter-spacing:.04em;color:#262626">Social Radar</div>
+              <div style="font:500 9px ui-monospace,monospace;letter-spacing:.16em;color:#9a9a9a;margin-top:6px">PRODUCT DESIGN</div>
+              <div style="width:40px;height:2px;background:#cfcfcf;margin-top:14px"></div>
+            </div>
+          </div>
+          <div style="height:140px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ featured work — wide image ]</div>
+        </div>
+      </div>
+      <!-- intro strip: name + bio + contacts + 2 buttons -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:24px;padding-left:76px">
+        <div style="max-width:330px">
+          <div style="font:700 30px/1.05 system-ui;letter-spacing:-.02em;color:#1f1f1f">Your Name</div>
+          <div style="font:500 13px/1.6 system-ui;color:#6f6f6f;margin-top:8px">Short bio — one or two calm, specific lines on who you are and what you build.</div>
+          <div style="display:flex;gap:14px;margin-top:12px;font:500 11px ui-monospace,monospace;color:#9a9a9a"><span>email ↗</span><span>linkedin ↗</span></div>
+        </div>
+        <div style="flex:none;display:flex;gap:10px;align-items:center">
+          <div style="display:inline-flex;align-items:center;gap:6px;background:#2b2b2b;border:1.5px solid #2b2b2b;border-radius:6px;padding:10px 18px;font:600 12px system-ui;color:#fff">View Portfolio →</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid #2b2b2b;border-radius:6px;padding:10px 16px;font:600 12px system-ui;color:#2b2b2b">Résumé ↗ <span style="font:500 8px ui-monospace,monospace;color:#bdbdbd">new tab</span></div>
+        </div>
+      </div>
+      <!-- MY STACK -->
+      <div style="height:1px;background:#ececec;margin:30px 0 22px"></div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px"><div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0">MY STACK</div><div style="font:500 10px system-ui;color:#c4c4c4">— tools &amp; technologies I work with</div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px 16px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">Re</div><div style="font:500 7px system-ui;color:#a8a8a8">React</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">TS</div><div style="font:500 7px system-ui;color:#a8a8a8">TypeScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">H5</div><div style="font:500 7px system-ui;color:#a8a8a8">HTML</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">CSS</div><div style="font:500 7px system-ui;color:#a8a8a8">CSS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">JS</div><div style="font:500 7px system-ui;color:#a8a8a8">JavaScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">Fi</div><div style="font:500 7px system-ui;color:#a8a8a8">Figma</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">Mi</div><div style="font:500 7px system-ui;color:#a8a8a8">Miro</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">No</div><div style="font:500 7px system-ui;color:#a8a8a8">Notion</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">GH</div><div style="font:500 7px system-ui;color:#a8a8a8">GitHub</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">Cl</div><div style="font:500 7px system-ui;color:#a8a8a8">Claude</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">GPT</div><div style="font:500 7px system-ui;color:#a8a8a8">ChatGPT</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">Cu</div><div style="font:500 7px system-ui;color:#a8a8a8">Cursor</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:5px;width:42px"><div style="width:38px;height:38px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#8a8a8a">VS</div><div style="font:500 7px system-ui;color:#a8a8a8">VS Code</div></div>
+      </div>
+      <!-- ABOUT -->
+      <div style="height:1px;background:#ececec;margin:26px 0 22px"></div>
+      <div style="display:grid;grid-template-columns:130px 1fr;gap:24px">
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0">ABOUT</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:97%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:92%"></div>
+          <div style="height:8px;background:#e6e6e6;border-radius:2px;width:48%"></div>
+        </div>
+      </div>
+      <!-- PROJECTS TABLE (7 col) -->
+      <div style="height:1px;background:#ececec;margin:26px 0 18px"></div>
+      <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">SELECTED PROJECTS</div>
+      <div style="display:grid;grid-template-columns:1.5fr 0.95fr 0.7fr 0.7fr 0.7fr 0.55fr 0.7fr;gap:6px;font:600 8px ui-monospace,monospace;letter-spacing:.04em;color:#bdbdbd;padding-bottom:10px;border-bottom:1px solid #e6e6e6">
+        <div>PROJECT</div><div>STATUS</div><div>CASE<br>STUDY</div><div>UX<br>RESEARCH</div><div>UI<br>MOCKUPS</div><div>MVP</div><div>GITHUB</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.5fr 0.95fr 0.7fr 0.7fr 0.7fr 0.55fr 0.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 14px system-ui;color:#262626">Social Radar</div><div style="font:500 10px system-ui;color:#7a8a7a"><span style="border:1px solid #dadada;border-radius:10px;padding:2px 8px">Shipped</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.5fr 0.95fr 0.7fr 0.7fr 0.7fr 0.55fr 0.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 14px system-ui;color:#262626">BioQuest</div><div style="font:500 10px system-ui;color:#9a9a9a"><span style="border:1px solid #e2e2e2;border-radius:10px;padding:2px 8px">In progress</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.5fr 0.95fr 0.7fr 0.7fr 0.7fr 0.55fr 0.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 14px system-ui;color:#262626">DocAssistant</div><div style="font:500 10px system-ui;color:#7a8a7a"><span style="border:1px solid #dadada;border-radius:10px;padding:2px 8px">Shipped</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.5fr 0.95fr 0.7fr 0.7fr 0.7fr 0.55fr 0.7fr;gap:6px;align-items:center;padding:13px 0"><div style="font:600 14px system-ui;color:#262626">MedTech</div><div style="font:500 10px system-ui;color:#9a9a9a"><span style="border:1px solid #e2e2e2;border-radius:10px;padding:2px 8px">Concept</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:20px;border:1px solid #cfcfcf;border-radius:4px;font:600 9px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 12px ui-monospace,monospace;color:#d2d2d2">—</span></div></div>
+      <div style="margin-top:12px;font:500 9px ui-monospace,monospace;color:#bdbdbd">// cells link out · em-dash = not available yet (empty state)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOME · LAPTOP 1280 ============ -->
+<div style="position:absolute;left:792px;top:1730px;width:560px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">LAPTOP · 1280</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px"><div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com</div></div>
+    <div style="padding:26px 28px 30px">
+      <div style="display:flex;gap:18px;align-items:stretch">
+        <div style="width:48px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:space-between;border-right:1px solid #ececec;padding:2px 0 6px">
+          <div style="width:32px;height:32px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 10px system-ui;color:#2b2b2b">YN</div>
+          <div style="writing-mode:vertical-rl;transform:rotate(180deg);font:600 9px system-ui;letter-spacing:.2em;color:#9a9a9a"><span style="color:#2b2b2b">WORK</span>&nbsp;&nbsp;ABOUT&nbsp;&nbsp;CONTACT</div>
+          <div style="display:flex;flex-direction:column;gap:7px;align-items:center">
+            <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">Tw</div>
+            <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">Be</div>
+            <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">in</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+          <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:10px">
+            <div style="height:172px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+            <div style="height:172px;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;display:flex;flex-direction:column;justify-content:center;padding:0 18px">
+              <div style="font:600 8px ui-monospace,monospace;letter-spacing:.1em;color:#b0b0b0;margin-bottom:8px">FEATURED PROJECT</div>
+              <div style="font:600 20px Georgia,serif;letter-spacing:.04em;color:#262626">Social Radar</div>
+              <div style="font:500 8px ui-monospace,monospace;letter-spacing:.16em;color:#9a9a9a;margin-top:5px">PRODUCT DESIGN</div>
+            </div>
+          </div>
+          <div style="height:118px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ featured work — wide ]</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:20px;padding-left:66px">
+        <div style="max-width:250px">
+          <div style="font:700 25px/1.05 system-ui;letter-spacing:-.02em;color:#1f1f1f">Your Name</div>
+          <div style="font:500 12px/1.55 system-ui;color:#6f6f6f;margin-top:7px">Short bio — calm, specific lines on what you build.</div>
+          <div style="display:flex;gap:12px;margin-top:10px;font:500 10px ui-monospace,monospace;color:#9a9a9a"><span>email ↗</span><span>linkedin ↗</span></div>
+        </div>
+        <div style="flex:none;display:flex;gap:8px;align-items:center">
+          <div style="display:inline-flex;align-items:center;gap:5px;background:#2b2b2b;border:1.5px solid #2b2b2b;border-radius:6px;padding:8px 13px;font:600 11px system-ui;color:#fff">View Portfolio →</div>
+          <div style="display:inline-flex;align-items:center;gap:5px;border:1.5px solid #2b2b2b;border-radius:6px;padding:8px 12px;font:600 11px system-ui;color:#2b2b2b">Résumé ↗</div>
+        </div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:24px 0 18px"></div>
+      <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">MY STACK</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 13px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Re</div><div style="font:500 6px system-ui;color:#a8a8a8">React</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">TS</div><div style="font:500 6px system-ui;color:#a8a8a8">TypeScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">H5</div><div style="font:500 6px system-ui;color:#a8a8a8">HTML</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">CSS</div><div style="font:500 6px system-ui;color:#a8a8a8">CSS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">JS</div><div style="font:500 6px system-ui;color:#a8a8a8">JavaScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Fi</div><div style="font:500 6px system-ui;color:#a8a8a8">Figma</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Mi</div><div style="font:500 6px system-ui;color:#a8a8a8">Miro</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">No</div><div style="font:500 6px system-ui;color:#a8a8a8">Notion</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">GH</div><div style="font:500 6px system-ui;color:#a8a8a8">GitHub</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Cl</div><div style="font:500 6px system-ui;color:#a8a8a8">Claude</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">GPT</div><div style="font:500 6px system-ui;color:#a8a8a8">ChatGPT</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Cu</div><div style="font:500 6px system-ui;color:#a8a8a8">Cursor</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:38px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">VS</div><div style="font:500 6px system-ui;color:#a8a8a8">VS Code</div></div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:22px 0 18px"></div>
+      <div style="display:grid;grid-template-columns:110px 1fr;gap:18px">
+        <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0">ABOUT</div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:8px;background:#dcdcdc;border-radius:2px;width:94%"></div><div style="height:8px;background:#e6e6e6;border-radius:2px;width:50%"></div></div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:22px 0 16px"></div>
+      <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:12px">SELECTED PROJECTS</div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 0.6fr 0.6fr 0.6fr 0.5fr 0.6fr;gap:4px;font:600 7px ui-monospace,monospace;letter-spacing:.03em;color:#bdbdbd;padding-bottom:9px;border-bottom:1px solid #e6e6e6"><div>PROJECT</div><div>STATUS</div><div>CASE</div><div>UX</div><div>UI</div><div>MVP</div><div>GIT</div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 0.6fr 0.6fr 0.6fr 0.5fr 0.6fr;gap:4px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">Social Radar</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 0.6fr 0.6fr 0.6fr 0.5fr 0.6fr;gap:4px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">BioQuest</div><div style="font:500 9px system-ui;color:#9a9a9a">In progress</div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 0.6fr 0.6fr 0.6fr 0.5fr 0.6fr;gap:4px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">DocAssistant</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 0.6fr 0.6fr 0.6fr 0.5fr 0.6fr;gap:4px;align-items:center;padding:11px 0"><div style="font:600 12px system-ui;color:#262626">MedTech</div><div style="font:500 9px system-ui;color:#9a9a9a">Concept</div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;width:24px;height:18px;border:1px solid #cfcfcf;border-radius:4px;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#666">↗</span></div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 11px ui-monospace,monospace;color:#d2d2d2">—</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOME · TABLET 768 ============ -->
+<div style="position:absolute;left:1400px;top:1730px;width:430px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">TABLET · 768</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:28px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px"><div style="flex:1;height:15px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 9px ui-monospace,monospace;color:#9a9a9a">yourname.com</div></div>
+    <div style="padding:22px 24px 26px">
+      <!-- rail collapses to top bar -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <div style="width:30px;height:30px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 11px system-ui;color:#2b2b2b">YN</div>
+        <div style="display:flex;align-items:center;gap:16px"><div style="display:flex;gap:14px;font:600 9px system-ui;letter-spacing:.1em;color:#9a9a9a"><span style="color:#2b2b2b">WORK</span><span>ABOUT</span><span>CONTACT</span></div><div style="display:flex;flex-direction:column;gap:3px;width:16px"><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div></div></div>
+      </div>
+      <!-- collage: portrait + featured side by side, wide band below -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="height:150px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+        <div style="height:150px;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;display:flex;flex-direction:column;justify-content:center;padding:0 16px"><div style="font:600 8px ui-monospace,monospace;letter-spacing:.1em;color:#b0b0b0;margin-bottom:8px">FEATURED</div><div style="font:600 18px Georgia,serif;color:#262626">Social Radar</div><div style="font:500 7px ui-monospace,monospace;letter-spacing:.14em;color:#9a9a9a;margin-top:5px">PRODUCT DESIGN</div></div>
+      </div>
+      <div style="height:100px;margin-top:10px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#9a9a9a">[ wide work ]</div>
+      <!-- intro -->
+      <div style="margin-top:18px">
+        <div style="font:700 24px/1.05 system-ui;letter-spacing:-.02em;color:#1f1f1f">Your Name</div>
+        <div style="font:500 12px/1.55 system-ui;color:#6f6f6f;margin-top:7px">Short bio — calm, specific lines on what you build.</div>
+        <div style="display:flex;gap:12px;margin-top:10px;font:500 10px ui-monospace,monospace;color:#9a9a9a"><span>email ↗</span><span>linkedin ↗</span></div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <div style="flex:1;text-align:center;background:#2b2b2b;border:1.5px solid #2b2b2b;border-radius:6px;padding:9px 0;font:600 11px system-ui;color:#fff">View Portfolio →</div>
+          <div style="flex:1;text-align:center;border:1.5px solid #2b2b2b;border-radius:6px;padding:9px 0;font:600 11px system-ui;color:#2b2b2b">Résumé ↗</div>
+        </div>
+      </div>
+      <!-- stack wraps -->
+      <div style="height:1px;background:#ececec;margin:20px 0 16px"></div>
+      <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:12px">MY STACK</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 14px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Re</div><div style="font:500 6px system-ui;color:#a8a8a8">React</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">TS</div><div style="font:500 6px system-ui;color:#a8a8a8">TypeScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">H5</div><div style="font:500 6px system-ui;color:#a8a8a8">HTML</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">CSS</div><div style="font:500 6px system-ui;color:#a8a8a8">CSS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">JS</div><div style="font:500 6px system-ui;color:#a8a8a8">JavaScript</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Fi</div><div style="font:500 6px system-ui;color:#a8a8a8">Figma</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Mi</div><div style="font:500 6px system-ui;color:#a8a8a8">Miro</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">No</div><div style="font:500 6px system-ui;color:#a8a8a8">Notion</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">GH</div><div style="font:500 6px system-ui;color:#a8a8a8">GitHub</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Cl</div><div style="font:500 6px system-ui;color:#a8a8a8">Claude</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">GPT</div><div style="font:500 6px system-ui;color:#a8a8a8">ChatGPT</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Cu</div><div style="font:500 6px system-ui;color:#a8a8a8">Cursor</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:40px"><div style="width:34px;height:34px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">VS</div><div style="font:500 6px system-ui;color:#a8a8a8">VS Code</div></div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:18px 0 14px"></div>
+      <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:10px">ABOUT</div>
+      <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:8px;background:#dcdcdc;border-radius:2px;width:92%"></div><div style="height:8px;background:#e6e6e6;border-radius:2px;width:55%"></div></div>
+      <!-- projects: table, spacing adapts (resource cols become icons) -->
+      <div style="height:1px;background:#ececec;margin:18px 0 14px"></div>
+      <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:10px">SELECTED PROJECTS</div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.6fr;gap:6px;font:600 7px ui-monospace,monospace;letter-spacing:.03em;color:#bdbdbd;padding-bottom:8px;border-bottom:1px solid #e6e6e6"><div>PROJECT</div><div>STATUS</div><div style="text-align:right">RESOURCES</div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.6fr;gap:6px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">Social Radar</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div style="display:flex;gap:4px;justify-content:flex-end"><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.6fr;gap:6px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">BioQuest</div><div style="font:500 9px system-ui;color:#9a9a9a">In progress</div><div style="display:flex;gap:4px;justify-content:flex-end"><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.6fr;gap:6px;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 12px system-ui;color:#262626">DocAssistant</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div style="display:flex;gap:4px;justify-content:flex-end"><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">CS</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+      <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.6fr;gap:6px;align-items:center;padding:11px 0"><div style="font:600 12px system-ui;color:#262626">MedTech</div><div style="font:500 9px system-ui;color:#9a9a9a">Concept</div><div style="display:flex;gap:4px;justify-content:flex-end"><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">UI</span><span style="width:26px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">MVP</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">GH</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HOME · MOBILE 390 ============ -->
+<div style="position:absolute;left:1888px;top:1730px;width:250px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">MOBILE · 390</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:26px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;justify-content:center;font:500 9px ui-monospace,monospace;color:#9a9a9a">yourname.com</div>
+    <div style="padding:18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <div style="width:30px;height:30px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 11px system-ui;color:#2b2b2b">YN</div>
+        <div style="display:flex;flex-direction:column;gap:3px;width:18px"><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div></div>
+      </div>
+      <div style="width:100%;height:180px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ portrait ]</div>
+      <div style="height:108px;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa;display:flex;flex-direction:column;justify-content:center;padding:0 16px;margin-top:10px"><div style="font:600 7px ui-monospace,monospace;letter-spacing:.1em;color:#b0b0b0;margin-bottom:7px">FEATURED PROJECT</div><div style="font:600 18px Georgia,serif;color:#262626">Social Radar</div><div style="font:500 7px ui-monospace,monospace;letter-spacing:.14em;color:#9a9a9a;margin-top:5px">PRODUCT DESIGN</div></div>
+      <div style="width:100%;height:90px;margin-top:10px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#9a9a9a">[ wide work ]</div>
+      <div style="font:700 21px/1.05 system-ui;letter-spacing:-.02em;color:#1f1f1f;margin-top:18px">Your Name</div>
+      <div style="font:500 12px/1.6 system-ui;color:#6f6f6f;margin-top:7px">Short bio — one or two calm, specific lines.</div>
+      <div style="display:flex;gap:8px;margin-top:11px;align-items:center">
+        <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">Tw</div>
+        <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">Be</div>
+        <div style="width:20px;height:20px;border:1px solid #cfcfcf;border-radius:50%;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#9a9a9a">in</div>
+      </div>
+      <!-- stacked full-width buttons -->
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+        <div style="text-align:center;background:#2b2b2b;border:1.5px solid #2b2b2b;border-radius:6px;padding:11px 0;font:600 12px system-ui;color:#fff">View Portfolio →</div>
+        <div style="text-align:center;border:1.5px solid #2b2b2b;border-radius:6px;padding:11px 0;font:600 12px system-ui;color:#2b2b2b">Résumé ↗</div>
+      </div>
+      <!-- stack wraps ~5/row -->
+      <div style="height:1px;background:#ececec;margin:20px 0 14px"></div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.07em;color:#b0b0b0;margin-bottom:12px">MY STACK</div>
+      <div style="display:flex;flex-wrap:wrap;gap:11px 12px;justify-content:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#8a8a8a">Re</div><div style="font:500 6px system-ui;color:#a8a8a8">React</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">TS</div><div style="font:500 6px system-ui;color:#a8a8a8">TS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">H5</div><div style="font:500 6px system-ui;color:#a8a8a8">HTML</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">CSS</div><div style="font:500 6px system-ui;color:#a8a8a8">CSS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">JS</div><div style="font:500 6px system-ui;color:#a8a8a8">JS</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">Fi</div><div style="font:500 6px system-ui;color:#a8a8a8">Figma</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">Mi</div><div style="font:500 6px system-ui;color:#a8a8a8">Miro</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">No</div><div style="font:500 6px system-ui;color:#a8a8a8">Notion</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">GH</div><div style="font:500 6px system-ui;color:#a8a8a8">GitHub</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">Cl</div><div style="font:500 6px system-ui;color:#a8a8a8">Claude</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#8a8a8a">GPT</div><div style="font:500 6px system-ui;color:#a8a8a8">GPT</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">Cu</div><div style="font:500 6px system-ui;color:#a8a8a8">Cursor</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:34px"><div style="width:32px;height:32px;border:1px solid #d4d4d4;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;font:600 7px ui-monospace,monospace;color:#8a8a8a">VS</div><div style="font:500 6px system-ui;color:#a8a8a8">VS Code</div></div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:18px 0 14px"></div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.07em;color:#b0b0b0;margin-bottom:10px">ABOUT</div>
+      <div style="display:flex;flex-direction:column;gap:7px"><div style="height:7px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:7px;background:#dcdcdc;border-radius:2px;width:90%"></div><div style="height:7px;background:#e6e6e6;border-radius:2px;width:55%"></div></div>
+      <!-- projects → cards -->
+      <div style="height:1px;background:#ececec;margin:18px 0 14px"></div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.07em;color:#b0b0b0;margin-bottom:12px">SELECTED PROJECTS</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="border:1px solid #e6e6e6;border-radius:6px;padding:13px 14px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><div style="font:600 14px system-ui;color:#262626">Social Radar</div><span style="font:500 9px system-ui;color:#7a8a7a;border:1px solid #dadada;border-radius:10px;padding:2px 8px">Shipped</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px">
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">Case Study <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">UX Research <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">UI Mockups <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">MVP <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">GitHub <span style="color:#888">↗</span></div>
+          </div>
+        </div>
+        <div style="border:1px solid #e6e6e6;border-radius:6px;padding:13px 14px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><div style="font:600 14px system-ui;color:#262626">BioQuest</div><span style="font:500 9px system-ui;color:#9a9a9a;border:1px solid #e2e2e2;border-radius:10px;padding:2px 8px">In progress</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px">
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#c4c4c4;border:1px dashed #e6e6e6;border-radius:4px;padding:5px 8px">Case Study —</div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">UX Research <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">UI Mockups <span style="color:#888">↗</span></div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#c4c4c4;border:1px dashed #e6e6e6;border-radius:4px;padding:5px 8px">MVP —</div>
+            <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:5px 8px">GitHub <span style="color:#888">↗</span></div>
+          </div>
+        </div>
+        <div style="font:500 9px ui-monospace,monospace;color:#bdbdbd">// one card per project · same fields as the desktop table</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- responsive notes -->
+<div style="position:absolute;left:2178px;top:1730px;width:226px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">RESPONSIVE NOTES</div>
+  <div style="font:500 11px/1.6 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:7px"><span style="color:#222;font-weight:600">1440 / 1280:</span> vertical rail persists; collage 2-up + wide band; stack in one row; 7-col table.</div>
+    <div style="margin-bottom:7px"><span style="color:#222;font-weight:600">768:</span> rail → top bar; collage 2-up; buttons go 50/50; stack wraps; table condenses 5 resource cols → one icon group.</div>
+    <div style="margin-bottom:7px"><span style="color:#222;font-weight:600">390:</span> hamburger; everything single-column; buttons full-width stacked; stack wraps ~5/row; table → one card per project.</div>
+    <div style="margin-top:10px;color:#8a8a8a">Hero buttons: <b>View Portfolio</b> (primary) + <b>Résumé ↗</b> (opens PDF, new tab).</div>
+  </div>
+</div>
+
+<!-- ================= SECTION HEADER: PROJECTS TABLE ================= -->
+<div style="position:absolute;left:64px;top:3760px;width:1100px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Projects table — responsive behavior</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">PROJECT · STATUS · CASE STUDY · UX RESEARCH · UI MOCKUPS · MVP · GITHUB — table → cards</div>
+</div>
+
+<!-- projects table — DESKTOP -->
+<div style="position:absolute;left:64px;top:3850px;width:780px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">DESKTOP / LAPTOP — full table</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:26px 30px">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.85fr 0.85fr 0.6fr 0.7fr;gap:8px;font:600 9px ui-monospace,monospace;letter-spacing:.05em;color:#b0b0b0;padding-bottom:12px;border-bottom:1.5px solid #e0e0e0">
+      <div>PROJECT</div><div>STATUS</div><div>CASE STUDY</div><div>UX RESEARCH</div><div>UI MOCKUPS</div><div>MVP</div><div>GITHUB</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.85fr 0.85fr 0.6fr 0.7fr;gap:8px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 16px system-ui;color:#262626">Social Radar</div><div><span style="font:500 11px system-ui;color:#5a6a5a;border:1px solid #d6ddd6;border-radius:11px;padding:3px 10px">Shipped</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div></div>
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.85fr 0.85fr 0.6fr 0.7fr;gap:8px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 16px system-ui;color:#262626">BioQuest</div><div><span style="font:500 11px system-ui;color:#9a9a9a;border:1px solid #e2e2e2;border-radius:11px;padding:3px 10px">In progress</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div></div>
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.85fr 0.85fr 0.6fr 0.7fr;gap:8px;align-items:center;padding:16px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 16px system-ui;color:#262626">DocAssistant</div><div><span style="font:500 11px system-ui;color:#5a6a5a;border:1px solid #d6ddd6;border-radius:11px;padding:3px 10px">Shipped</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div></div>
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 0.8fr 0.85fr 0.85fr 0.6fr 0.7fr;gap:8px;align-items:center;padding:16px 0"><div style="font:600 16px system-ui;color:#262626">MedTech</div><div><span style="font:500 11px system-ui;color:#9a9a9a;border:1px solid #e2e2e2;border-radius:11px;padding:3px 10px">Concept</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border:1px solid #cfcfcf;border-radius:5px;font:600 10px ui-monospace,monospace;color:#555">↗</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div><div><span style="font:500 13px ui-monospace,monospace;color:#d2d2d2">—</span></div></div>
+    <div style="margin-top:14px;display:flex;gap:18px;font:500 10px ui-monospace,monospace;color:#bdbdbd"><span><span style="display:inline-flex;width:22px;height:15px;border:1px solid #cfcfcf;border-radius:3px;vertical-align:middle"></span> link present</span><span>—  empty state (not available yet)</span></div>
+  </div>
+</div>
+
+<!-- projects table — TABLET -->
+<div style="position:absolute;left:884px;top:3850px;width:360px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">TABLET — condensed</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:20px 22px">
+    <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.7fr;gap:6px;font:600 8px ui-monospace,monospace;letter-spacing:.04em;color:#b0b0b0;padding-bottom:10px;border-bottom:1.5px solid #e0e0e0"><div>PROJECT</div><div>STATUS</div><div style="text-align:right">RESOURCES</div></div>
+    <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#262626">Social Radar</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div style="display:flex;gap:3px;justify-content:flex-end;flex-wrap:wrap"><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+    <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#262626">BioQuest</div><div style="font:500 9px system-ui;color:#9a9a9a">In prog.</div><div style="display:flex;gap:3px;justify-content:flex-end;flex-wrap:wrap"><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+    <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.7fr;gap:6px;align-items:center;padding:13px 0;border-bottom:1px solid #f0f0f0"><div style="font:600 13px system-ui;color:#262626">DocAssistant</div><div style="font:500 9px system-ui;color:#9a9a9a">Shipped</div><div style="display:flex;gap:3px;justify-content:flex-end;flex-wrap:wrap"><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">CS</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">UX</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UI</span><span style="width:26px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">MVP</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">GH</span></div></div>
+    <div style="display:grid;grid-template-columns:1.4fr 0.9fr 1.7fr;gap:6px;align-items:center;padding:13px 0"><div style="font:600 13px system-ui;color:#262626">MedTech</div><div style="font:500 9px system-ui;color:#9a9a9a">Concept</div><div style="display:flex;gap:3px;justify-content:flex-end;flex-wrap:wrap"><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">CS</span><span style="width:22px;height:18px;border:1px solid #cfcfcf;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#888">UX</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">UI</span><span style="width:26px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">MVP</span><span style="width:22px;height:18px;border:1px dashed #e0e0e0;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font:600 6px ui-monospace,monospace;color:#d2d2d2">GH</span></div></div>
+    <div style="margin-top:12px;font:500 9px ui-monospace,monospace;color:#bdbdbd">// 5 resource cols collapse into one icon group; spacing tightens</div>
+  </div>
+</div>
+
+<!-- projects table — MOBILE cards -->
+<div style="position:absolute;left:1284px;top:3850px;width:250px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">MOBILE — cards</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:18px 16px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="border:1px solid #e6e6e6;border-radius:6px;padding:13px 14px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font:600 15px system-ui;color:#262626">Social Radar</div><span style="font:500 9px system-ui;color:#5a6a5a;border:1px solid #d6ddd6;border-radius:11px;padding:2px 9px">Shipped</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">Case Study <span style="color:#888">↗</span></div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">UX Research <span style="color:#888">↗</span></div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">UI Mockups <span style="color:#888">↗</span></div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">MVP <span style="color:#888">↗</span></div>
+          <div style="grid-column:1 / -1;display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">GitHub <span style="color:#888">↗</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e6e6e6;border-radius:6px;padding:13px 14px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font:600 15px system-ui;color:#262626">BioQuest</div><span style="font:500 9px system-ui;color:#9a9a9a;border:1px solid #e2e2e2;border-radius:11px;padding:2px 9px">In progress</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#c4c4c4;border:1px dashed #e6e6e6;border-radius:4px;padding:6px 8px">Case Study —</div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">UX Research <span style="color:#888">↗</span></div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">UI Mockups <span style="color:#888">↗</span></div>
+          <div style="display:flex;justify-content:space-between;font:500 10px system-ui;color:#c4c4c4;border:1px dashed #e6e6e6;border-radius:4px;padding:6px 8px">MVP —</div>
+          <div style="grid-column:1 / -1;display:flex;justify-content:space-between;font:500 10px system-ui;color:#555;border:1px solid #ececec;border-radius:4px;padding:6px 8px">GitHub <span style="color:#888">↗</span></div>
+        </div>
+      </div>
+      <div style="font:500 9px ui-monospace,monospace;color:#bdbdbd">// one card per project · same hierarchy preserved</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION HEADER: PORTFOLIO ============ -->
+<div style="position:absolute;left:64px;top:4520px;width:900px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Portfolio — single long page</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">CARD GALLERY → ANCHOR + SMOOTH SCROLL → STACKED CASE SECTIONS</div>
+</div>
+
+<!-- ============ PORTFOLIO — DESKTOP ============ -->
+<div style="position:absolute;left:64px;top:4600px;width:640px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">DESKTOP · 1440</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px">
+      <div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com/portfolio#social-radar</div>
+    </div>
+    <div style="padding:34px 40px 38px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:40px">
+        <div style="font:700 15px system-ui;color:#2b2b2b">Your Name</div>
+        <div style="display:flex;gap:20px;font:500 13px system-ui;color:#9a9a9a"><span>Home</span><span style="color:#2b2b2b">Portfolio</span><span>Dear Diary</span><span style="border:1px solid #cfcfcf;border-radius:5px;padding:4px 10px;color:#2b2b2b;font-weight:600">Résumé ↗</span></div>
+      </div>
+      <div style="font:700 36px/1.05 system-ui;letter-spacing:-.025em;color:#1f1f1f">Work</div>
+      <div style="font:500 13px system-ui;color:#9a9a9a;margin-top:8px">Click a card to jump to its case study ↓</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px">
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:120px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:12px 14px"><div style="font:600 14px system-ui;color:#262626">Social Radar</div><div style="font:500 10px ui-monospace,monospace;color:#b0b0b0;margin-top:4px">#social-radar →</div></div></div>
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:120px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:12px 14px"><div style="font:600 14px system-ui;color:#262626">BioQuest</div><div style="font:500 10px ui-monospace,monospace;color:#b0b0b0;margin-top:4px">#bioquest →</div></div></div>
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:120px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:12px 14px"><div style="font:600 14px system-ui;color:#262626">DocAssistant</div><div style="font:500 10px ui-monospace,monospace;color:#b0b0b0;margin-top:4px">#docassistant →</div></div></div>
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:120px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:12px 14px"><div style="font:600 14px system-ui;color:#262626">MedTech</div><div style="font:500 10px ui-monospace,monospace;color:#b0b0b0;margin-top:4px">#medtech →</div></div></div>
+      </div>
+      <div style="height:2px;background:#2b2b2b;margin:40px 0 0"></div>
+      <div style="font:500 10px ui-monospace,monospace;color:#bdbdbd;margin:10px 0 0">▼ #social-radar  (smooth-scroll target)</div>
+      <div style="margin-top:18px">
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0">PROJECT 01</div>
+        <div style="font:700 32px/1.08 system-ui;letter-spacing:-.02em;color:#1f1f1f;margin-top:8px">Social Radar</div>
+        <div style="width:100%;height:200px;margin-top:20px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 10px ui-monospace,monospace;color:#9a9a9a">[ project hero ]</div>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;margin-top:28px">
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">OVERVIEW</div>
+          <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:8px;background:#dcdcdc;border-radius:2px;width:92%"></div><div style="height:8px;background:#e6e6e6;border-radius:2px;width:55%"></div></div>
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">ROLE</div>
+          <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:70%"></div></div>
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">PROBLEM</div>
+          <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:8px;background:#dcdcdc;border-radius:2px;width:88%"></div></div>
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">SOLUTION</div>
+          <div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:8px;background:#dcdcdc;border-radius:2px;width:95%"></div></div><div style="height:140px;margin-top:14px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ screens / process ]</div></div>
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">OUTCOME</div>
+          <div style="display:flex;flex-direction:column;gap:8px"><div style="height:8px;background:#dcdcdc;border-radius:2px;width:90%"></div><div style="height:8px;background:#e6e6e6;border-radius:2px;width:45%"></div></div>
+          <div style="font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0">PROJECT<br>RESOURCES</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+            <div style="border:1px solid #cfcfcf;border-radius:6px;padding:10px 8px;text-align:center"><div style="font:600 11px system-ui;color:#333">Case Study</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Notion ↗</div></div>
+            <div style="border:1px solid #cfcfcf;border-radius:6px;padding:10px 8px;text-align:center"><div style="font:600 11px system-ui;color:#333">UX Research</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Miro ↗</div></div>
+            <div style="border:1px solid #cfcfcf;border-radius:6px;padding:10px 8px;text-align:center"><div style="font:600 11px system-ui;color:#333">UI Mockups</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Figma ↗</div></div>
+            <div style="border:1px solid #cfcfcf;border-radius:6px;padding:10px 8px;text-align:center"><div style="font:600 11px system-ui;color:#333">MVP</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Live app ↗</div></div>
+            <div style="border:1px solid #cfcfcf;border-radius:6px;padding:10px 8px;text-align:center"><div style="font:600 11px system-ui;color:#333">GitHub</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Repo ↗</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:34px 0 0"></div>
+      <div style="font:500 10px ui-monospace,monospace;color:#bdbdbd;margin-top:16px">▼ #bioquest — same section structure</div>
+      <div style="font:500 10px ui-monospace,monospace;color:#cfcfcf;margin-top:8px">▼ #docassistant</div>
+      <div style="font:500 10px ui-monospace,monospace;color:#cfcfcf;margin-top:8px">▼ #medtech</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PORTFOLIO — MOBILE ============ -->
+<div style="position:absolute;left:752px;top:4600px;width:248px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">MOBILE · 390</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:26px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;justify-content:center;font:500 9px ui-monospace,monospace;color:#9a9a9a">/portfolio#social-radar</div>
+    <div style="padding:20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px">
+        <div style="font:700 13px system-ui;color:#2b2b2b">Your Name</div>
+        <div style="display:flex;flex-direction:column;gap:3px;width:18px"><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div></div>
+      </div>
+      <div style="font:700 26px/1.06 system-ui;letter-spacing:-.02em;color:#1f1f1f">Work</div>
+      <div style="font:500 11px system-ui;color:#9a9a9a;margin-top:6px">Tap a card to jump ↓</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:90px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:10px 12px"><div style="font:600 13px system-ui;color:#262626">Social Radar</div><div style="font:500 9px ui-monospace,monospace;color:#b0b0b0">#social-radar →</div></div></div>
+        <div style="border:1px solid #e6e6e6;border-radius:5px;overflow:hidden"><div style="height:90px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);display:flex;align-items:center;justify-content:center;font:600 8px ui-monospace,monospace;color:#9a9a9a">[ cover ]</div><div style="padding:10px 12px"><div style="font:600 13px system-ui;color:#262626">BioQuest</div><div style="font:500 9px ui-monospace,monospace;color:#b0b0b0">#bioquest →</div></div></div>
+      </div>
+      <div style="height:2px;background:#2b2b2b;margin:24px 0 0"></div>
+      <div style="font:500 9px ui-monospace,monospace;color:#bdbdbd;margin:10px 0 0">▼ #social-radar</div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0;margin-top:16px">PROJECT 01</div>
+      <div style="font:700 22px/1.1 system-ui;letter-spacing:-.02em;color:#1f1f1f;margin-top:6px">Social Radar</div>
+      <div style="width:100%;height:130px;margin-top:14px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ hero ]</div>
+      <div style="display:flex;flex-direction:column;gap:18px;margin-top:20px">
+        <div><div style="font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0;margin-bottom:8px">OVERVIEW</div><div style="display:flex;flex-direction:column;gap:7px"><div style="height:7px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:7px;background:#e6e6e6;border-radius:2px;width:60%"></div></div></div>
+        <div><div style="font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0;margin-bottom:8px">ROLE · PROBLEM · SOLUTION · OUTCOME</div><div style="display:flex;flex-direction:column;gap:7px"><div style="height:7px;background:#dcdcdc;border-radius:2px;width:95%"></div><div style="height:7px;background:#dcdcdc;border-radius:2px;width:88%"></div><div style="height:7px;background:#e6e6e6;border-radius:2px;width:50%"></div></div></div>
+        <div><div style="font:600 9px ui-monospace,monospace;letter-spacing:.06em;color:#b0b0b0;margin-bottom:8px">PROJECT RESOURCES</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+            <div style="border:1px solid #cfcfcf;border-radius:5px;padding:8px 6px;text-align:center;font:600 10px system-ui;color:#444">Case Study</div>
+            <div style="border:1px solid #cfcfcf;border-radius:5px;padding:8px 6px;text-align:center;font:600 10px system-ui;color:#444">UX Research</div>
+            <div style="border:1px solid #cfcfcf;border-radius:5px;padding:8px 6px;text-align:center;font:600 10px system-ui;color:#444">UI Mockups</div>
+            <div style="border:1px solid #cfcfcf;border-radius:5px;padding:8px 6px;text-align:center;font:600 10px system-ui;color:#444">MVP</div>
+            <div style="grid-column:1 / -1;border:1px solid #cfcfcf;border-radius:5px;padding:8px 6px;text-align:center;font:600 10px system-ui;color:#444">GitHub</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- project resources note -->
+<div style="position:absolute;left:1040px;top:4600px;width:224px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">PROJECT RESOURCES</div>
+  <div style="font:500 11px/1.6 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:8px;color:#555">Old "Links" row → renamed <b>Project Resources</b> with explicit destinations:</div>
+    <div style="margin-bottom:4px">› Case Study <span style="color:#9a9a9a">(Notion)</span></div>
+    <div style="margin-bottom:4px">› UX Research <span style="color:#9a9a9a">(Miro)</span></div>
+    <div style="margin-bottom:4px">› UI Mockups <span style="color:#9a9a9a">(Figma)</span></div>
+    <div style="margin-bottom:4px">› MVP <span style="color:#9a9a9a">(live prototype / app)</span></div>
+    <div style="margin-bottom:8px">› GitHub <span style="color:#9a9a9a">(repo)</span></div>
+    <div style="color:#8a8a8a">Desktop: one row · Tablet: wraps · Mobile: 2-col grid.</div>
+  </div>
+</div>
+
+<!-- ================= SECTION HEADER: PROJECT RESOURCES BLOCK ================= -->
+<div style="position:absolute;left:64px;top:6450px;width:1000px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Project Resources — responsive block</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">CASE STUDY · UX RESEARCH · UI MOCKUPS · MVP · GITHUB — balanced buttons</div>
+</div>
+
+<!-- PR — desktop row -->
+<div style="position:absolute;left:64px;top:6540px;width:640px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">DESKTOP — single row</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:26px 28px">
+    <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:16px">PROJECT RESOURCES</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+      <div style="border:1px solid #cfcfcf;border-radius:7px;padding:14px 10px;text-align:center"><div style="font:600 13px system-ui;color:#2b2b2b">Case Study</div><div style="font:500 9px ui-monospace,monospace;color:#a8a8a8;margin-top:5px">Notion ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:7px;padding:14px 10px;text-align:center"><div style="font:600 13px system-ui;color:#2b2b2b">UX Research</div><div style="font:500 9px ui-monospace,monospace;color:#a8a8a8;margin-top:5px">Miro ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:7px;padding:14px 10px;text-align:center"><div style="font:600 13px system-ui;color:#2b2b2b">UI Mockups</div><div style="font:500 9px ui-monospace,monospace;color:#a8a8a8;margin-top:5px">Figma ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:7px;padding:14px 10px;text-align:center"><div style="font:600 13px system-ui;color:#2b2b2b">MVP</div><div style="font:500 9px ui-monospace,monospace;color:#a8a8a8;margin-top:5px">Live app ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:7px;padding:14px 10px;text-align:center"><div style="font:600 13px system-ui;color:#2b2b2b">GitHub</div><div style="font:500 9px ui-monospace,monospace;color:#a8a8a8;margin-top:5px">Repo ↗</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PR — tablet wrap -->
+<div style="position:absolute;left:724px;top:6540px;width:340px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">TABLET — wraps</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:22px 22px">
+    <div style="font:600 10px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:14px">PROJECT RESOURCES</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <div style="flex:1 1 40%;border:1px solid #cfcfcf;border-radius:7px;padding:12px 10px;text-align:center"><div style="font:600 12px system-ui;color:#2b2b2b">Case Study</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:4px">Notion ↗</div></div>
+      <div style="flex:1 1 40%;border:1px solid #cfcfcf;border-radius:7px;padding:12px 10px;text-align:center"><div style="font:600 12px system-ui;color:#2b2b2b">UX Research</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:4px">Miro ↗</div></div>
+      <div style="flex:1 1 40%;border:1px solid #cfcfcf;border-radius:7px;padding:12px 10px;text-align:center"><div style="font:600 12px system-ui;color:#2b2b2b">UI Mockups</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:4px">Figma ↗</div></div>
+      <div style="flex:1 1 40%;border:1px solid #cfcfcf;border-radius:7px;padding:12px 10px;text-align:center"><div style="font:600 12px system-ui;color:#2b2b2b">MVP</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:4px">Live app ↗</div></div>
+      <div style="flex:1 1 40%;border:1px solid #cfcfcf;border-radius:7px;padding:12px 10px;text-align:center"><div style="font:600 12px system-ui;color:#2b2b2b">GitHub</div><div style="font:500 8px ui-monospace,monospace;color:#a8a8a8;margin-top:4px">Repo ↗</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PR — mobile grid -->
+<div style="position:absolute;left:1084px;top:6540px;width:230px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">MOBILE — 2-col grid</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:18px 16px">
+    <div style="font:600 9px ui-monospace,monospace;letter-spacing:.07em;color:#b0b0b0;margin-bottom:12px">PROJECT RESOURCES</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="border:1px solid #cfcfcf;border-radius:6px;padding:11px 8px;text-align:center"><div style="font:600 11px system-ui;color:#2b2b2b">Case Study</div><div style="font:500 7px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Notion ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:6px;padding:11px 8px;text-align:center"><div style="font:600 11px system-ui;color:#2b2b2b">UX Research</div><div style="font:500 7px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Miro ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:6px;padding:11px 8px;text-align:center"><div style="font:600 11px system-ui;color:#2b2b2b">UI Mockups</div><div style="font:500 7px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Figma ↗</div></div>
+      <div style="border:1px solid #cfcfcf;border-radius:6px;padding:11px 8px;text-align:center"><div style="font:600 11px system-ui;color:#2b2b2b">MVP</div><div style="font:500 7px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Live app ↗</div></div>
+      <div style="grid-column:1 / -1;border:1px solid #cfcfcf;border-radius:6px;padding:11px 8px;text-align:center"><div style="font:600 11px system-ui;color:#2b2b2b">GitHub</div><div style="font:500 7px ui-monospace,monospace;color:#a8a8a8;margin-top:3px">Repo ↗</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION HEADER: DEAR DIARY ============ -->
+<div style="position:absolute;left:64px;top:6960px;width:900px">
+  <div style="font:700 22px system-ui;color:#2b2b2b;letter-spacing:-.01em">Dear Diary — personal journal</div>
+  <div style="margin-top:6px;font:500 12px ui-monospace,monospace;letter-spacing:.04em;color:#9a9a9a">DIFFERENT MOOD · EDITORIAL TYPOGRAPHY · MAGAZINE RHYTHM · COMFORTABLE READING</div>
+</div>
+
+<!-- ============ DEAR DIARY — DESKTOP ============ -->
+<div style="position:absolute;left:64px;top:7040px;width:640px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">DESKTOP · 1440</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:5px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:30px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;padding:0 12px">
+      <div style="flex:1;height:16px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;display:flex;align-items:center;padding:0 10px;font:500 10px ui-monospace,monospace;color:#9a9a9a">yourname.com/dear-diary</div>
+    </div>
+    <div style="padding:38px 48px 42px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #e6e6e6;padding-bottom:18px;margin-bottom:38px">
+        <div style="font:italic 600 22px Georgia,serif;color:#262626">Dear Diary</div>
+        <div style="display:flex;gap:18px;font:500 12px system-ui;color:#9a9a9a"><span>Home</span><span>Portfolio</span><span style="color:#2b2b2b">Dear Diary</span></div>
+      </div>
+      <div style="text-align:center;margin-bottom:8px;font:600 11px ui-monospace,monospace;letter-spacing:.14em;color:#b0b0b0">A DESIGN JOURNAL · ISSUE No.7</div>
+      <div style="text-align:center;font:600 52px/1.06 Georgia,serif;letter-spacing:-.01em;color:#1f1f1f">Notes between<br><span style="font-style:italic">the projects</span></div>
+      <div style="text-align:center;font:500 14px system-ui;color:#9a9a9a;margin-top:18px">Occasional writing on craft, process &amp; the in-between.</div>
+      <div style="height:240px;margin:34px 0 0;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 10px ui-monospace,monospace;color:#9a9a9a">[ full-bleed feature image ]</div>
+      <div style="max-width:480px;margin:30px auto 0">
+        <div style="font:600 11px ui-monospace,monospace;letter-spacing:.08em;color:#b0b0b0;margin-bottom:10px">JUN 2026 · 6 MIN READ</div>
+        <div style="font:600 30px/1.16 Georgia,serif;letter-spacing:-.01em;color:#1f1f1f">On designing quiet interfaces</div>
+        <div style="display:flex;gap:14px;margin-top:22px">
+          <div style="font:700 56px/0.7 Georgia,serif;color:#262626">A</div>
+          <div style="display:flex;flex-direction:column;gap:9px;flex:1;padding-top:4px">
+            <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+            <div style="height:8px;background:#dcdcdc;border-radius:2px;width:97%"></div>
+            <div style="height:8px;background:#dcdcdc;border-radius:2px;width:99%"></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:9px">
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:94%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:98%"></div>
+          <div style="height:8px;background:#e6e6e6;border-radius:2px;width:40%"></div>
+        </div>
+        <div style="border-left:2px solid #2b2b2b;padding-left:18px;margin:26px 0;font:italic 500 20px/1.4 Georgia,serif;color:#555">A pull quote sits in the margin rhythm — bigger, slower, breathing.</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:96%"></div>
+          <div style="height:8px;background:#dcdcdc;border-radius:2px;width:100%"></div>
+          <div style="height:8px;background:#e6e6e6;border-radius:2px;width:55%"></div>
+        </div>
+      </div>
+      <div style="height:1px;background:#ececec;margin:40px 0 24px"></div>
+      <div style="font:600 11px ui-monospace,monospace;letter-spacing:.1em;color:#b0b0b0;text-align:center;margin-bottom:24px">MORE ENTRIES</div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid #ececec"><div><div style="font:600 22px Georgia,serif;color:#1f1f1f">The cost of a clean grid</div><div style="font:500 12px system-ui;color:#aaa;margin-top:4px">Process · 4 min</div></div><div style="font:500 11px ui-monospace,monospace;color:#bdbdbd">MAY 2026</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid #ececec"><div><div style="font:600 22px Georgia,serif;color:#1f1f1f">Notebooks I keep</div><div style="font:500 12px system-ui;color:#aaa;margin-top:4px">Craft · 3 min</div></div><div style="font:500 11px ui-monospace,monospace;color:#bdbdbd">APR 2026</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid #ececec;border-bottom:1px solid #ececec"><div><div style="font:600 22px Georgia,serif;color:#1f1f1f">Why I stopped over-polishing</div><div style="font:500 12px system-ui;color:#aaa;margin-top:4px">Notes · 5 min</div></div><div style="font:500 11px ui-monospace,monospace;color:#bdbdbd">MAR 2026</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DEAR DIARY — MOBILE ============ -->
+<div style="position:absolute;left:752px;top:7040px;width:248px">
+  <div data-drags-parent="1" style="position:absolute;top:-26px;left:2px;font:600 12px ui-monospace,monospace;letter-spacing:.05em;color:#5a5a5a">MOBILE · 390</div>
+  <div style="background:#fff;border:1px solid #e3e3e3;border-radius:18px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden">
+    <div style="height:26px;background:#f1f1f1;border-bottom:1px solid #e3e3e3;display:flex;align-items:center;justify-content:center;font:500 9px ui-monospace,monospace;color:#9a9a9a">/dear-diary</div>
+    <div style="padding:22px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e6e6e6;padding-bottom:14px;margin-bottom:24px">
+        <div style="font:italic 600 18px Georgia,serif;color:#262626">Dear Diary</div>
+        <div style="display:flex;flex-direction:column;gap:3px;width:18px"><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div><div style="height:2px;background:#888"></div></div>
+      </div>
+      <div style="text-align:center;font:600 9px ui-monospace,monospace;letter-spacing:.12em;color:#b0b0b0;margin-bottom:8px">A DESIGN JOURNAL · No.7</div>
+      <div style="text-align:center;font:600 30px/1.08 Georgia,serif;color:#1f1f1f">Notes between <span style="font-style:italic">the projects</span></div>
+      <div style="height:160px;margin-top:22px;background:repeating-linear-gradient(45deg,#eee,#eee 7px,#e4e4e4 7px,#e4e4e4 14px);border:1px solid #e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 9px ui-monospace,monospace;color:#9a9a9a">[ feature ]</div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.07em;color:#b0b0b0;margin-top:20px">JUN 2026 · 6 MIN</div>
+      <div style="font:600 22px/1.18 Georgia,serif;color:#1f1f1f;margin-top:6px">On designing quiet interfaces</div>
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <div style="font:700 40px/0.7 Georgia,serif;color:#262626">A</div>
+        <div style="display:flex;flex-direction:column;gap:7px;flex:1;padding-top:2px"><div style="height:7px;background:#dcdcdc;border-radius:2px;width:100%"></div><div style="height:7px;background:#dcdcdc;border-radius:2px;width:96%"></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px;margin-top:7px"><div style="height:7px;background:#dcdcdc;border-radius:2px;width:99%"></div><div style="height:7px;background:#e6e6e6;border-radius:2px;width:45%"></div></div>
+      <div style="border-left:2px solid #2b2b2b;padding-left:14px;margin:20px 0;font:italic 500 15px/1.4 Georgia,serif;color:#555">A pull quote, slower and bigger.</div>
+      <div style="height:1px;background:#ececec;margin:8px 0 18px"></div>
+      <div style="font:600 9px ui-monospace,monospace;letter-spacing:.09em;color:#b0b0b0;text-align:center;margin-bottom:16px">MORE ENTRIES</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-top:1px solid #ececec"><div style="font:600 16px Georgia,serif;color:#1f1f1f">The cost of a clean grid</div><div style="font:500 9px ui-monospace,monospace;color:#bdbdbd">MAY</div></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-top:1px solid #ececec;border-bottom:1px solid #ececec"><div style="font:600 16px Georgia,serif;color:#1f1f1f">Notebooks I keep</div><div style="font:500 9px ui-monospace,monospace;color:#bdbdbd">APR</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- mood note for diary -->
+<div style="position:absolute;left:1044px;top:7040px;width:220px;background:#f4f4f4;border:1px solid #e2e2e2;border-radius:3px;box-shadow:0 1px 4px rgba(0,0,0,.05);padding:14px 16px">
+  <div style="font:700 11px ui-monospace,monospace;letter-spacing:.04em;color:#444;margin-bottom:10px">MOOD SHIFT</div>
+  <div style="font:500 11px/1.65 system-ui;color:#3a3a3a">
+    <div style="margin-bottom:7px">› Serif display type (vs sans on Home/Portfolio).</div>
+    <div style="margin-bottom:7px">› Narrow centered reading column, ~480px.</div>
+    <div style="margin-bottom:7px">› Drop-cap, pull-quotes, dated entry index.</div>
+    <div style="margin-bottom:7px">› Looser leading, magazine rhythm.</div>
+    <div>› Signals a separate, personal space.</div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

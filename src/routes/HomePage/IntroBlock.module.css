@@ -1,0 +1,79 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 640px;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  font-size: clamp(30px, 6vw, 52px);
+  color: var(--color-text-primary);
+}
+
+.bio {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.contactLink {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: var(--color-brand-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contactLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.ctaRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.ctaRow > a,
+.ctaRow > button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .ctaRow {
+    flex-direction: row;
+  }
+
+  .ctaRow > a,
+  .ctaRow > button {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ctaRow > a,
+  .ctaRow > button {
+    flex: none;
+  }
+}

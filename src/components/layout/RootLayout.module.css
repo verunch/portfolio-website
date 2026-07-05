@@ -1,0 +1,19 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.mainWithRail {
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .mainWithRail {
+    margin-left: 72px;
+  }
+}

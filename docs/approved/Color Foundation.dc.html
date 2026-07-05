@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#FBFAF6;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#403636;-webkit-font-smoothing:antialiased}
+  ::selection{background:#F2CB57;color:#403636}
+</style>
+</helmet>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 40px">
+
+  <!-- ===== MASTHEAD ===== -->
+  <header style="padding:80px 0 40px;border-bottom:1px solid #E5E0D6">
+    <div style="display:flex;align-items:center;gap:10px;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:#8D9FA6;text-transform:uppercase">
+      <span style="width:26px;height:26px;border-radius:7px;background:#8D9FA6;display:inline-block"></span>
+      Design System · Foundations
+    </div>
+    <h1 style="font:650 56px/1.04 system-ui;letter-spacing:-.03em;margin:26px 0 0;color:#403636">Color Foundation</h1>
+    <p style="font:400 19px/1.6 system-ui;color:#6F6966;max-width:680px;margin:18px 0 0">The complete color language of the system — a calm, warm, paper-first palette anchored by a muted blue-grey brand and a single confident gold accent. Built for clarity, restraint and longevity.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:30px">
+      <a href="#philosophy" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">01 · Philosophy</a>
+      <a href="#core" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">02 · Core Palette</a>
+      <a href="#neutral" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">03 · Neutral Scale</a>
+      <a href="#accent" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">04 · Variations</a>
+      <a href="#tokens" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">05 · Semantic Tokens</a>
+      <a href="#components" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">06 · Components</a>
+      <a href="#a11y" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">07 · Accessibility</a>
+      <a href="#usage" style="text-decoration:none;font:500 13px system-ui;color:#403636;background:#fff;border:1px solid #E5E0D6;border-radius:999px;padding:8px 15px">08 · Usage</a>
+    </div>
+  </header>
+
+  <!-- ===== 01 PHILOSOPHY ===== -->
+  <section id="philosophy" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">01 — Philosophy</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 0">How the color groups work together</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:16px 0 40px">Four groups carry distinct responsibilities. Kept in their lanes, they produce an interface that feels editorial and quiet — never loud — while still giving the eye a clear path through actions and meaning.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:26px 26px 28px">
+        <div style="display:flex;gap:7px;margin-bottom:16px"><span style="width:30px;height:30px;border-radius:8px;background:#8D9FA6"></span><span style="width:30px;height:30px;border-radius:8px;background:#A4BFBA"></span><span style="width:30px;height:30px;border-radius:8px;background:#7B9098"></span></div>
+        <h3 style="font:600 19px system-ui;margin:0">Brand · muted blue-grey</h3>
+        <p style="font:400 15px/1.65 system-ui;color:#6F6966;margin:8px 0 0">The signature. Used sparingly for primary actions, focus, links and identity. Its low saturation keeps the product calm — it guides rather than shouts.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:26px 26px 28px">
+        <div style="display:flex;gap:7px;margin-bottom:16px"><span style="width:30px;height:30px;border-radius:8px;background:#FBFAF6;border:1px solid #E5E0D6"></span><span style="width:30px;height:30px;border-radius:8px;background:#F2EFDF"></span><span style="width:30px;height:30px;border-radius:8px;background:#F2DAC4"></span></div>
+        <h3 style="font:600 19px system-ui;margin:0">Neutrals · warm paper</h3>
+        <p style="font:400 15px/1.65 system-ui;color:#6F6966;margin:8px 0 0">The stage. Warm off-whites and beige form ~84% of every screen, giving the brand and accent room to breathe and making long reading comfortable.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:26px 26px 28px">
+        <div style="display:flex;gap:7px;margin-bottom:16px"><span style="width:30px;height:30px;border-radius:8px;background:#F2CB57"></span><span style="width:30px;height:30px;border-radius:8px;background:#F6DE97"></span><span style="width:30px;height:30px;border-radius:8px;background:#F8E8B9"></span></div>
+        <h3 style="font:600 19px system-ui;margin:0">Accent · gold</h3>
+        <p style="font:400 15px/1.65 system-ui;color:#6F6966;margin:8px 0 0">The spark. A single warm gold for highlights, marks and moments of emphasis. Capped at ~2% of the canvas so it always reads as intentional.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:26px 26px 28px">
+        <div style="display:flex;gap:7px;margin-bottom:16px"><span style="width:30px;height:30px;border-radius:8px;background:#8FB89A"></span><span style="width:30px;height:30px;border-radius:8px;background:#E5B64A"></span><span style="width:30px;height:30px;border-radius:8px;background:#F29991"></span></div>
+        <h3 style="font:600 19px system-ui;margin:0">Functional · status</h3>
+        <p style="font:400 15px/1.65 system-ui;color:#6F6966;margin:8px 0 0">The signals. Success, warning, error and info are desaturated to live inside the warm world, communicating state without breaking the calm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 CORE PALETTE ===== -->
+  <section id="core" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">02 — Core Palette</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">The approved palette</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 36px">Every value below is fixed. Each swatch carries its display name, HEX, RGB and the design token used in code.</p>
+
+    <!-- group: BRAND -->
+    <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 14px">Brand</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:34px">
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#8D9FA6"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Primary</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#8D9FA6</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(141,159,166)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.brand.primary</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#A4BFBA"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Primary Light</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#A4BFBA</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(164,191,186)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.brand.light</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#7B9098"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Primary Hover</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#7B9098</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(123,144,152)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.brand.hover</div></div></div>
+    </div>
+
+    <!-- group: NEUTRALS -->
+    <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 14px">Neutrals</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-bottom:34px">
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:120px;background:#FBFAF6"></div><div style="padding:14px 16px 16px"><div style="font:600 15px system-ui">Paper</div><div style="font:500 12px ui-monospace,monospace;color:#6F6966;margin-top:7px">#FBFAF6</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">251,250,246</div><div style="font:500 11px ui-monospace,monospace;color:#8D9FA6;margin-top:7px">color.neutral.paper</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:120px;background:#F2EFDF"></div><div style="padding:14px 16px 16px"><div style="font:600 15px system-ui">Warm Surface</div><div style="font:500 12px ui-monospace,monospace;color:#6F6966;margin-top:7px">#F2EFDF</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">242,239,223</div><div style="font:500 11px ui-monospace,monospace;color:#8D9FA6;margin-top:7px">color.neutral.warm</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:120px;background:#FFFFFF;border-bottom:1px solid #ECE8DF"></div><div style="padding:14px 16px 16px"><div style="font:600 15px system-ui">Surface</div><div style="font:500 12px ui-monospace,monospace;color:#6F6966;margin-top:7px">#FFFFFF</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">255,255,255</div><div style="font:500 11px ui-monospace,monospace;color:#8D9FA6;margin-top:7px">color.neutral.surface</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:120px;background:#F2DAC4"></div><div style="padding:14px 16px 16px"><div style="font:600 15px system-ui">Warm Beige</div><div style="font:500 12px ui-monospace,monospace;color:#6F6966;margin-top:7px">#F2DAC4</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">242,218,196</div><div style="font:500 11px ui-monospace,monospace;color:#8D9FA6;margin-top:7px">color.neutral.beige</div></div></div>
+    </div>
+
+    <!-- group: ACCENT -->
+    <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 14px">Accent · Gold</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:34px">
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#F2CB57"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Gold</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#F2CB57</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(242,203,87)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.accent.gold</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#F6DE97"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Gold Light</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#F6DE97</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(246,222,151)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.accent.light</div></div></div>
+      <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff"><div style="height:130px;background:#F8E8B9"></div><div style="padding:16px 18px 18px"><div style="font:600 16px system-ui">Gold Soft</div><div style="font:500 13px ui-monospace,monospace;color:#6F6966;margin-top:8px">#F8E8B9</div><div style="font:500 13px ui-monospace,monospace;color:#A6A19D">rgb(248,232,185)</div><div style="font:500 12px ui-monospace,monospace;color:#8D9FA6;margin-top:8px">color.accent.soft</div></div></div>
+    </div>
+
+    <!-- group: TEXT / BORDER / FUNCTIONAL compact -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+      <div>
+        <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 14px">Typography</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#403636;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Primary Text</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.text.primary</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#403636</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#6F6966;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Secondary Text</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.text.secondary</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#6F6966</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#A6A19D;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Muted Text</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.text.muted</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#A6A19D</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#FFFFFF;border:1px solid #E5E0D6;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Inverse Text</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.text.inverse</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#FFFFFF</div></div>
+        </div>
+        <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:24px 0 14px">Borders</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#E5E0D6;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Border</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.border.base</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#E5E0D6</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#ECE8DF;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Divider</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.border.divider</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#ECE8DF</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#CFC8BB;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Strong Border</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.border.strong</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#CFC8BB</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 14px">Functional</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#8FB89A;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Success</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.functional.success</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#8FB89A</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#E5B64A;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Warning</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.functional.warning</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#E5B64A</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#F29991;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Error</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.functional.error</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#F29991</div></div>
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #E5E0D6;border-radius:12px;padding:12px 14px"><span style="width:40px;height:40px;border-radius:9px;background:#8D9FA6;flex:none"></span><div style="flex:1"><div style="font:600 14px system-ui">Info</div><div style="font:500 12px ui-monospace,monospace;color:#A6A19D">color.functional.info</div></div><div style="font:500 13px ui-monospace,monospace;color:#6F6966">#8D9FA6</div></div>
+        </div>
+        <div style="background:#F2EFDF;border:1px solid #E5E0D6;border-radius:14px;padding:18px 20px;margin-top:24px">
+          <div style="font:600 13px system-ui;color:#403636;margin-bottom:6px">Token note</div>
+          <div style="font:400 13.5px/1.6 system-ui;color:#6F6966">Functional colors are surfaces. Pair each with its 10–15% tint for backgrounds and <span style="font-family:ui-monospace,monospace">text.primary</span> for labels — never white type on these light hues.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 NEUTRAL SCALE ===== -->
+  <section id="neutral" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">03 — Neutral Scale</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">Warm neutral ramp · 50 → 950</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 32px">A warm grayscale derived from the paper and ink of the palette — every step carries a faint warm cast so neutrals never feel clinical against the brand.</p>
+    <div style="display:grid;grid-template-columns:repeat(11,1fr);gap:8px;border:1px solid #E5E0D6;border-radius:16px;padding:16px;background:#fff">
+      <div><div style="height:96px;border-radius:9px;background:#FBFAF6;border:1px solid #ECE8DF"></div><div style="font:600 12px system-ui;margin-top:9px">50</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#FBFAF6</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#F4F2EC"></div><div style="font:600 12px system-ui;margin-top:9px">100</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#F4F2EC</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#E9E5DC"></div><div style="font:600 12px system-ui;margin-top:9px">200</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#E9E5DC</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#D8D3C8"></div><div style="font:600 12px system-ui;margin-top:9px">300</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#D8D3C8</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#BBB5A9"></div><div style="font:600 12px system-ui;margin-top:9px">400</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#BBB5A9</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#98928A"></div><div style="font:600 12px system-ui;margin-top:9px">500</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#98928A</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#79736D"></div><div style="font:600 12px system-ui;margin-top:9px">600</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#79736D</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#5C5752"></div><div style="font:600 12px system-ui;margin-top:9px">700</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#5C5752</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#433F3B"></div><div style="font:600 12px system-ui;margin-top:9px">800</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#433F3B</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#2C2926"></div><div style="font:600 12px system-ui;margin-top:9px">900</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#2C2926</div></div>
+      <div><div style="height:96px;border-radius:9px;background:#1A1816"></div><div style="font:600 12px system-ui;margin-top:9px">950</div><div style="font:500 10px ui-monospace,monospace;color:#A6A19D">#1A1816</div></div>
+    </div>
+    <div style="font:400 13.5px/1.6 system-ui;color:#A6A19D;margin-top:14px">50–200 → backgrounds & surfaces · 300–400 → borders & disabled · 500–600 → muted/secondary text · 700–950 → primary text & dark panels.</div>
+  </section>
+
+  <!-- ===== 04 ACCENT VARIATIONS ===== -->
+  <section id="accent" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">04 — Variations</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">Brand & Gold tints and shades</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 32px">Extended ramps around the two hero hues. The supplied values map to fixed stops (marked ●); the rest are derived for hover, active, tints and dark surfaces.</p>
+
+    <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 12px">Brand</div>
+    <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:8px;border:1px solid #E5E0D6;border-radius:16px;padding:16px;background:#fff;margin-bottom:26px">
+      <div><div style="height:80px;border-radius:9px;background:#F0F3F3;border:1px solid #ECE8DF"></div><div style="font:600 11px system-ui;margin-top:8px">50</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#F0F3F3</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#E0E8E7"></div><div style="font:600 11px system-ui;margin-top:8px">100</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#E0E8E7</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#C8D6D4"></div><div style="font:600 11px system-ui;margin-top:8px">200</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#C8D6D4</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#A4BFBA"></div><div style="font:600 11px system-ui;margin-top:8px">300 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#A4BFBA</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#8D9FA6"></div><div style="font:600 11px system-ui;margin-top:8px">400 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#8D9FA6</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#7B9098"></div><div style="font:600 11px system-ui;margin-top:8px">500 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#7B9098</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#687C83"></div><div style="font:600 11px system-ui;margin-top:8px">600</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#687C83</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#55666C"></div><div style="font:600 11px system-ui;margin-top:8px">700</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#55666C</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#424F54"></div><div style="font:600 11px system-ui;margin-top:8px">800</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#424F54</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#2F383C"></div><div style="font:600 11px system-ui;margin-top:8px">900</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#2F383C</div></div>
+    </div>
+
+    <div style="font:600 12px ui-monospace,monospace;letter-spacing:.1em;color:#A6A19D;text-transform:uppercase;margin:0 0 12px">Gold</div>
+    <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:8px;border:1px solid #E5E0D6;border-radius:16px;padding:16px;background:#fff">
+      <div><div style="height:80px;border-radius:9px;background:#FEF9EC;border:1px solid #ECE8DF"></div><div style="font:600 11px system-ui;margin-top:8px">50</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#FEF9EC</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#FCF1D0"></div><div style="font:600 11px system-ui;margin-top:8px">100</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#FCF1D0</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#F8E8B9"></div><div style="font:600 11px system-ui;margin-top:8px">200 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#F8E8B9</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#F6DE97"></div><div style="font:600 11px system-ui;margin-top:8px">300 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#F6DE97</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#F2CB57"></div><div style="font:600 11px system-ui;margin-top:8px">400 ●</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#F2CB57</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#E0B63E"></div><div style="font:600 11px system-ui;margin-top:8px">500</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#E0B63E</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#C49A2C"></div><div style="font:600 11px system-ui;margin-top:8px">600</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#C49A2C</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#9E7C22"></div><div style="font:600 11px system-ui;margin-top:8px">700</div><div style="font:500 9.5px ui-monospace,monospace;color:#fff">#9E7C22</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#6E561A"></div><div style="font:600 11px system-ui;margin-top:8px">800</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#6E561A</div></div>
+      <div><div style="height:80px;border-radius:9px;background:#4A3A12"></div><div style="font:600 11px system-ui;margin-top:8px">900</div><div style="font:500 9.5px ui-monospace,monospace;color:#A6A19D">#4A3A12</div></div>
+    </div>
+  </section>
+
+  <!-- ===== 05 SEMANTIC TOKENS ===== -->
+  <section id="tokens" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">05 — Semantic Tokens</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">From raw values to meaning</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 32px">Components reference semantic tokens, never raw hex. This is the full mapping.</p>
+    <div style="border:1px solid #E5E0D6;border-radius:16px;overflow:hidden;background:#fff">
+      <div style="display:grid;grid-template-columns:48px 1.4fr 1fr 2fr;gap:0;font:600 11px ui-monospace,monospace;letter-spacing:.06em;color:#A6A19D;text-transform:uppercase;background:#F2EFDF;padding:12px 18px;border-bottom:1px solid #E5E0D6"><div></div><div>Token</div><div>Value</div><div>Usage</div></div>
+      <div data-tok></div>
+    </div>
+  </section>
+
+  <!-- ===== 06 COMPONENTS ===== -->
+  <section id="components" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">06 — Components</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">Color in use</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 32px">The palette applied to real interface patterns.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+
+      <!-- Buttons -->
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:24px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:18px">Buttons</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+          <span style="background:#8D9FA6;color:#fff;font:600 14px system-ui;padding:11px 20px;border-radius:10px">Primary</span>
+          <span style="background:#7B9098;color:#fff;font:600 14px system-ui;padding:11px 20px;border-radius:10px">Hover</span>
+          <span style="background:#F2DAC4;color:#403636;font:600 14px system-ui;padding:11px 20px;border-radius:10px">Secondary</span>
+          <span style="background:#F2CB57;color:#403636;font:600 14px system-ui;padding:11px 20px;border-radius:10px">Accent</span>
+          <span style="background:transparent;color:#403636;font:600 14px system-ui;padding:11px 20px;border-radius:10px;border:1px solid #CFC8BB">Outline</span>
+          <span style="background:#F4F2EC;color:#A6A19D;font:600 14px system-ui;padding:11px 20px;border-radius:10px">Disabled</span>
+        </div>
+      </div>
+
+      <!-- Tags / Chips / Badges -->
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:24px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:18px">Tags · Chips · Badges</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px">
+          <span style="background:#F0F3F3;color:#55666C;font:600 12px system-ui;padding:5px 12px;border-radius:999px">Brand tag</span>
+          <span style="background:#FCF1D0;color:#9E7C22;font:600 12px system-ui;padding:5px 12px;border-radius:999px">Gold tag</span>
+          <span style="background:#F2EFDF;color:#6F6966;font:600 12px system-ui;padding:5px 12px;border-radius:999px">Neutral tag</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          <span style="border:1px solid #CFC8BB;color:#403636;font:500 12px system-ui;padding:5px 12px;border-radius:8px">Chip</span>
+          <span style="border:1px solid #8D9FA6;background:#F0F3F3;color:#55666C;font:500 12px system-ui;padding:5px 12px;border-radius:8px">Chip · active</span>
+          <span style="background:#8FB89A;color:#fff;font:600 11px system-ui;padding:3px 9px;border-radius:999px">New</span>
+          <span style="background:#F29991;color:#5b211c;font:600 11px system-ui;padding:3px 9px;border-radius:999px">3</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div style="grid-column:1 / -1;background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:0;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #ECE8DF;background:#FBFAF6">
+          <div style="display:flex;align-items:center;gap:24px">
+            <span style="font:700 16px system-ui;color:#403636">Acme</span>
+            <span style="font:600 14px system-ui;color:#403636;border-bottom:2px solid #8D9FA6;padding-bottom:4px">Overview</span>
+            <span style="font:500 14px system-ui;color:#6F6966">Projects</span>
+            <span style="font:500 14px system-ui;color:#6F6966">Journal</span>
+          </div>
+          <span style="background:#8D9FA6;color:#fff;font:600 13px system-ui;padding:9px 16px;border-radius:9px">Résumé ↗</span>
+        </div>
+        <div style="padding:14px 22px;font:500 13px system-ui;color:#A6A19D">Active item underlined in <span style="color:#7B9098;font-weight:600">brand</span>; rest in secondary; bar sits on paper above a divider.</div>
+      </div>
+
+      <!-- Table -->
+      <div style="grid-column:1 / -1;background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:24px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:16px">Table</div>
+        <div style="border:1px solid #ECE8DF;border-radius:12px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;background:#F2EFDF;font:600 12px system-ui;color:#6F6966;padding:11px 16px">
+            <div>Project</div><div>Status</div><div>Updated</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:13px 16px;border-top:1px solid #ECE8DF;font:500 14px system-ui;color:#403636;align-items:center"><div>Social Radar</div><div><span style="background:#E7F0EA;color:#3f6b4d;font:600 11px system-ui;padding:3px 9px;border-radius:999px">Shipped</span></div><div style="color:#6F6966">Jun 2026</div></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:13px 16px;border-top:1px solid #ECE8DF;font:500 14px system-ui;color:#403636;align-items:center;background:#FBFAF6"><div>BioQuest</div><div><span style="background:#FCF1D0;color:#9E7C22;font:600 11px system-ui;padding:3px 9px;border-radius:999px">In progress</span></div><div style="color:#6F6966">May 2026</div></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:13px 16px;border-top:1px solid #ECE8DF;font:500 14px system-ui;color:#403636;align-items:center"><div>MedTech</div><div><span style="background:#F2EFDF;color:#6F6966;font:600 11px system-ui;padding:3px 9px;border-radius:999px">Concept</span></div><div style="color:#6F6966">Apr 2026</div></div>
+        </div>
+      </div>
+
+      <!-- Forms -->
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:24px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:16px">Forms</div>
+        <label style="font:600 13px system-ui;color:#403636;display:block;margin-bottom:7px">Email</label>
+        <div style="border:1px solid #8D9FA6;box-shadow:0 0 0 3px rgba(141,159,166,.25);border-radius:10px;padding:11px 14px;font:500 14px system-ui;color:#403636;margin-bottom:14px">you@studio.com<span style="color:#8D9FA6">|</span></div>
+        <label style="font:600 13px system-ui;color:#403636;display:block;margin-bottom:7px">Name</label>
+        <div style="border:1px solid #E5E0D6;border-radius:10px;padding:11px 14px;font:500 14px system-ui;color:#A6A19D;margin-bottom:14px">Placeholder text</div>
+        <div style="border:1px solid #F29991;border-radius:10px;padding:11px 14px;font:500 14px system-ui;color:#403636">Invalid value</div>
+        <div style="font:500 12px system-ui;color:#cf6b62;margin-top:6px">This field is required.</div>
+      </div>
+
+      <!-- Project card -->
+      <div style="background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:24px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:16px">Project Card</div>
+        <div style="border:1px solid #ECE8DF;border-radius:14px;overflow:hidden">
+          <div style="height:96px;background:#A4BFBA"></div>
+          <div style="padding:16px 18px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><div style="font:600 16px system-ui;color:#403636">Social Radar</div><span style="background:#FCF1D0;color:#9E7C22;font:600 11px system-ui;padding:3px 9px;border-radius:999px">Featured</span></div>
+            <div style="font:400 13.5px/1.6 system-ui;color:#6F6966;margin-top:8px">Calmer social signals for product teams.</div>
+            <div style="font:600 12px ui-monospace,monospace;color:#8D9FA6;margin-top:12px">View case ↗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article block + quote -->
+      <div style="grid-column:1 / -1;background:#fff;border:1px solid #E5E0D6;border-radius:16px;padding:30px 32px">
+        <div style="font:600 13px ui-monospace,monospace;letter-spacing:.08em;color:#A6A19D;text-transform:uppercase;margin-bottom:18px">Article block · Quote · Links</div>
+        <div style="max-width:640px">
+          <h3 style="font:600 24px/1.3 system-ui;color:#403636;margin:0 0 12px">On designing quiet interfaces</h3>
+          <p style="font:400 16px/1.75 system-ui;color:#403636;margin:0 0 16px">Body copy uses <span style="color:#403636;font-weight:600">text.primary</span> on paper for maximum comfort, while secondary notes drop to <span style="color:#6F6966;font-weight:600">text.secondary</span>. Inline <a href="#components" style="color:#7B9098;text-decoration:underline;text-underline-offset:3px;font-weight:600">links use brand hover</a> for a subtle, legible cue.</p>
+          <blockquote style="margin:0;border-left:3px solid #F2CB57;background:#FBFAF6;padding:16px 22px;border-radius:0 10px 10px 0;font:500 18px/1.55 Georgia,serif;font-style:italic;color:#403636">Restraint is the loudest thing a calm palette can say.</blockquote>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div style="grid-column:1 / -1;background:#2F383C;border-radius:16px;padding:28px 30px">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+          <div>
+            <div style="font:700 16px system-ui;color:#fff">Acme Studio</div>
+            <div style="font:400 13px system-ui;color:#A4BFBA;margin-top:6px">Dark footer on brand-900 · inverse text · brand-light links.</div>
+          </div>
+          <div style="display:flex;gap:18px;font:500 13px system-ui;color:#A4BFBA">
+            <span>Work</span><span>Journal</span><span style="color:#F2CB57">Contact ↗</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 07 ACCESSIBILITY ===== -->
+  <section id="a11y" style="padding:72px 0;border-bottom:1px solid #E5E0D6">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">07 — Accessibility</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">Contrast & safe pairings</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 32px">The palette is light and warm, so contrast must be checked deliberately. Ratios below are approximate WCAG 2.1 values.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="border:1px solid #E5E0D6;border-radius:14px;overflow:hidden;background:#fff">
+        <div style="padding:22px;background:#FBFAF6;color:#403636;font:600 18px system-ui">Text Primary on Paper<div style="font:400 14px system-ui;color:#6F6966;margin-top:4px">Body & headings — the default pairing.</div></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid #ECE8DF;font:600 13px ui-monospace,monospace"><span style="color:#6F6966">#403636 on #FBFAF6</span><span style="color:#3f6b4d">≈ 9.6:1 · AAA</span></div>
+      </div>
+      <div style="border:1px solid #E5E0D6;border-radius:14px;overflow:hidden;background:#fff">
+        <div style="padding:22px;background:#FBFAF6;color:#6F6966;font:600 18px system-ui">Secondary on Paper<div style="font:400 14px system-ui;color:#6F6966;margin-top:4px">Supporting copy & captions.</div></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid #ECE8DF;font:600 13px ui-monospace,monospace"><span style="color:#6F6966">#6F6966 on #FBFAF6</span><span style="color:#3f6b4d">≈ 4.9:1 · AA</span></div>
+      </div>
+      <div style="border:1px solid #E5E0D6;border-radius:14px;overflow:hidden;background:#fff">
+        <div style="padding:22px;background:#403636;color:#fff;font:600 18px system-ui">Inverse on Brand-900<div style="font:400 14px system-ui;color:#A4BFBA;margin-top:4px">Footers, dark panels, tooltips.</div></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid #ECE8DF;font:600 13px ui-monospace,monospace"><span style="color:#6F6966">#FFFFFF on #2F383C</span><span style="color:#3f6b4d">≈ 10.4:1 · AAA</span></div>
+      </div>
+      <div style="border:1px solid #E5E0D6;border-radius:14px;overflow:hidden;background:#fff">
+        <div style="padding:22px;background:#F2CB57;color:#403636;font:600 18px system-ui">Ink on Gold<div style="font:400 14px system-ui;color:#6b5a2a;margin-top:4px">The only correct text color on accent.</div></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid #ECE8DF;font:600 13px ui-monospace,monospace"><span style="color:#6F6966">#403636 on #F2CB57</span><span style="color:#3f6b4d">≈ 7.0:1 · AAA</span></div>
+      </div>
+    </div>
+    <!-- cautions -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+      <div style="background:#FCEEE c;border:1px solid #F29991;border-radius:14px;padding:18px 20px;background:#FDEEEC">
+        <div style="font:600 14px system-ui;color:#403636;margin-bottom:6px">⚠ Avoid: white on Primary</div>
+        <div style="font:400 14px/1.6 system-ui;color:#6F6966"><span style="font-family:ui-monospace,monospace">#FFF on #8D9FA6 ≈ 2.1:1</span> — fails. For white text use Brand-700 <span style="font-family:ui-monospace,monospace">#55666C</span> (≈ 5.6:1) or put <span style="font-family:ui-monospace,monospace">text.primary</span> on the brand instead.</div>
+      </div>
+      <div style="background:#FDEEEC;border:1px solid #F29991;border-radius:14px;padding:18px 20px">
+        <div style="font:600 14px system-ui;color:#403636;margin-bottom:6px">⚠ Avoid: Muted as body text</div>
+        <div style="font:400 14px/1.6 system-ui;color:#6F6966"><span style="font-family:ui-monospace,monospace">#A6A19D on paper ≈ 2.3:1</span> — decorative & large-only. Never use Muted for paragraphs or small labels that must be read.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 08 USAGE ===== -->
+  <section id="usage" style="padding:72px 0 100px">
+    <div style="font:600 13px ui-monospace,monospace;letter-spacing:.12em;color:#8D9FA6;text-transform:uppercase">08 — Usage</div>
+    <h2 style="font:600 34px/1.15 system-ui;letter-spacing:-.02em;margin:14px 0 8px">Color distribution</h2>
+    <p style="font:400 17px/1.7 system-ui;color:#6F6966;max-width:760px;margin:0 0 28px">A rough budget keeps screens calm. Treat brand and accent as seasoning, not the meal.</p>
+    <div style="display:flex;height:64px;border-radius:14px;overflow:hidden;border:1px solid #E5E0D6">
+      <div style="width:72%;background:#FBFAF6;display:flex;align-items:center;justify-content:center;font:600 13px system-ui;color:#6F6966;border-right:1px solid #ECE8DF">72%</div>
+      <div style="width:12%;background:#F2EFDF;display:flex;align-items:center;justify-content:center;font:600 13px system-ui;color:#6F6966;border-right:1px solid #ECE8DF">12%</div>
+      <div style="width:10%;background:#403636;display:flex;align-items:center;justify-content:center;font:600 13px system-ui;color:#fff;border-right:1px solid #2C2926">10%</div>
+      <div style="width:4%;background:#8D9FA6;border-right:1px solid #7B9098"></div>
+      <div style="width:2%;background:#F2CB57"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px">
+      <div><div style="display:flex;align-items:center;gap:8px;font:600 14px system-ui;color:#403636"><span style="width:12px;height:12px;border-radius:3px;background:#FBFAF6;border:1px solid #CFC8BB"></span>72% Backgrounds</div><div style="font:400 13px/1.55 system-ui;color:#A6A19D;margin-top:5px">Paper & warm neutrals.</div></div>
+      <div><div style="display:flex;align-items:center;gap:8px;font:600 14px system-ui;color:#403636"><span style="width:12px;height:12px;border-radius:3px;background:#F2EFDF"></span>12% Surfaces</div><div style="font:400 13px/1.55 system-ui;color:#A6A19D;margin-top:5px">Cards, rows, panels.</div></div>
+      <div><div style="display:flex;align-items:center;gap:8px;font:600 14px system-ui;color:#403636"><span style="width:12px;height:12px;border-radius:3px;background:#403636"></span>10% Typography</div><div style="font:400 13px/1.55 system-ui;color:#A6A19D;margin-top:5px">Ink & secondary text.</div></div>
+      <div><div style="display:flex;align-items:center;gap:8px;font:600 14px system-ui;color:#403636"><span style="width:12px;height:12px;border-radius:3px;background:#8D9FA6"></span>4% Brand</div><div style="font:400 13px/1.55 system-ui;color:#A6A19D;margin-top:5px">Actions, focus, links.</div></div>
+      <div><div style="display:flex;align-items:center;gap:8px;font:600 14px system-ui;color:#403636"><span style="width:12px;height:12px;border-radius:3px;background:#F2CB57"></span>2% Accent</div><div style="font:400 13px/1.55 system-ui;color:#A6A19D;margin-top:5px">Highlights only.</div></div>
+    </div>
+    <div style="margin-top:40px;padding-top:26px;border-top:1px solid #E5E0D6;font:400 13px system-ui;color:#A6A19D">Color Foundation · v1.0 · Approved palette — values are fixed. Tokens reference semantic names, never raw hex.</div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const groups = [
+      ['Layout', [
+        ['background', '#FBFAF6', 'neutral.paper', 'App canvas — the dominant surface'],
+        ['surface', '#FFFFFF', 'neutral.surface', 'Raised content over the background'],
+        ['surface.hover', '#F2EFDF', 'neutral.warm', 'Hover state for surfaces & rows'],
+        ['card', '#FFFFFF', 'neutral.surface', 'Card containers'],
+        ['card.hover', '#FBFAF6', 'neutral.paper', 'Card hover / pressed'],
+        ['overlay', 'rgba(64,54,54,.45)', 'text.primary @45%', 'Modal scrim & dropdowns'],
+      ]],
+      ['Brand & Accent', [
+        ['primary', '#8D9FA6', 'brand.primary', 'Primary buttons, active nav, focus'],
+        ['primary.hover', '#7B9098', 'brand.hover', 'Hover for primary actions & links'],
+        ['primary.active', '#687C83', 'brand.600', 'Pressed / active primary'],
+        ['secondary', '#F2DAC4', 'neutral.beige', 'Secondary buttons & soft fills'],
+        ['accent', '#F2CB57', 'accent.gold', 'Highlights, marks, featured'],
+        ['accent.hover', '#E0B63E', 'accent.500', 'Accent hover'],
+        ['accent.active', '#C49A2C', 'accent.600', 'Accent pressed'],
+      ]],
+      ['Lines & Focus', [
+        ['border', '#E5E0D6', 'border.base', 'Default borders & inputs'],
+        ['divider', '#ECE8DF', 'border.divider', 'Hairline separators'],
+        ['focus', 'rgba(141,159,166,.45)', 'brand @45%', '3px focus ring on interactives'],
+      ]],
+      ['Text', [
+        ['text.primary', '#403636', 'text.primary', 'Headings & body'],
+        ['text.secondary', '#6F6966', 'text.secondary', 'Supporting copy'],
+        ['text.muted', '#A6A19D', 'text.muted', 'Captions, large/decorative only'],
+        ['text.inverse', '#FFFFFF', 'text.inverse', 'On dark & brand-700+ surfaces'],
+      ]],
+      ['Status', [
+        ['success', '#8FB89A', 'functional.success', 'Positive state & badges'],
+        ['warning', '#E5B64A', 'functional.warning', 'Caution & in-progress'],
+        ['error', '#F29991', 'functional.error', 'Errors & destructive'],
+        ['info', '#8D9FA6', 'functional.info', 'Neutral information'],
+        ['disabled', '#D8D3C8', 'neutral.300', 'Disabled fills; text on neutral.100'],
+      ]],
+    ];
+    const rowsHtml = groups.map(([label, rows]) => {
+      const header = `<div style="grid-column:1 / -1;background:#FBFAF6;padding:9px 18px;font:600 10px ui-monospace,monospace;letter-spacing:.12em;color:#A6A19D;text-transform:uppercase;border-bottom:1px solid #ECE8DF">${label}</div>`;
+      const body = rows.map(([tok, val, maps, use]) => {
+        const isRing = val.indexOf('rgba') === 0;
+        const swatch = isRing
+          ? `<span style="width:26px;height:26px;border-radius:7px;background:#FBFAF6;box-shadow:0 0 0 3px ${val};display:inline-block;border:1px solid #E5E0D6"></span>`
+          : `<span style="width:26px;height:26px;border-radius:7px;background:${val};display:inline-block;border:1px solid rgba(0,0,0,.06)"></span>`;
+        return `<div style="display:grid;grid-template-columns:48px 1.4fr 1fr 2fr;align-items:center;padding:12px 18px;border-bottom:1px solid #F1EDE4">`
+          + `<div>${swatch}</div>`
+          + `<div style="font:600 13px ui-monospace,Menlo,monospace;color:#403636">${tok}<div style="font:500 11px ui-monospace,monospace;color:#A6A19D;margin-top:3px">→ ${maps}</div></div>`
+          + `<div style="font:500 12.5px ui-monospace,monospace;color:#6F6966">${val}</div>`
+          + `<div style="font:400 13.5px system-ui;color:#6F6966">${use}</div>`
+          + `</div>`;
+      }).join('');
+      return header + body;
+    }).join('');
+    return { tokenRows: rowsHtml };
+  }
+  componentDidMount() {
+    const host = this.el ? this.el.querySelector('[data-tok]') : document.querySelector('[data-tok]');
+    if (host) host.innerHTML = this.renderVals().tokenRows;
+  }
+}
+</script>
+</body>
+</html>
