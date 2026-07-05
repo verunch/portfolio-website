@@ -9,7 +9,7 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 
 ## Milestones
 
-- [ ] **Milestone 1** — `data/` layer (`projects.ts`, `profile.ts`, `stack.ts`) + Home hero/intro composition fix
+- [x] **Milestone 1** — `data/` layer (`projects.ts`, `profile.ts`, `stack.ts`) + Home hero/intro composition fix
 - [ ] **Milestone 2** — My Stack (`StackGrid`) + About section
 - [ ] **Milestone 3** — Selected Projects table (`ProjectStatusBadge`, `ProjectsTable`)
 - [ ] **Milestone 4** — Footer (real implementation, mounted globally)
@@ -22,7 +22,6 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 
 ## Technical debt
 
-- No `data/` access layer yet — Home and Portfolio both need it; currently blocks most remaining work.
 - No `useScrollToHash` / `useContainerBreakpoint` hooks (`src/hooks/` doesn't exist).
 - No prerendering/SSG decision made for SEO (`ARCHITECTURE.md` §18).
 - No per-route `<title>` / OG metadata.

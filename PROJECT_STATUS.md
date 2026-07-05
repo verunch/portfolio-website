@@ -8,18 +8,18 @@ Living dashboard for the portfolio website. Full detail lives in the linked docu
 
 ## Current milestone
 
-None in progress. Awaiting approval to start Milestone 1.
+None in progress. Milestone 1 complete; awaiting approval to start Milestone 2.
 
 ## Next milestone
 
-**Milestone 1 — Data layer + Home hero correction.** Build `data/projects.ts`, `data/profile.ts`, `data/stack.ts`; fix `IntroBlock`'s desktop composition to match the approved side-by-side bio/CTA row.
+**Milestone 2 — My Stack + About.** Build `StackGrid`, wire to `data/stack.ts`. Build the About section from `data/profile.ts`.
 
 ## Completed milestones
 
 - Foundation (tokens, `Button`, `SectionLabel`, `Divider`, `ImagePlaceholder`, folder scaffold, routing shell)
 - `RootLayout` with `Header`/`IdentityRail` variant switch, `navConfig`
-- Home: `HeroCollage`, `IntroBlock` (composition deviates from approved — see [01-home-audit.md](docs/reviews/01-home-audit.md))
 - Documentation audit (`docs/reviews/`) and documentation restructure (this dashboard, `CHANGELOG.md`, `TODO.md`, `docs/architecture/DECISIONS.md`)
+- **Milestone 1** — Data layer (`data/projects.ts`, `data/profile.ts`, `data/stack.ts`) + `IntroBlock` desktop composition fix (side-by-side bio/CTA row, matching Home (A))
 
 ## Status by area
 

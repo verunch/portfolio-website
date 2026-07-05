@@ -7,9 +7,11 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 ### Added
 - `CHANGELOG.md`, `TODO.md`, `docs/architecture/DECISIONS.md`.
 - `PROJECT_STATUS.md` simplified into a scannable dashboard, with detail moved out to the linked documents.
+- **Milestone 1**: `data/projects.ts`, `data/profile.ts`, `data/stack.ts` — typed, data-driven access layer per `ARCHITECTURE.md` §8/§16, seeded with placeholder content pending Phase 3 real copy.
 
 ### Changed
 - Seed project set decision resolved: **Ascendra** replaces **MedTech**; **DocAssistant** confirmed complete. Moved from open questions to [docs/architecture/DECISIONS.md](docs/architecture/DECISIONS.md).
+- **Milestone 1**: `IntroBlock` desktop (≥1024px) composition fixed from a stacked column to the approved side-by-side row — bio cluster left, CTA buttons right, bottom-aligned — matching Home (A)'s desktop breakpoint. `IntroBlock` now sources profile content from `data/profile.ts` instead of an inline placeholder object.
 
 ## 2026-07-05 — Documentation audit
 
