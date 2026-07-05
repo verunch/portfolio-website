@@ -8,11 +8,11 @@ Living dashboard for the portfolio website. Full detail lives in the linked docu
 
 ## Current milestone
 
-None in progress. Milestone 1 complete; awaiting approval to start Milestone 2.
+None in progress. Milestone 2 complete, plus a visual-fidelity pass correcting Home against the approved wireframe. Awaiting approval to start Milestone 3.
 
 ## Next milestone
 
-**Milestone 2 — My Stack + About.** Build `StackGrid`, wire to `data/stack.ts`. Build the About section from `data/profile.ts`.
+**Milestone 3 — Selected Projects table.** Build `ProjectStatusBadge` and `ProjectsTable` (table/condensed/cards variants), wire to `data/projects.ts`, assemble into `HomePage`.
 
 ## Completed milestones
 
@@ -20,6 +20,8 @@ None in progress. Milestone 1 complete; awaiting approval to start Milestone 2.
 - `RootLayout` with `Header`/`IdentityRail` variant switch, `navConfig`
 - Documentation audit (`docs/reviews/`) and documentation restructure (this dashboard, `CHANGELOG.md`, `TODO.md`, `docs/architecture/DECISIONS.md`)
 - **Milestone 1** — Data layer (`data/projects.ts`, `data/profile.ts`, `data/stack.ts`) + `IntroBlock` desktop composition fix (side-by-side bio/CTA row, matching Home (A))
+- **Milestone 2** — `StackGrid` (`components/project/`) + `StackSection`/`AboutSection` wired to `data/stack.ts`/`data/profile.ts`, assembled into `HomePage` with `Divider` separators
+- **Visual fidelity pass** — `HeroCollage`'s featured card corrected to match the wireframe (text-only panel, no nested image, accent underline restored); hero name sizing resolved to the wireframe's literal per-breakpoint values (see `docs/architecture/DECISIONS.md`); hero→intro and inter-section spacing rebalanced; Résumé button's "new tab" hint added at desktop/laptop
 
 ## Status by area
 

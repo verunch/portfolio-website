@@ -13,9 +13,9 @@ export default function HeroCollage() {
 
       <Link to="/portfolio#social-radar" className={styles.featuredCard}>
         <SectionLabel>Featured Project</SectionLabel>
-        <ImagePlaceholder label="cover" aspectRatio="16 / 10" decorative />
         <p className={styles.featuredTitle}>Social Radar</p>
         <p className={styles.featuredKicker}>Product Design</p>
+        <span className={styles.featuredAccent} aria-hidden="true" />
       </Link>
 
       <ImagePlaceholder

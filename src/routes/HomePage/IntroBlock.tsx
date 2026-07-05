@@ -29,7 +29,7 @@ export default function IntroBlock() {
           View Portfolio →
         </Button>
         <Button variant="outline" href={profile.resumeUrl} external>
-          Résumé ↗
+          Résumé ↗ <span className={styles.resumeHint}>new tab</span>
         </Button>
       </div>
     </div>

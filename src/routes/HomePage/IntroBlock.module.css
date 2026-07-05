@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  margin-top: var(--space-5);
 }
 
 .bioCluster {
@@ -11,13 +12,34 @@
   max-width: 480px;
 }
 
+/* Literal per-breakpoint values from the approved wireframe (Home (A),
+   detailed) — resolves the sizing question in DECISIONS.md in favor of the
+   wireframe over ARCHITECTURE.md §15's broader range. */
 .name {
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.1;
-  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.05;
+  font-size: 21px;
   color: var(--color-text-primary);
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .name {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .name {
+    font-size: 30px;
+  }
 }
 
 .bio {
@@ -64,6 +86,14 @@
   width: 100%;
 }
 
+.resumeHint {
+  display: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 9px;
+  color: var(--color-text-muted);
+}
+
 @media (min-width: 768px) {
   .ctaRow {
     flex-direction: row;
@@ -94,5 +124,9 @@
   .ctaRow > button {
     flex: none;
     width: auto;
+  }
+
+  .resumeHint {
+    display: inline;
   }
 }

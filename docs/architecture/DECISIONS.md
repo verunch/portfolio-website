@@ -12,13 +12,13 @@ A running log of decisions that resolve ambiguity between the approved wireframe
 | Primary button text color | Ink (`text.primary`) on `brand.primary`, not white | `ARCHITECTURE.md` §13 — resolves a contrast failure (≈2.1:1) present in Color Foundation's own component mock |
 | Button variant scope | Only `primary` / `outline` / `tile` are implemented | `ARCHITECTURE.md` §10/§11 intentionally narrows Color Foundation's full button catalogue (its "Secondary" beige variant is out of scope) |
 | Journal / Dear Diary | Excluded from MVP | `ARCHITECTURE.md` §1/§19 Phase 4 — reserved for future addition, not a current gap |
+| Home hero name sizing | Use the wireframe's literal per-breakpoint px values (21/24/25/30px), not `ARCHITECTURE.md` §15's broader 30–52px range | Resolved during the visual-fidelity milestone in favor of the wireframe as source of truth for Home; §15's range remains the general typographic guideline for roles without a more specific wireframe value |
 
 ## Open Questions
 
 | Question | Why it's open | Reference |
 |---|---|---|
 | Does Home's tablet breakpoint (768–1023px) need visible nav links alongside the hamburger, or is hamburger-only acceptable? | `ARCHITECTURE.md` §6 says the rail "collapses to a top bar (monogram left, **nav + hamburger** right)" — the wireframe mock itself is ambiguous grayscale | [docs/reviews/01-home-audit.md](../reviews/01-home-audit.md), [docs/reviews/06-responsive-review.md](../reviews/06-responsive-review.md) |
-| Should Home's hero name follow the wireframe's literal per-breakpoint px values (30px desktop) or `ARCHITECTURE.md` §15's documented range (up to 52px)? | The two source documents disagree and neither explicitly overrides the other for this specific case | [docs/reviews/01-home-audit.md](../reviews/01-home-audit.md) |
 
 ## See also
 

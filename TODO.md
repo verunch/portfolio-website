@@ -5,12 +5,11 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 ## Open questions (blocking, need an answer before related work starts)
 
 - [ ] Does Home's tablet breakpoint need visible nav links alongside the hamburger, or is hamburger-only acceptable? — see [docs/architecture/DECISIONS.md](docs/architecture/DECISIONS.md)
-- [ ] Should Home's hero name use the wireframe's literal px values or `ARCHITECTURE.md` §15's range? — see [docs/architecture/DECISIONS.md](docs/architecture/DECISIONS.md)
 
 ## Milestones
 
 - [x] **Milestone 1** — `data/` layer (`projects.ts`, `profile.ts`, `stack.ts`) + Home hero/intro composition fix
-- [ ] **Milestone 2** — My Stack (`StackGrid`) + About section
+- [x] **Milestone 2** — My Stack (`StackGrid`) + About section
 - [ ] **Milestone 3** — Selected Projects table (`ProjectStatusBadge`, `ProjectsTable`)
 - [ ] **Milestone 4** — Footer (real implementation, mounted globally)
 - [ ] **Milestone 5** — Portfolio hero + card gallery

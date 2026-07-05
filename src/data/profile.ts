@@ -5,6 +5,7 @@ export type Profile = {
   email: string;
   linkedin: string;
   resumeUrl: string;
+  about: { paragraphs: string[] };
 };
 
 // Placeholder copy carried over verbatim from the approved wireframe's own seed
@@ -16,4 +17,7 @@ export const profile: Profile = {
   email: 'hello@yourname.com',
   linkedin: 'https://linkedin.com/in/yourname',
   resumeUrl: '/resume.pdf',
+  about: {
+    paragraphs: ['Placeholder about paragraph — real content lands in Phase 3.'],
+  },
 };
