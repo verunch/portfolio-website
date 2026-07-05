@@ -27,7 +27,10 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
   - `IdentityRail`'s vertical gap tightened (`justify-content: flex-start` + `socials` pinned via `margin-top: auto`, replacing `justify-content: space-between`) — the rail is `position: fixed` spanning the full viewport, so the wireframe's `space-between` rule (sized for its own ~250–300px-tall rail) was stretching the nav far below the avatar.
   - `IdentityRail`'s active nav item now uses color only (`brand.900`), no underline/border indicator, matching the wireframe's rail treatment.
   - Résumé "new tab" hint tightened to ≥1440px only (previously ≥1024px) — the wireframe shows it at the 1440 desktop mock only.
-  - Several other requested changes were reviewed and **not** implemented because they contradict the approved wireframe or color system as written: removing the "View Portfolio →" arrow, removing the Résumé "new tab" hint entirely, removing the Twitter/Behance rail icons, and redesigning Tech Stack badges into icon-style marks with no text labels. See `docs/architecture/DECISIONS.md` Open Questions for each.
+  - Two other requested changes were reviewed and **not yet** implemented because they contradict the approved wireframe as written and weren't part of the explicit product-decision list below: removing the "View Portfolio →" arrow, and removing the Résumé "new tab" hint entirely. See `docs/architecture/DECISIONS.md` Open Questions.
+- **Product decisions overriding the wireframe** (explicit product-owner direction, recorded in `docs/architecture/DECISIONS.md`, not fidelity corrections):
+  - `IdentityRail`: Twitter and Behance icons removed from the rail's socials — LinkedIn only.
+  - `StackGrid`: text labels removed from beneath every tool badge. The badge is now the sole visual unit (larger/bolder abbreviation, subtle gradient and shadow), with the full technology name preserved as a visually-hidden accessible name rather than shown on screen. No per-brand logos or colors were introduced.
 
 ## 2026-07-05 — Documentation audit
 

@@ -3,14 +3,9 @@ import NavLinks from '../../components/nav/NavLinks';
 import { navConfig } from '../../components/nav/navConfig';
 import styles from './IdentityRail.module.css';
 
-// Social labels are the literal placeholder set drawn in the approved wireframe
-// (Twitter / Behance / LinkedIn abbreviations) — hrefs are stand-ins until real
-// profile links are supplied.
-const socials = [
-  { label: 'Tw', href: '#' },
-  { label: 'Be', href: '#' },
-  { label: 'in', href: '#' },
-];
+// Twitter/Behance removed per product decision (docs/architecture/DECISIONS.md)
+// — LinkedIn only. href is a stand-in until the real profile link is supplied.
+const socials = [{ label: 'in', name: 'LinkedIn', href: '#' }];
 
 // Desktop/laptop-only (>=1024px) Home chrome — replaces Header at that breakpoint
 // per ARCHITECTURE.md §9. Shares navConfig with Header via NavLinks ("one nav
@@ -25,7 +20,7 @@ export default function IdentityRail() {
       <ul className={styles.socials}>
         {socials.map((social) => (
           <li key={social.label}>
-            <a href={social.href} className={styles.socialLink}>
+            <a href={social.href} className={styles.socialLink} aria-label={social.name}>
               {social.label}
             </a>
           </li>

@@ -8,7 +8,7 @@ Living dashboard for the portfolio website. Full detail lives in the linked docu
 
 ## Current milestone
 
-None in progress. Milestone 3 complete, plus a design-fidelity correction pass (container, identity, rail nav, buttons). Awaiting approval to start Milestone 4.
+None in progress. Milestone 3 complete, plus a design-fidelity correction pass and a product-decision pass (rail socials, Tech Stack badges) overriding the wireframe by explicit product-owner direction. Awaiting approval to start Milestone 4.
 
 ## Next milestone
 
@@ -23,7 +23,8 @@ None in progress. Milestone 3 complete, plus a design-fidelity correction pass (
 - **Milestone 2** — `StackGrid` (`components/project/`) + `StackSection`/`AboutSection` wired to `data/stack.ts`/`data/profile.ts`, assembled into `HomePage` with `Divider` separators
 - **Milestone 3** — `ProjectStatusBadge` + `ProjectsTable` (`components/project/`), wired to `data/projects.ts`, assembled into `HomePage` as `SelectedProjectsSection`
 - **Visual fidelity pass (1)** — `HeroCollage`'s featured card corrected to match the wireframe (text-only panel, no nested image, accent underline restored); hero name sizing resolved to the wireframe's literal per-breakpoint values (see `docs/architecture/DECISIONS.md`); hero→intro and inter-section spacing rebalanced; Résumé button's "new tab" hint added at desktop/laptop
-- **Design-fidelity correction pass (2)** — `Header` given a centered 1180px container (previously stretched edge-to-edge); real identity ("Vera Bakerava" / "VB") replacing "Your Name" placeholders across `Header`, `Footer`, `IdentityRail`, `data/profile.ts`; `IdentityRail`'s vertical gap and active-item indicator corrected; Résumé "new tab" hint tightened to the correct breakpoint. Several other requested changes were **not** implemented because they'd contradict the approved wireframe/color system — see `docs/architecture/DECISIONS.md` Open Questions
+- **Design-fidelity correction pass (2)** — `Header` given a centered 1180px container (previously stretched edge-to-edge); real identity ("Vera Bakerava" / "VB") replacing "Your Name" placeholders across `Header`, `Footer`, `IdentityRail`, `data/profile.ts`; `IdentityRail`'s vertical gap and active-item indicator corrected; Résumé "new tab" hint tightened to the correct breakpoint
+- **Product decisions overriding the wireframe (3)** — `IdentityRail`'s Twitter/Behance icons removed (LinkedIn only); `StackGrid` badges redesigned without text labels (badge-only, accessible name preserved via `sr-only` text). Both by explicit product-owner direction — see `docs/architecture/DECISIONS.md`. The "View Portfolio →" arrow and Résumé "new tab" hint remain as the wireframe specifies pending an explicit decision on those two specifically
 
 ## Status by area
 
