@@ -19,3 +19,8 @@ Conservative estimate, weighted by remaining work rather than file count.
 ## Note on the 30% expectation
 
 This audit lands slightly below the ~30% baseline expectation — mainly because Portfolio is closer to 0% than 30%, and the data layer plus 4 data-driven components are shared blocking dependencies for most of what remains.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard (overall completion figure sourced from this document)
+- [09-priority-matrix.md](./09-priority-matrix.md) — what to fix first

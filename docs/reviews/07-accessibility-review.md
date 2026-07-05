@@ -17,3 +17,8 @@ Source of truth: `docs/approved/ARCHITECTURE.md` §17.
 ## Summary
 
 What's built is accessibility-correct. The gap is coverage, not quality — accessibility work should continue to be verified per-component as each new piece (Footer, ProjectsTable, Portfolio) lands, rather than deferred to a single end-of-project pass.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — Milestone 9 (accessibility + SEO pass)

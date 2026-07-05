@@ -34,3 +34,9 @@ No invented sections were found — the page has nothing to audit for scope cree
 ## Summary
 
 Portfolio is ~2% complete — a heading stub only. This is the single largest gap in the project and depends on the Home milestone's data layer (`data/projects.ts`) being built first.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — actionable task list (Milestones 5–8)
+- [10-roadmap.md](./10-roadmap.md) — sequencing

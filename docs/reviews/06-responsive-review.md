@@ -13,3 +13,9 @@ Verified breakpoints: 390 (mobile) · 768 (tablet) · 1024–1280 (laptop) · 14
 ## Summary
 
 What's built respects the breakpoint system correctly. The components carrying the most responsive-variant complexity (`ProjectsTable`, `ProjectResources`) haven't been built, so the majority of the responsive surface area is unverifiable until [05-missing-components.md](./05-missing-components.md) items land.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../architecture/DECISIONS.md](../architecture/DECISIONS.md) — open question on tablet nav behavior
+- [01-home-audit.md](./01-home-audit.md) — hero name sizing discrepancy

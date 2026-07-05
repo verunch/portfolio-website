@@ -47,3 +47,9 @@ Nothing built. **Correctly out of scope** — `ARCHITECTURE.md` §1/§19 Phase 4
 
 - [ ] `useScrollToHash`
 - [ ] `useContainerBreakpoint`
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — actionable task list
+- [10-roadmap.md](./10-roadmap.md) — sequencing for building these components

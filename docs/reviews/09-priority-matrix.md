@@ -12,3 +12,9 @@
 | 🟡 Medium | Hero name desktop size | 52px rendered vs. 30px wireframe spec | Wireframes v2; ARCHITECTURE.md §15 | Milestone 1 (needs clarification first) |
 | 🟢 Low | Featured card accent underline | Small decorative rule missing | Wireframes v2, Home (A) desktop | Milestone 1 or later polish |
 | 🟢 Low | Anchor scroll + reduced-motion | Needed for Portfolio but not blocking earlier milestones | ARCHITECTURE.md §4/§17 | Milestone 5 |
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — actionable checklist derived from this matrix
+- [10-roadmap.md](./10-roadmap.md) — full milestone sequencing

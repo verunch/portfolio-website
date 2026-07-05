@@ -28,3 +28,9 @@ Compared against: `src/tokens/*.ts`, `src/styles/tokens.css`, `src/components/ui
 ## Summary
 
 Every token and every built component is verbatim-correct against the design system. The remaining gap is coverage — 4 of 11 required reusable components (all data-driven, all with the most responsive-variant complexity) don't exist yet.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../architecture/DECISIONS.md](../architecture/DECISIONS.md) — button variant scope and primary-button contrast decisions
+- [05-missing-components.md](./05-missing-components.md) — full missing-components checklist

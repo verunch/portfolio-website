@@ -23,3 +23,9 @@ Compared against: `src/routes/HomePage/*`, `src/components/layout/RootLayout.tsx
 ## Summary
 
 Home is partially built: the hero collage and intro block exist but deviate from the approved composition (stacked instead of side-by-side), and three entire content sections (My Stack, About, Selected Projects) plus the Footer are missing. See [10-roadmap.md](./10-roadmap.md) for sequencing.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — actionable task list
+- [../architecture/DECISIONS.md](../architecture/DECISIONS.md) — decisions & open questions (tablet nav, hero name sizing)

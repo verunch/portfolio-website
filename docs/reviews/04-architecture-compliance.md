@@ -29,3 +29,9 @@ Legend: ✅ Implemented · 🟡 Partially implemented · ❌ Missing
 ## Summary
 
 Foundation-level architecture (routing shell, layout, nav, tokens) is fully compliant. The gaps concentrate in the data-driven layer (`data/`, the 4 missing project components) and in Portfolio, which has no implementation yet.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — technical debt list
+- [05-missing-components.md](./05-missing-components.md) — full missing-components checklist

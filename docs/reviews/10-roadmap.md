@@ -14,3 +14,9 @@ Each milestone is independently reviewable and independently committable, ordere
 10. **Milestone 10 — Responsive QA sweep.** Verify all 4 breakpoints on both routes against the wireframe pixel values identified in this audit.
 
 See [09-priority-matrix.md](./09-priority-matrix.md) for the priority rationale behind this sequencing.
+
+## See also
+
+- [../../PROJECT_STATUS.md](../../PROJECT_STATUS.md) — current dashboard
+- [../../TODO.md](../../TODO.md) — this roadmap as a day-to-day checklist
+- [../architecture/DECISIONS.md](../architecture/DECISIONS.md) — decisions & open questions affecting Milestone 1
