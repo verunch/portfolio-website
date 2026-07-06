@@ -8,6 +8,8 @@ export const color = {
     light: '#A4BFBA',
     hover: '#7B9098',
     active: '#687C83',
+    700: '#55666C',
+    800: '#424F54',
     900: '#2F383C',
   },
   accent: {

@@ -8,7 +8,7 @@ Living dashboard for the portfolio website. Full detail lives in the linked docu
 
 ## Current milestone
 
-None in progress. Milestone 3 complete, plus a design-fidelity correction pass and a product-decision pass (rail socials, Tech Stack badges) overriding the wireframe by explicit product-owner direction. Awaiting approval to start Milestone 4.
+None in progress. Milestones 1–3 and 5–8 complete (Milestone 4/Footer and 9–10 remain), plus design-fidelity and product-decision passes overriding parts of the wireframe by explicit product-owner direction. Awaiting approval to start Milestone 4.
 
 ## Next milestone
 
@@ -25,6 +25,7 @@ None in progress. Milestone 3 complete, plus a design-fidelity correction pass a
 - **Visual fidelity pass (1)** — `HeroCollage`'s featured card corrected to match the wireframe (text-only panel, no nested image, accent underline restored); hero name sizing resolved to the wireframe's literal per-breakpoint values (see `docs/architecture/DECISIONS.md`); hero→intro and inter-section spacing rebalanced; Résumé button's "new tab" hint added at desktop/laptop
 - **Design-fidelity correction pass (2)** — `Header` given a centered 1180px container (previously stretched edge-to-edge); real identity ("Vera Bakerava" / "VB") replacing "Your Name" placeholders across `Header`, `Footer`, `IdentityRail`, `data/profile.ts`; `IdentityRail`'s vertical gap and active-item indicator corrected; Résumé "new tab" hint tightened to the correct breakpoint
 - **Product decisions overriding the wireframe (3)** — `IdentityRail`'s Twitter/Behance icons removed (LinkedIn only); `StackGrid` badges redesigned without text labels (badge-only, accessible name preserved via `sr-only` text). Both by explicit product-owner direction — see `docs/architecture/DECISIONS.md`. The "View Portfolio →" arrow and Résumé "new tab" hint remain as the wireframe specifies pending an explicit decision on those two specifically
+- **Milestones 5–8 + further product decisions (4)** — Portfolio page built out: `PortfolioHero`, `ProjectCardGallery`, `CaseStudySection` (×4), `ProjectResources`, `useScrollToHash` (reduced-motion aware); `PortfolioPage` given the same centered 1180px container as `HomePage`. `StackGrid` badges now colored per tool's common brand color (recognizable, no logos reproduced). Primary button changed to white text on `brand.700` (was ink on `brand.primary`) to match Color Foundation's literal button mock at accessible contrast. All by explicit product-owner direction — see `docs/architecture/DECISIONS.md`
 
 ## Status by area
 

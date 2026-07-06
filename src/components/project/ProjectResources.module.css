@@ -1,0 +1,78 @@
+.resources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* mobile: 1fr 1fr grid, last (GitHub) tile spans both columns (§14) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.grid > :last-child {
+  grid-column: 1 / -1;
+}
+
+.tile,
+.tileEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  text-align: center;
+  padding: var(--space-3) var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-control);
+  text-decoration: none;
+}
+
+.tile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.tileEmpty {
+  border-style: dashed;
+  border-color: var(--color-border-base);
+}
+
+.tileLabel {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text-primary);
+}
+
+.tileEmpty .tileLabel {
+  color: var(--color-text-muted);
+}
+
+.tilePlatform {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* tablet: flex-wrap at ~40% basis (§14) */
+@media (min-width: 768px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tile,
+  .tileEmpty {
+    flex: 1 1 40%;
+  }
+}
+
+/* desktop/laptop: single row of 5 (§14) */
+@media (min-width: 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

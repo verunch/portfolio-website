@@ -28,19 +28,22 @@
   padding: var(--space-2) var(--space-4);
 }
 
-/* Filled brand background — ink text per ARCHITECTURE.md §13
-   (white-on-brand.primary fails contrast; text.primary is the approved pairing). */
+/* White text on brand.700, per product decision (docs/architecture/DECISIONS.md)
+   to match Color Foundation's literal white-on-primary button mock. Uses
+   brand.700 rather than brand.primary — white on brand.primary is ~2.1:1 and
+   fails contrast (Color Foundation's own §07 flags this); Color Foundation's
+   same section names brand-700 (~5.6:1) as the fix for keeping white text. */
 .primary {
-  background: var(--color-brand-primary);
-  color: var(--color-text-primary);
+  background: var(--color-brand-700);
+  color: var(--color-text-inverse);
 }
 
 .primary:hover {
-  background: var(--color-brand-hover);
+  background: var(--color-brand-800);
 }
 
 .primary:active {
-  background: var(--color-brand-active);
+  background: var(--color-brand-900);
 }
 
 .outline {

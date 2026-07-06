@@ -12,16 +12,16 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 - [x] **Milestone 2** — My Stack (`StackGrid`) + About section
 - [x] **Milestone 3** — Selected Projects table (`ProjectStatusBadge`, `ProjectsTable`)
 - [ ] **Milestone 4** — Footer (real implementation, mounted globally)
-- [ ] **Milestone 5** — Portfolio hero + card gallery
-- [ ] **Milestone 6** — Case study section (reusable, ×4 projects)
-- [ ] **Milestone 7** — Project Resources block
-- [ ] **Milestone 8** — Anchor scroll + reduced-motion handling
+- [x] **Milestone 5** — Portfolio hero + card gallery
+- [x] **Milestone 6** — Case study section (reusable, ×4 projects)
+- [x] **Milestone 7** — Project Resources block
+- [x] **Milestone 8** — Anchor scroll + reduced-motion handling
 - [ ] **Milestone 9** — Accessibility + SEO pass
 - [ ] **Milestone 10** — Responsive QA sweep
 
 ## Technical debt
 
-- No `useScrollToHash` / `useContainerBreakpoint` hooks (`src/hooks/` doesn't exist).
+- No `useContainerBreakpoint` hook (`useScrollToHash` now exists in `src/hooks/`).
 - No prerendering/SSG decision made for SEO (`ARCHITECTURE.md` §18).
 - No per-route `<title>` / OG metadata.
 
