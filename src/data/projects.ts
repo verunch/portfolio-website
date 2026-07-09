@@ -178,8 +178,7 @@ export const projects: Project[] = [
     problem: 'Placeholder problem statement.',
     solution: 'Placeholder solution summary.',
     resources: {
-      // Placeholder — real repo URL lands after today's deploy.
-      github: { label: 'GitHub', href: '#' },
+      github: { label: 'GitHub', href: 'https://github.com/verunch/portfolio-website' },
     },
     showOnPortfolioPage: false,
   },
