@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import SectionLabel from '../../components/ui/SectionLabel';
 import portraitSrc from '../../../assets/images/portrrait5.webp';
-import heroWorkSrc from '../../../assets/images/social_radar_work.png';
+import heroWorkSrc from '../../../assets/images/social_radar_work.webp';
 import styles from './HeroCollage.module.css';
 
 // "Social Radar" is the approved seed project (ARCHITECTURE.md §16 seed set) —

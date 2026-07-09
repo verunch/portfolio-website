@@ -1,8 +1,8 @@
 import docAssistantCover from '../../assets/images/docassistant.png';
-import ascendraCover from '../../assets/images/cloud_workspace.png';
+import ascendraCover from '../../assets/images/cloud_workspace.webp';
 import ascendraDetailCover from '../../assets/images/cloud_workspace_desc.png';
-import socialRadarCover from '../../assets/images/social_radar.png';
-import bioQuestCover from '../../assets/images/bioquest.png';
+import socialRadarCover from '../../assets/images/social_radar.webp';
+import bioQuestCover from '../../assets/images/bioquest.webp';
 import docAssistantMascot from '../../assets/images/mascot-floating-v2.html?url';
 import docAssistantMascotGallery from '../../assets/images/mascot-floating-v2-gallery.html?url';
 
