@@ -60,14 +60,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-circle);
   border: 1px solid var(--color-border-strong);
   color: var(--color-text-secondary);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 9px;
+  font-size: 13px;
   text-decoration: none;
 }
 

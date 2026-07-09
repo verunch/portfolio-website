@@ -1,0 +1,41 @@
+.button {
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 40px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+  border-radius: var(--radius-control);
+  border: 1px solid #3f6b4d;
+  color: #3f6b4d;
+  background: #e7f0ea;
+  text-decoration: none;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.button:hover {
+  background: #fef9ec;
+  border-color: #a4bfba;
+  color: #a4bfba;
+}
+
+.button:active {
+  background: #fbeed2;
+  border-color: #91aeaa;
+  color: #91aeaa;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}

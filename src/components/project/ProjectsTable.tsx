@@ -1,3 +1,4 @@
+import ActionButton from '../ui/ActionButton';
 import type { Project } from '../../data/projects';
 import ProjectStatusBadge from './ProjectStatusBadge';
 import styles from './ProjectsTable.module.css';
@@ -31,32 +32,25 @@ type ResourceCellProps = {
   column: ColumnDef;
 };
 
-// Renders a button only when the project has a URL for this resource — no
-// URL means an empty cell, never a disabled or inert placeholder button.
+// Renders a button only when the project has a URL for this resource. With
+// no URL the cell is left empty — no dash, no disabled button, no empty
+// wrapper — and `.cell:empty` collapses it entirely on mobile cards while
+// still holding its column position in the desktop/tablet grid.
 function ResourceCell({ project, column }: ResourceCellProps) {
   const resource = project.resources[column.key];
-  const accessibleLabel = `${column.label} — ${project.title}`;
+
+  if (!resource) {
+    return <div className={styles.cell} role="cell" />;
+  }
 
   return (
     <div className={styles.cell} role="cell">
       <span className={styles.cellLabel} aria-hidden="true">
         {column.label}
       </span>
-      {resource ? (
-        <a
-          href={resource.href}
-          className={styles.resourceButton}
-          aria-label={accessibleLabel}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span aria-hidden="true">↗</span>
-        </a>
-      ) : (
-        <span className={styles.cellEmpty} aria-hidden="true">
-          —
-        </span>
-      )}
+      <div className={styles.buttonSlot}>
+        <ActionButton href={resource.href} ariaLabel={`${column.label} — ${project.title}`} />
+      </div>
     </div>
   );
 }
@@ -66,7 +60,9 @@ type ProjectCellProps = {
 };
 
 function ProjectCell({ project }: ProjectCellProps) {
-  const nameLink = `/portfolio#${project.slug}`;
+  // Portfolio Website has no case-study section on /portfolio — its anchor
+  // points at the Home page (its own heading) instead.
+  const nameHref = project.slug === 'portfolio-website' ? '/' : `/portfolio#${project.slug}`;
 
   return (
     <div className={`${styles.cell} ${styles.colProject}`} role="cell">
@@ -75,9 +71,9 @@ function ProjectCell({ project }: ProjectCellProps) {
       </span>
       <div className={styles.projectMeta}>
         <span className={styles.projectTitle}>{project.title}</span>
-        <a href={nameLink} className={styles.resourceButton} aria-label={`View ${project.title}`}>
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div className={styles.buttonSlot}>
+          <ActionButton href={nameHref} ariaLabel={`View ${project.title}`} external={false} />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import Divider from '../../components/ui/Divider';
 import HeroCollage from './HeroCollage';
 import IntroBlock from './IntroBlock';
 import StackSection from './StackSection';
@@ -11,11 +10,8 @@ export default function HomePage() {
     <div className={styles.page}>
       <HeroCollage />
       <IntroBlock />
-      <Divider />
       <StackSection />
-      <Divider />
       <AboutSection />
-      <Divider />
       <SelectedProjectsSection />
     </div>
   );

@@ -1,8 +1,17 @@
 /*
  * Div + CSS Grid table (no <table>/<ul> semantics — ARIA role="table" carries
- * the structure instead). Each row declares the same grid-template-columns
- * as the header, so columns line up without a shared grid ancestor. Below
- * 610px every row collapses into its own label/value card.
+ * the structure instead).
+ *
+ * <768px: every project is a standalone card, each cell stacked as its own
+ * label/value row. Empty resource cells collapse via `.cell:empty` instead
+ * of rendering a dash.
+ *
+ * >=768px: `.table` becomes the single CSS Grid, and row wrappers switch to
+ * `display: contents` so header cells and every row's cells become direct
+ * grid children sharing one set of column tracks — required for the
+ * content-driven `fit-content()`/`max-content` columns to size consistently
+ * across the header and every row. Empty resource cells stay in the DOM
+ * (blank) here so column position never shifts.
  */
 .table {
   display: flex;
@@ -47,12 +56,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-}
-
-.cellEmpty {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--color-text-muted);
+  flex-shrink: 0;
 }
 
 .colProject {
@@ -74,105 +78,77 @@
   color: var(--color-text-primary);
 }
 
-.resourceButton {
-  display: inline-flex;
+/* Keeps the Action Button from stretching to fill its flex/grid cell. */
+.buttonSlot {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  padding: 0;
-  box-sizing: border-box;
-  border-radius: var(--radius-control);
-  border: 1px solid #3f6b4d;
-  color: #3f6b4d;
-  background: #e7f0ea;
-  text-decoration: none;
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
+  width: fit-content;
+  height: fit-content;
 }
 
-a.resourceButton:hover {
-  background: #fef9ec;
-  border-color: #a4bfba;
-  color: #a4bfba;
-}
-
-a.resourceButton:active {
-  background: #fbeed2;
-  border-color: #91aeaa;
-  color: #91aeaa;
-}
-
-a.resourceButton:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
-/* 610px+: rows switch from stacked cards to a CSS Grid table. Buttons go
-   full-width inside their cell at this narrowest grid step. */
-@media (min-width: 610px) {
-  .table {
-    gap: 0;
+/* Mobile cards only: a resource with no destination renders an empty cell
+   (see ResourceCell) — collapse it so cards don't show blank rows. */
+@media (max-width: 767px) {
+  .cell:empty {
+    display: none;
   }
 
-  .headerRow {
+  .cell {
+    align-items: flex-start;
+  }
+}
+
+/* 768px+: tablet & desktop share one content-driven grid — the project
+   column takes the remaining space, Status sizes to its badge, and each
+   resource column sizes to its 40px Action Button. */
+@media (min-width: 768px) {
+  .table {
     display: grid;
-    grid-template-columns: minmax(150px, 1.4fr) 120px 100px 100px 100px 90px 110px 90px;
-    gap: var(--space-2);
+    grid-template-columns:
+      minmax(220px, 2fr)
+      fit-content(120px)
+      repeat(6, max-content);
+    column-gap: var(--space-2);
+    row-gap: 0;
+    align-items: stretch;
+  }
+
+  .headerRow,
+  .row {
+    display: contents;
+  }
+
+  .headerCell {
     padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--color-border-strong);
   }
 
-  .row {
-    display: grid;
-    grid-template-columns: minmax(150px, 1.4fr) 120px 100px 100px 100px 90px 110px 90px;
-    align-items: center;
-    gap: var(--space-2);
+  .cell {
+    justify-content: flex-start;
     padding: var(--space-2) 0;
-    border: none;
-    border-radius: 0;
     border-bottom: 1px solid var(--color-border-divider);
   }
 
-  .colProject {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-  }
-
-  .cell {
-    justify-content: flex-start;
-    padding: 0;
-  }
-
-  .cellLabel,
-  .cellEmpty {
+  .cellLabel {
     display: none;
   }
-}
 
-/* 768px+: columns widen, spacing grows back, buttons may wrap onto two
-   lines instead of forcing horizontal scroll. */
-@media (min-width: 768px) {
-  .headerRow,
-  .row {
-    grid-template-columns: minmax(180px, 1.6fr) 110px 120px 120px 120px 110px 130px 110px;
-    gap: var(--space-3);
+  .colProject {
+    padding-bottom: var(--space-2);
+    margin-bottom: 0;
   }
 
-  .row {
-    padding: var(--space-3) 0;
+  /* Tablet: names may wrap rather than force horizontal scroll. */
+  .projectTitle {
+    white-space: normal;
   }
 }
 
-/* 1200px+: normal desktop grid — full-width columns sized to content, no
-   wrapping needed. */
+/* 1200px+: desktop compact layout — full width is available, so gaps widen
+   back out without reintroducing equal-width columns. */
 @media (min-width: 1200px) {
-  .headerRow,
-  .row {
-    grid-template-columns: minmax(220px, 2fr) 130px 150px 150px 150px 130px 160px 130px;
+  .table {
+    column-gap: var(--space-4);
   }
 }
