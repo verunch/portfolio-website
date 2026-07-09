@@ -1,4 +1,4 @@
-import type { Project, ProjectResourceLink } from '../../data/projects';
+import type { Project } from '../../data/projects';
 import ProjectStatusBadge from './ProjectStatusBadge';
 import styles from './ProjectsTable.module.css';
 
@@ -6,110 +6,120 @@ type ProjectsTableProps = {
   projects: Project[];
 };
 
-const RESOURCE_COLUMNS: Array<{
-  key: keyof Project['resources'];
-  label: string;
-  abbr: string;
-}> = [
-  { key: 'caseStudy', label: 'Case Study', abbr: 'CS' },
-  { key: 'uxResearch', label: 'UX Research', abbr: 'UX' },
-  { key: 'uiMockups', label: 'UI Mockups', abbr: 'UI' },
-  { key: 'mvp', label: 'MVP', abbr: 'MVP' },
-  { key: 'github', label: 'GitHub', abbr: 'GH' },
-];
+type ResourceKey = keyof Project['resources'];
 
-type ResourceCellProps = {
-  resource?: ProjectResourceLink;
-  projectTitle: string;
+type ColumnDef = {
+  key: ResourceKey;
   label: string;
-  abbr: string;
 };
 
-// Renders icon-only / abbreviated / full-label presentations together and
-// lets CSS pick which is visible per breakpoint (table -> condensed -> cards,
-// ARCHITECTURE.md §6) — the accessible name stays constant regardless of
-// which visual is shown.
-function ResourceCell({ resource, projectTitle, label, abbr }: ResourceCellProps) {
-  const accessibleName = `${label} — ${projectTitle}`;
+// Order drives both the header row and every project row — single source
+// so columns can't drift out of sync.
+const RESOURCE_COLUMNS: ColumnDef[] = [
+  { key: 'caseStudy', label: 'Case Study' },
+  { key: 'uiMockups', label: 'UI (Figma)' },
+  { key: 'uxResearch', label: 'UX (Miro)' },
+  { key: 'mvp', label: 'MVP' },
+  { key: 'landingPage', label: 'Landing Page' },
+  { key: 'github', label: 'GitHub' },
+];
 
-  if (!resource) {
-    return (
-      <span className={styles.resourceEmpty} aria-label={`${accessibleName} — not available`}>
-        <span className={styles.resourceIcon} aria-hidden="true">
-          —
-        </span>
-        <span className={styles.resourceAbbr} aria-hidden="true">
-          {abbr}
-        </span>
-        <span className={styles.resourceFull} aria-hidden="true">
-          {label} —
-        </span>
-      </span>
-    );
-  }
+const HEADER_LABELS = ['Project', 'Status', ...RESOURCE_COLUMNS.map((column) => column.label)];
+
+type ResourceCellProps = {
+  project: Project;
+  column: ColumnDef;
+};
+
+// Renders a button only when the project has a URL for this resource — no
+// URL means an empty cell, never a disabled or inert placeholder button.
+function ResourceCell({ project, column }: ResourceCellProps) {
+  const resource = project.resources[column.key];
+  const accessibleLabel = `${column.label} — ${project.title}`;
 
   return (
-    <a
-      href={resource.href}
-      className={styles.resourceLink}
-      aria-label={accessibleName}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <span className={styles.resourceIcon} aria-hidden="true">
-        ↗
+    <div className={styles.cell} role="cell">
+      <span className={styles.cellLabel} aria-hidden="true">
+        {column.label}
       </span>
-      <span className={styles.resourceAbbr} aria-hidden="true">
-        {abbr}
+      {resource ? (
+        <a
+          href={resource.href}
+          className={styles.resourceButton}
+          aria-label={accessibleLabel}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span aria-hidden="true">↗</span>
+        </a>
+      ) : (
+        <span className={styles.cellEmpty} aria-hidden="true">
+          —
+        </span>
+      )}
+    </div>
+  );
+}
+
+type ProjectCellProps = {
+  project: Project;
+};
+
+function ProjectCell({ project }: ProjectCellProps) {
+  const nameLink = `/portfolio#${project.slug}`;
+
+  return (
+    <div className={`${styles.cell} ${styles.colProject}`} role="cell">
+      <span className={styles.cellLabel} aria-hidden="true">
+        Project
       </span>
-      <span className={styles.resourceFull} aria-hidden="true">
-        {label} ↗
+      <div className={styles.projectMeta}>
+        <span className={styles.projectTitle}>{project.title}</span>
+        <a href={nameLink} className={styles.resourceButton} aria-label={`View ${project.title}`}>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function StatusCell({ project }: ProjectCellProps) {
+  return (
+    <div className={styles.cell} role="cell">
+      <span className={styles.cellLabel} aria-hidden="true">
+        Status
       </span>
-    </a>
+      <ProjectStatusBadge status={project.status} />
+    </div>
+  );
+}
+
+function ProjectRow({ project }: ProjectCellProps) {
+  return (
+    <div className={styles.row} role="row">
+      <ProjectCell project={project} />
+      <StatusCell project={project} />
+      {RESOURCE_COLUMNS.map((column) => (
+        <ResourceCell key={column.key} project={project} column={column} />
+      ))}
+    </div>
   );
 }
 
 export default function ProjectsTable({ projects }: ProjectsTableProps) {
   return (
-    <div className={styles.table}>
-      <div className={styles.headerRowWide} aria-hidden="true">
-        <span>Project</span>
-        <span>Status</span>
-        <span>Case Study</span>
-        <span>UX Research</span>
-        <span>UI Mockups</span>
-        <span>MVP</span>
-        <span>GitHub</span>
-      </div>
-      <div className={styles.headerRowCondensed} aria-hidden="true">
-        <span>Project</span>
-        <span>Status</span>
-        <span className={styles.headerResources}>Resources</span>
+    <div className={styles.table} role="table" aria-label="Selected Projects">
+      <div className={styles.headerRow} role="row">
+        {HEADER_LABELS.map((label) => (
+          <div key={label} className={styles.headerCell} role="columnheader">
+            {label}
+          </div>
+        ))}
       </div>
 
-      <ul className={styles.list}>
-        {projects.map((project) => (
-          <li key={project.slug} className={styles.row}>
-            <div className={styles.rowHead}>
-              <a href={`/portfolio#${project.slug}`} className={styles.projectLink}>
-                {project.title}
-              </a>
-              <ProjectStatusBadge status={project.status} />
-            </div>
-            <div className={styles.resourcesGroup}>
-              {RESOURCE_COLUMNS.map(({ key, label, abbr }) => (
-                <ResourceCell
-                  key={key}
-                  resource={project.resources[key]}
-                  projectTitle={project.title}
-                  label={label}
-                  abbr={abbr}
-                />
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
+      {projects.map((project) => (
+        <ProjectRow key={project.slug} project={project} />
+      ))}
     </div>
   );
 }

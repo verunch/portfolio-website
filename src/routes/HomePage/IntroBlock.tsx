@@ -26,10 +26,10 @@ export default function IntroBlock() {
 
       <div className={styles.ctaRow}>
         <Button variant="primary" href="/portfolio">
-          View Portfolio →
+          View Portfolio
         </Button>
         <Button variant="outline" href={profile.resumeUrl} external>
-          Résumé ↗ <span className={styles.resumeHint}>new tab</span>
+          Résumé ↗
         </Button>
       </div>
     </div>

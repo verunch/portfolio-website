@@ -4,8 +4,8 @@ import { navConfig } from '../../components/nav/navConfig';
 import styles from './IdentityRail.module.css';
 
 // Twitter/Behance removed per product decision (docs/architecture/DECISIONS.md)
-// — LinkedIn only. href is a stand-in until the real profile link is supplied.
-const socials = [{ label: 'in', name: 'LinkedIn', href: '#' }];
+// — LinkedIn only.
+const socials = [{ label: 'in', name: 'LinkedIn', href: 'https://www.linkedin.com/in/vera-bakerava-7a1022a1/' }];
 
 // Desktop/laptop-only (>=1024px) Home chrome — replaces Header at that breakpoint
 // per ARCHITECTURE.md §9. Shares navConfig with Header via NavLinks ("one nav
@@ -20,7 +20,13 @@ export default function IdentityRail() {
       <ul className={styles.socials}>
         {socials.map((social) => (
           <li key={social.label}>
-            <a href={social.href} className={styles.socialLink} aria-label={social.name}>
+            <a
+              href={social.href}
+              className={styles.socialLink}
+              aria-label={social.name}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {social.label}
             </a>
           </li>

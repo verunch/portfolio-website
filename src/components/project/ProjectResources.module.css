@@ -4,15 +4,14 @@
   gap: var(--space-4);
 }
 
-/* mobile: 1fr 1fr grid, last (GitHub) tile spans both columns (§14) */
+/* Flexbox only (no Grid) — wraps naturally at every breakpoint, uniform
+   sizing rules on .tile below instead of tiered per-breakpoint columns. */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: var(--space-2);
-}
-
-.grid > :last-child {
-  grid-column: 1 / -1;
 }
 
 .tile,
@@ -26,6 +25,10 @@
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-control);
   text-decoration: none;
+  flex: 0 1 auto;
+  min-width: 180px;
+  max-width: 249px;
+  width: 100%;
 }
 
 .tile:focus-visible {
@@ -33,9 +36,29 @@
   box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
+@media (max-width: 610px) {
+  .tile {
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
 .tileEmpty {
   border-style: dashed;
   border-color: var(--color-border-base);
+}
+
+/* Visually prominent (accent) resource card — "Ink on Gold" is the approved
+   accent-surface text pairing (Color Foundation.dc.html §07). */
+.tileAccent {
+  background: var(--color-accent-gold);
+  border-color: var(--color-accent-hover);
+}
+
+.tileAccent .tileLabel,
+.tileAccent .tilePlatform {
+  color: var(--color-text-primary);
 }
 
 .tileLabel {
@@ -54,25 +77,4 @@
   font-weight: 500;
   font-size: 10px;
   color: var(--color-text-muted);
-}
-
-/* tablet: flex-wrap at ~40% basis (§14) */
-@media (min-width: 768px) {
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tile,
-  .tileEmpty {
-    flex: 1 1 40%;
-  }
-}
-
-/* desktop/laptop: single row of 5 (§14) */
-@media (min-width: 1024px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  }
 }

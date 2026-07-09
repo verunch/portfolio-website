@@ -10,6 +10,82 @@
   gap: var(--space-4);
 }
 
+/* Fills the stretched grid row's height (see .introGrid at >=1200px) — the
+   content card (.overviewGrid) determines the row height, this stretches to
+   match; below 1200px it collapses to content height naturally (percentage
+   height with no definite ancestor resolves as auto). */
+.mediaContainer {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-card);
+}
+
+/* Never stretches horizontally — width is auto, driven by the image's own
+   aspect ratio against the available height, no crop, top-left aligned. */
+.heroImage {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: top left;
+}
+
+/* Animated HTML embed (DocAssistant) — the embedded document has a
+   transparent body, so give it a solid white surface behind it. Fills the
+   media container completely (an embed has no intrinsic aspect ratio to
+   contain). */
+.heroEmbed {
+  width: 100%;
+  height: 400px;
+  background: #ffffff;
+  border: none;
+}
+
+@media (min-width: 390px) and (max-width: 1199.98px) {
+  .heroEmbed {
+    min-height: 382px;
+  }
+}
+
+/* Two-column intro: cover image + Overview/Role/Problem/Solution. Single
+   column (image first) below 1200px, side-by-side from 1200px up. */
+.introGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.coverButton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.coverButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-radius: var(--radius-card);
+}
+
+@media (min-width: 768px) {
+  .introGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 48%) 1fr;
+    /* default (stretch): both columns take the height of the taller one,
+       so the details column matches the cover column's height. */
+    gap: var(--space-8);
+  }
+}
+
 .headerLabel {
   display: flex;
   align-items: center;
@@ -37,25 +113,45 @@
   gap: var(--space-5);
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
 .overviewGrid p {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-editorial);
+  font-weight: 400;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--color-text-primary);
 }
 
-.solution {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+/* Mobile floor sizes for both stacked cards — min-width/min-height only set
+   a lower bound, they never cap growth when content needs more room. Capped
+   below the 1200px desktop breakpoint so the equal-height grid stretch
+   above isn't affected. */
+@media (min-width: 375px) and (max-width: 1199.98px) {
+  .mediaContainer,
+  .overviewGrid {
+    min-height: 362px;
+  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 390px) and (max-width: 1199.98px) {
+  .mediaContainer,
   .overviewGrid {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: var(--space-6);
-    align-items: start;
+    min-height: 382px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .overviewGrid {
+    /* Fills the grid row's stretched height (matching the cover column) and
+       distributes any extra space evenly between the four fields instead of
+       leaving it as empty space below Solution. `gap` remains the minimum. */
+    height: 100%;
+    justify-content: space-between;
   }
 }

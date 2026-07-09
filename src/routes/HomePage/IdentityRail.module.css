@@ -33,7 +33,7 @@
   height: 34px;
   border-radius: var(--radius-circle);
   background: var(--color-brand-light);
-  color: var(--color-text-primary);
+  color: var(--color-brand-700);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 12px;

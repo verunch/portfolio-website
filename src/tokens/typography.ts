@@ -4,6 +4,7 @@
 export const font = {
   heading: `'Cormorant Garamond', Georgia, serif`,
   body: `'Inter', system-ui, -apple-system, sans-serif`,
+  editorial: `'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif`,
 } as const;
 
 export const type = {

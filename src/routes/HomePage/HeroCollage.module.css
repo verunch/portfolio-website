@@ -17,6 +17,15 @@
   }
 }
 
+.portraitImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-card);
+}
+
 .featuredCard {
   display: flex;
   flex-direction: column;
@@ -60,5 +69,32 @@
 }
 
 .wideBand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   grid-column: 1 / -1;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-card);
+}
+
+.wideBand:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+@media (min-width: 1200px) {
+  .wideBand {
+    justify-self: end;
+  }
+}
+
+.wideBandImage {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: right center;
 }

@@ -2,15 +2,15 @@ import type { ProjectStatus } from '../../data/projects';
 import styles from './ProjectStatusBadge.module.css';
 
 const statusLabel: Record<ProjectStatus, string> = {
-  shipped: 'Shipped',
-  'in-progress': 'In progress',
-  concept: 'Concept',
+  ready: 'Ready',
+  'coming-soon': 'Coming Soon',
+  'mvp-coming-soon': 'MVP Coming Soon',
 };
 
 const statusClass: Record<ProjectStatus, string> = {
-  shipped: styles.shipped,
-  'in-progress': styles.inProgress,
-  concept: styles.concept,
+  ready: styles.shipped,
+  'coming-soon': styles.concept,
+  'mvp-coming-soon': styles.inProgress,
 };
 
 type ProjectStatusBadgeProps = {

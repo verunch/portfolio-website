@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import ImagePlaceholder from '../../components/ui/ImagePlaceholder';
 import SectionLabel from '../../components/ui/SectionLabel';
+import portraitSrc from '../../../assets/images/portrrait5.webp';
+import heroWorkSrc from '../../../assets/images/social_radar_work.png';
 import styles from './HeroCollage.module.css';
 
 // "Social Radar" is the approved seed project (ARCHITECTURE.md §16 seed set) —
@@ -9,7 +10,7 @@ import styles from './HeroCollage.module.css';
 export default function HeroCollage() {
   return (
     <div className={styles.collage}>
-      <ImagePlaceholder label="portrait" aspectRatio="4 / 5" decorative />
+      <img src={portraitSrc} alt="Vera Bakerava" className={styles.portraitImage} />
 
       <Link to="/portfolio#social-radar" className={styles.featuredCard}>
         <SectionLabel>Featured Project</SectionLabel>
@@ -18,12 +19,9 @@ export default function HeroCollage() {
         <span className={styles.featuredAccent} aria-hidden="true" />
       </Link>
 
-      <ImagePlaceholder
-        label="work"
-        aspectRatio="16 / 5"
-        className={styles.wideBand}
-        decorative
-      />
+      <Link to="/portfolio#social-radar" className={styles.wideBand}>
+        <img src={heroWorkSrc} alt="Social Radar" className={styles.wideBandImage} />
+      </Link>
     </div>
   );
 }
