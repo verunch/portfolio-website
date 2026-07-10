@@ -55,6 +55,12 @@
   text-orientation: mixed;
   border-bottom: none;
   border-right: 2px solid transparent;
+  transition: color 0.15s ease;
+}
+
+.vertical .link:hover {
+  color: var(--color-text-primary);
+  cursor: pointer;
 }
 
 /* Rail active state: color only, no underline/border indicator — matches

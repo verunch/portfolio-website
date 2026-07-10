@@ -103,6 +103,11 @@
   color: var(--color-text-secondary);
 }
 
+.resumeButton:hover .resumeBadge {
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
 .resumeHint {
   display: none;
   font-family: var(--font-body);

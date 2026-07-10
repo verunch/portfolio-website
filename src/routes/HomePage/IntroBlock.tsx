@@ -28,7 +28,7 @@ export default function IntroBlock() {
         <Button variant="primary" href="/portfolio">
           View Portfolio
         </Button>
-        <Button variant="outline" href={profile.resumeUrl} external>
+        <Button variant="outline" href={profile.resumeUrl} external className={styles.resumeButton}>
           Résumé ↗
           <span className={styles.resumeBadge}>PDF</span>
         </Button>
