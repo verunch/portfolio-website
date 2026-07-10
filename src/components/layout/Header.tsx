@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import MailIcon from '../icons/MailIcon';
 import NavLinks from '../nav/NavLinks';
 import { navConfig } from '../nav/navConfig';
+import { profile } from '../../data/profile';
 import styles from './Header.module.css';
 
 type HeaderProps = {
@@ -39,17 +41,22 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
         <Link to="/" className={styles.wordmark}>
           Vera Bakerava
         </Link>
-        <button
-          ref={toggleRef}
-          type="button"
-          className={styles.menuToggle}
-          aria-expanded={isMenuOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          <span className={styles.srOnly}>{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
-          <span className={styles.hamburgerIcon} aria-hidden="true" />
-        </button>
+        <div className={styles.actions}>
+          <a href={`mailto:${profile.email}`} className={styles.emailLink} aria-label="Email">
+            <MailIcon />
+          </a>
+          <button
+            ref={toggleRef}
+            type="button"
+            className={styles.menuToggle}
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span className={styles.srOnly}>{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
+            <span className={styles.hamburgerIcon} aria-hidden="true" />
+          </button>
+        </div>
       </div>
       <nav
         id="primary-navigation"

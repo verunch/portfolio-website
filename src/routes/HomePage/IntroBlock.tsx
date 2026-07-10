@@ -30,6 +30,7 @@ export default function IntroBlock() {
         </Button>
         <Button variant="outline" href={profile.resumeUrl} external>
           Résumé ↗
+          <span className={styles.resumeBadge}>PDF</span>
         </Button>
       </div>
     </div>

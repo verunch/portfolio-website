@@ -46,6 +46,49 @@
   text-decoration: none;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.emailLink:hover {
+  border: 1px solid #3f6b4d;
+  color: #3f6b4d;
+  background: #e7f0ea;
+  cursor: pointer;
+}
+
+.emailLink:active {
+  background: #fbeed2;
+  border-color: #91aeaa;
+  color: #91aeaa;
+}
+
+.emailLink svg {
+  height: 20px;
+  width: auto;
+}
+
+.emailLink:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
 .menuToggle {
   display: inline-flex;
   align-items: center;
@@ -119,6 +162,10 @@
 
 @media (min-width: 768px) {
   .expandable .menuToggle {
+    display: none;
+  }
+
+  .expandable .emailLink {
     display: none;
   }
 

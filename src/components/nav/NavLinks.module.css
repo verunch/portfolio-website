@@ -11,6 +11,15 @@
   align-items: center;
 }
 
+.horizontal .link {
+  transition: color 0.15s ease;
+}
+
+.horizontal .link:hover {
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
 .vertical {
   flex-direction: column;
   gap: var(--space-6);

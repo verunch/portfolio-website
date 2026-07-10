@@ -69,6 +69,28 @@
   font-weight: 600;
   font-size: 13px;
   text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.socialLink:hover {
+  border: 1px solid #3f6b4d;
+  color: #3f6b4d;
+  background: #e7f0ea;
+  cursor: pointer;
+}
+
+.socialLink:active {
+  background: #fbeed2;
+  border-color: #91aeaa;
+  color: #91aeaa;
+}
+
+.socialLink svg {
+  height: 16px;
+  width: auto;
 }
 
 .socialLink:focus-visible {

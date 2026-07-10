@@ -87,6 +87,22 @@
   width: 100%;
 }
 
+/* No reusable Badge/Chip component exists in the Design System —
+   ProjectStatusBadge is coupled to ProjectStatus. Reuses its typography and
+   spacing tokens rather than inventing a new badge pattern. */
+.resumeBadge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
 .resumeHint {
   display: none;
   font-family: var(--font-body);
