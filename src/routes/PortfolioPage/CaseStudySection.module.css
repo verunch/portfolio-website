@@ -128,18 +128,12 @@
   color: var(--color-text-primary);
 }
 
-/* Mobile floor sizes for both stacked cards — min-width/min-height only set
-   a lower bound, they never cap growth when content needs more room. Capped
-   below the 1200px desktop breakpoint so the equal-height grid stretch
-   above isn't affected. */
-@media (min-width: 375px) and (max-width: 1199.98px) {
-  .mediaContainer,
-  .overviewGrid {
-    min-height: 362px;
-  }
-}
-
-@media (min-width: 390px) and (max-width: 1199.98px) {
+/* Floor size for both stacked cards from tablet up — min-height only sets a
+   lower bound, it never caps growth when content needs more room. Capped
+   below the 1200px desktop breakpoint so the equal-height grid stretch above
+   isn't affected. Below 768px there's no floor at all — the media container
+   is exactly as tall as the image it wraps. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
   .mediaContainer,
   .overviewGrid {
     min-height: 382px;

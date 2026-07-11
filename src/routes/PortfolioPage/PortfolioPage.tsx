@@ -5,6 +5,7 @@ import { projects } from '../../data/projects';
 import PortfolioHero from './PortfolioHero';
 import ProjectCardGallery from './ProjectCardGallery';
 import CaseStudySection from './CaseStudySection';
+import PageFooterNav from '../../components/layout/PageFooterNav';
 import styles from './PortfolioPage.module.css';
 
 export default function PortfolioPage() {
@@ -25,6 +26,7 @@ export default function PortfolioPage() {
           <CaseStudySection project={project} index={index + 1} />
         </Fragment>
       ))}
+      <PageFooterNav currentPath="/portfolio" />
     </div>
   );
 }

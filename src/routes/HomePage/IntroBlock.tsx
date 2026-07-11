@@ -1,8 +1,11 @@
 import Button from '../../components/ui/Button';
 import { profile } from '../../data/profile';
+import { useResumeModal } from '../../components/resume/ResumeModalContext';
 import styles from './IntroBlock.module.css';
 
 export default function IntroBlock() {
+  const { openResumeModal } = useResumeModal();
+
   return (
     <div className={styles.intro}>
       <div className={styles.bioCluster}>
@@ -28,8 +31,17 @@ export default function IntroBlock() {
         <Button variant="primary" href="/portfolio">
           View Portfolio
         </Button>
-        <Button variant="outline" href={profile.resumeUrl} external className={styles.resumeButton}>
-          Résumé ↗
+        <Button
+          variant="outline"
+          href={profile.resumeUrl}
+          external
+          className={styles.resumeButton}
+          onClick={(event) => {
+            event.preventDefault();
+            openResumeModal();
+          }}
+        >
+          Résumé
           <span className={styles.resumeBadge}>PDF</span>
         </Button>
       </div>

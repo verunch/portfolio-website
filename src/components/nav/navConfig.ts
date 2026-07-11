@@ -2,6 +2,8 @@ export type NavItem = {
   label: string;
   path: string;
   external?: boolean;
+  // Opens the résumé preview modal instead of navigating — see ResumeModalContext.
+  action?: 'resumeModal';
 };
 
 // Per ARCHITECTURE.md §3: "Dear Diary" is intentionally omitted from the MVP nav —
@@ -9,5 +11,5 @@ export type NavItem = {
 export const navConfig: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Résumé ↗', path: '/resume.pdf', external: true },
+  { label: 'Résumé', path: '/resume.pdf', external: true, action: 'resumeModal' },
 ];

@@ -99,6 +99,16 @@
   }
 }
 
+@media (max-width: 410px) {
+  .cell {
+    flex-wrap: wrap;
+  }
+
+  .projectMeta {
+    flex-wrap: wrap;
+  }
+}
+
 /* 768px+: tablet & desktop share one content-driven grid — the project
    column takes the remaining space, Status sizes to its badge, and each
    resource column sizes to its 40px Action Button. */

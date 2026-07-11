@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MailIcon from '../icons/MailIcon';
 import NavLinks from '../nav/NavLinks';
@@ -6,33 +5,44 @@ import { navConfig } from '../nav/navConfig';
 import { profile } from '../../data/profile';
 import styles from './Header.module.css';
 
+// Same pair IdentityRail shows in its vertical rail — mirrored here
+// horizontally since Header covers every route below the rail's breakpoint.
+const socials = [
+  { label: 'in', name: 'LinkedIn', href: profile.linkedin, external: true },
+  { label: 'email', name: 'Email', href: `mailto:${profile.email}`, external: false },
+];
+
 type HeaderProps = {
   // True when this Header instance sits on the Home route, where it only
   // covers <1024px — IdentityRail takes over above that (ARCHITECTURE.md §9).
-  // Below 1024px on Home, the nav stays hamburger-gated even at tablet width
-  // (§6), unlike the standard bar used on every other route.
   collapseOnRail?: boolean;
 };
 
+function SocialsList({ className }: { className: string }) {
+  return (
+    <ul className={className}>
+      {socials.map((social) => (
+        <li key={social.label}>
+          <a
+            href={social.href}
+            className={styles.socialLink}
+            aria-label={social.name}
+            {...(social.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            {social.label === 'email' ? <MailIcon /> : social.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Header({ collapseOnRail = false }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!isMenuOpen) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsMenuOpen(false);
-        toggleRef.current?.focus();
-      }
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isMenuOpen]);
-
-  const headerClasses = [styles.header, collapseOnRail ? styles.hiddenAboveRail : styles.expandable]
+  // `.expandable` drives the always-visible nav row on every route;
+  // `.hiddenAboveRail` additionally hides the whole bar once IdentityRail
+  // takes over on Home (>=1024px) — the two are independent concerns.
+  const headerClasses = [styles.header, styles.expandable, collapseOnRail ? styles.hiddenAboveRail : '']
+    .filter(Boolean)
     .join(' ');
 
   return (
@@ -41,29 +51,13 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
         <Link to="/" className={styles.wordmark}>
           Vera Bakerava
         </Link>
-        <div className={styles.actions}>
-          <a href={`mailto:${profile.email}`} className={styles.emailLink} aria-label="Email">
-            <MailIcon />
-          </a>
-          <button
-            ref={toggleRef}
-            type="button"
-            className={styles.menuToggle}
-            aria-expanded={isMenuOpen}
-            aria-controls="primary-navigation"
-            onClick={() => setIsMenuOpen((open) => !open)}
-          >
-            <span className={styles.srOnly}>{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
-            <span className={styles.hamburgerIcon} aria-hidden="true" />
-          </button>
-        </div>
+        {/* <478px only — see .socialsBar */}
+        <SocialsList className={styles.socialsBar} />
       </div>
-      <nav
-        id="primary-navigation"
-        aria-label="Primary"
-        className={`${styles.nav} ${styles.container} ${isMenuOpen ? styles.navOpen : ''}`}
-      >
-        <NavLinks items={navConfig} orientation="horizontal" onLinkClick={() => setIsMenuOpen(false)} />
+      <nav id="primary-navigation" aria-label="Primary" className={`${styles.nav} ${styles.container}`}>
+        <NavLinks items={navConfig} orientation="horizontal" />
+        {/* >=478px only — see .socialsNav */}
+        <SocialsList className={styles.socialsNav} />
       </nav>
     </header>
   );

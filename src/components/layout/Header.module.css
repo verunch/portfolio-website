@@ -46,19 +46,61 @@
   text-decoration: none;
 }
 
-.actions {
+/* Nav is always visible on every route — no hamburger toggle. */
+.nav {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  padding-bottom: var(--space-4);
 }
 
-.emailLink {
+/* <478px: socials sit in the top bar, pushed to the far right. */
+.socialsBar {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+}
+
+@media (max-width: 477.98px) {
+  .socialsBar {
+    display: flex;
+  }
+}
+
+/* >=478px: socials move into the nav row instead, also pushed to the right. */
+.socialsNav {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+}
+
+@media (min-width: 478px) {
+  .socialsNav {
+    display: flex;
+  }
+}
+
+/* Same visual recipe as IdentityRail's .socialLink — bordered circle, green
+   on hover — since this is the same LinkedIn/Email pair shown horizontally. */
+.socialLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-border-strong);
   color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
   text-decoration: none;
   transition:
     background-color 0.15s ease,
@@ -66,111 +108,25 @@
     color 0.15s ease;
 }
 
-.emailLink:hover {
-  border: 1px solid #3f6b4d;
+.socialLink:hover {
+  border-color: #3f6b4d;
   color: #3f6b4d;
   background: #e7f0ea;
   cursor: pointer;
 }
 
-.emailLink:active {
+.socialLink:active {
   background: #fbeed2;
   border-color: #91aeaa;
   color: #91aeaa;
 }
 
-.emailLink svg {
-  height: 20px;
+.socialLink svg {
+  height: 16px;
   width: auto;
 }
 
-.emailLink:focus-visible {
+.socialLink:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
-.menuToggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.menuToggle:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
-.hamburgerIcon,
-.hamburgerIcon::before,
-.hamburgerIcon::after {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--color-text-primary);
-}
-
-.hamburgerIcon {
-  position: relative;
-}
-
-.hamburgerIcon::before,
-.hamburgerIcon::after {
-  content: '';
-  position: absolute;
-  left: 0;
-}
-
-.hamburgerIcon::before {
-  top: -6px;
-}
-
-.hamburgerIcon::after {
-  top: 6px;
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.nav {
-  display: none;
-  padding-bottom: var(--space-4);
-}
-
-.navOpen {
-  display: block;
-}
-
-/* Standard bar (Portfolio, 404): full horizontal nav from tablet up, hamburger only below 768px. */
-.expandable .menuToggle {
-  display: inline-flex;
-}
-
-@media (min-width: 768px) {
-  .expandable .menuToggle {
-    display: none;
-  }
-
-  .expandable .emailLink {
-    display: none;
-  }
-
-  .expandable .nav {
-    display: block;
-    padding-bottom: var(--space-4);
-  }
 }

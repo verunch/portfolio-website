@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import type { NavItem } from './navConfig';
+import { useResumeModal } from '../resume/ResumeModalContext';
 import styles from './NavLinks.module.css';
 
 type NavLinksProps = {
@@ -17,6 +18,7 @@ export default function NavLinks({
 }: NavLinksProps) {
   const location = useLocation();
   const currentPath = activePath ?? location.pathname;
+  const { openResumeModal } = useResumeModal();
 
   return (
     <ul
@@ -26,7 +28,19 @@ export default function NavLinks({
         const isActive = !item.external && item.path === currentPath;
         return (
           <li key={item.path}>
-            {item.external ? (
+            {item.action === 'resumeModal' ? (
+              <a
+                href={item.path}
+                className={styles.link}
+                onClick={(event) => {
+                  event.preventDefault();
+                  openResumeModal();
+                  onLinkClick?.();
+                }}
+              >
+                {item.label}
+              </a>
+            ) : item.external ? (
               <a
                 href={item.path}
                 target="_blank"
