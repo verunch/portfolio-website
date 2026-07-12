@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react';
 import type { Project, ProjectResourceLink } from '../../data/projects';
 import SectionLabel from '../ui/SectionLabel';
+import { adjustTileColor } from '../../lib/color';
 import styles from './ProjectResources.module.css';
 
 const RESOURCE_META: Array<{ key: keyof Project['resources']; label: string; platform: string; background: string }> = [
@@ -7,6 +9,7 @@ const RESOURCE_META: Array<{ key: keyof Project['resources']; label: string; pla
   { key: 'uxResearch', label: 'UX Research', platform: 'Miro', background: '#FCF1D0' },
   { key: 'uiMockups', label: 'UI Mockups', platform: 'Figma', background: '#F2DAC4' },
   { key: 'mvp', label: 'MVP', platform: 'Live app', background: '#F2CB57' },
+  { key: 'landingPage', label: 'Landing Page', platform: 'Live page', background: '#FCF1D0' },
   { key: 'github', label: 'GitHub', platform: 'Repo', background: '#A4BFBA' },
 ];
 
@@ -28,12 +31,24 @@ export default function ProjectResources({ resources, projectTitle }: ProjectRes
           const resource = resources[key] as ProjectResourceLink;
           const isAccent = resource.accent;
 
+          // Hover/active are derived from each tile's own background — more
+          // saturated (10%/20%) and darker (10% each) — rather than one fixed
+          // hover color for every resource type. Accent tiles skip this and
+          // use the accent-hover/accent-active tokens instead (see CSS).
+          const tileStyle = isAccent
+            ? undefined
+            : ({
+                '--tile-bg': background,
+                '--tile-bg-hover': adjustTileColor(background, 10, 10),
+                '--tile-bg-active': adjustTileColor(background, 20, 10),
+              } as CSSProperties);
+
           return (
             <a
               key={key}
               href={resource.href}
               className={`${styles.tile} ${isAccent ? styles.tileAccent : ''}`}
-              style={isAccent ? undefined : { background }}
+              style={tileStyle}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${label} — ${projectTitle}`}

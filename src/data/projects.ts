@@ -23,7 +23,6 @@ export type ProjectResources = {
   uxResearch?: ProjectResourceLink;
   uiMockups?: ProjectResourceLink;
   mvp?: ProjectResourceLink;
-  // Home Projects Table only — never rendered on Portfolio case study pages.
   landingPage?: ProjectResourceLink;
   github?: ProjectResourceLink;
 };

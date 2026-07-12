@@ -31,6 +31,30 @@
   width: 100%;
 }
 
+/* Non-accent tiles: background comes from the --tile-bg custom properties
+   set inline per resource (see ProjectResources.tsx) so hover/active can be
+   derived from each tile's own color instead of one fixed hover color. */
+.tile {
+  background-color: var(--tile-bg);
+}
+
+.tile:hover {
+  background-color: var(--tile-bg-hover);
+  cursor: pointer;
+}
+
+.tile:active {
+  background-color: var(--tile-bg-active);
+  border-color: var(--tile-bg-active);
+}
+
+.tile:hover .tileLabel,
+.tile:hover .tilePlatform,
+.tile:active .tileLabel,
+.tile:active .tilePlatform {
+  color: #2c1a0c;
+}
+
 .tile:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
@@ -56,9 +80,26 @@
   border-color: var(--color-accent-hover);
 }
 
+.tileAccent:hover {
+  background: var(--color-accent-hover);
+  cursor: pointer;
+}
+
+.tileAccent:active {
+  background: var(--color-accent-active);
+  border-color: var(--color-accent-active);
+}
+
 .tileAccent .tileLabel,
 .tileAccent .tilePlatform {
   color: var(--color-text-primary);
+}
+
+.tileAccent:hover .tileLabel,
+.tileAccent:hover .tilePlatform,
+.tileAccent:active .tileLabel,
+.tileAccent:active .tilePlatform {
+  color: #2c1a0c;
 }
 
 .tileLabel {
