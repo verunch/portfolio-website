@@ -53,6 +53,9 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
         </Link>
         {/* <478px only — see .socialsBar */}
         <SocialsList className={styles.socialsBar} />
+        <Link to="/" className={`${styles.wordmark} ${styles.tagline}`}>
+          Product Designer
+        </Link>
       </div>
       <nav id="primary-navigation" aria-label="Primary" className={`${styles.nav} ${styles.container}`}>
         <NavLinks items={navConfig} orientation="horizontal" />

@@ -38,12 +38,24 @@
   padding-bottom: var(--space-4);
 }
 
+@media (max-width: 477.98px) {
+  .bar {
+    flex-wrap: wrap;
+  }
+}
+
 .wordmark {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 16px;
   color: var(--color-text-primary);
   text-decoration: none;
+}
+
+@media (max-width: 477.98px) {
+  .tagline {
+    width: 100%;
+  }
 }
 
 /* Nav is always visible on every route — no hamburger toggle. */
