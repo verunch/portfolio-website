@@ -1,9 +1,8 @@
 import { track as vercelTrack } from '@vercel/analytics';
 
-// Yandex Metrica counter ID — set VITE_YM_ID in Vercel's Environment
-// Variables (or a local .env.local). Without it Metrica stays off; Vercel
-// Analytics still runs.
-const YM_ID = Number(import.meta.env.VITE_YM_ID) || 0;
+// Yandex Metrica counter ID. Public by nature (it ships in every page's
+// tag), so it lives in code; VITE_YM_ID can still override it per build.
+const YM_ID = Number(import.meta.env.VITE_YM_ID) || 113811749;
 // Only real production builds report — `npm run dev` / preview never
 // pollute the stats.
 const ENABLED = import.meta.env.PROD && YM_ID > 0;
