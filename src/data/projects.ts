@@ -101,9 +101,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A platform that enables companies to transform documents and knowledge bases into AI-powered customer assistants and embeddable website widgets. The product simplifies document management, chatbot configuration, testing, and publishing.',
-      ru: 'Платформа, которая позволяет компаниям превращать документы и базы знаний в AI-ассистентов для клиентов и встраиваемые виджеты для сайта. Продукт упрощает управление документами, настройку чат-бота, тестирование и публикацию.',
-      be: 'Платформа, якая дазваляе кампаніям ператвараць дакументы і базы ведаў у AI-асістэнтаў для кліентаў і ўбудаваныя віджэты для сайта. Прадукт спрашчае кіраванне дакументамі, наладу чат-бота, тэсціраванне і публікацыю.',
+      en: 'An AI SaaS product that enables companies to transform documents and knowledge bases into AI-powered customer assistants and embeddable website widgets. The product simplifies document management, chatbot configuration, testing, and publishing.',
+      ru: 'AI SaaS-продукт, который позволяет компаниям превращать документы и базы знаний в AI-ассистентов для клиентов и встраиваемые виджеты для сайта. Продукт упрощает управление документами, настройку чат-бота, тестирование и публикацию.',
+      be: 'AI SaaS-прадукт, які дазваляе кампаніям ператвараць дакументы і базы ведаў у AI-асістэнтаў для кліентаў і ўбудаваныя віджэты для сайта. Прадукт спрашчае кіраванне дакументамі, наладу чат-бота, тэсціраванне і публікацыю.',
     },
     role: {
       en: 'Product Designer — Product Discovery • UX/UI Design • Information Architecture • Design System • Landing Page • Frontend MVP',
@@ -149,9 +149,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A cloud workspace platform designed for developers and DevOps teams to provision, organize, and manage virtual environments through a clean and scalable interface.',
-      ru: 'Облачная платформа рабочих пространств для разработчиков и DevOps-команд: создание, организация и управление виртуальными окружениями через понятный и масштабируемый интерфейс.',
-      be: 'Воблачная платформа працоўных прастораў для распрацоўшчыкаў і DevOps-каманд: стварэнне, арганізацыя і кіраванне віртуальнымі асяроддзямі праз зразумелы і маштабаваны інтэрфейс.',
+      en: 'A cloud workspace platform — a B2B product for developers and DevOps teams to provision, organize, and manage virtual environments through a clean and scalable interface.',
+      ru: 'Облачная платформа рабочих пространств — B2B-продукт для разработчиков и DevOps-команд: создание, организация и управление виртуальными окружениями через понятный и масштабируемый интерфейс.',
+      be: 'Воблачная платформа працоўных прастораў — B2B-прадукт для распрацоўшчыкаў і DevOps-каманд: стварэнне, арганізацыя і кіраванне віртуальнымі асяроддзямі праз зразумелы і маштабаваны інтэрфейс.',
     },
     role: {
       en: 'Product Designer — UX/UI Design • Dashboard Design • Information Architecture • Design System • Frontend MVP',
@@ -189,9 +189,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A proximity-based social discovery platform that helps people turn shared interests into meaningful real-world connections. The product combines reciprocal matching, privacy-first interaction, and thoughtful onboarding to encourage quality conversations instead of endless scrolling.',
-      ru: 'Платформа для знакомств с людьми поблизости, которая помогает превращать общие интересы в настоящие связи в реальной жизни. Продукт сочетает взаимный мэтчинг, приватность по умолчанию и продуманный онбординг, чтобы поощрять качественное общение вместо бесконечного скроллинга.',
-      be: 'Платформа для знаёмстваў з людзьмі побач, якая дапамагае ператвараць агульныя інтарэсы ў сапраўдныя сувязі ў рэальным жыцці. Прадукт спалучае ўзаемны мэтчынг, прыватнасць па змаўчанні і прадуманы анбордынг, каб заахвочваць якасныя размовы замест бясконцага скролінгу.',
+      en: 'A proximity-based social discovery product that helps people turn shared interests into meaningful real-world connections. The product combines reciprocal matching, privacy-first interaction, and thoughtful onboarding to encourage quality conversations instead of endless scrolling.',
+      ru: 'Социальный продукт для знакомств с людьми поблизости, который помогает превращать общие интересы в настоящие связи в реальной жизни. Продукт сочетает взаимный мэтчинг, приватность по умолчанию и продуманный онбординг, чтобы поощрять качественное общение вместо бесконечного скроллинга.',
+      be: 'Сацыяльны прадукт для знаёмстваў з людзьмі побач, які дапамагае ператвараць агульныя інтарэсы ў сапраўдныя сувязі ў рэальным жыцці. Прадукт спалучае ўзаемны мэтчынг, прыватнасць па змаўчанні і прадуманы анбордынг, каб заахвочваць якасныя размовы замест бясконцага скролінгу.',
     },
     role: {
       en: 'Product Designer — Product Strategy • UX Research • UX/UI Design • Design System • Interactive Prototype • Frontend MVP',
@@ -236,9 +236,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A mobile educational game that transforms biology learning into an interactive adventure. Students explore the cell through visual challenges, mini-games, and progression mechanics that improve understanding and long-term retention.',
-      ru: 'Мобильная образовательная игра, которая превращает изучение биологии в интерактивное приключение. Ученики исследуют клетку через визуальные задания, мини-игры и механики прогресса, которые улучшают понимание и долгосрочное запоминание.',
-      be: 'Мабільная адукацыйная гульня, якая ператварае вывучэнне біялогіі ў інтэрактыўную прыгоду. Вучні даследуюць клетку праз візуальныя заданні, міні-гульні і механікі прагрэсу, якія паляпшаюць разуменне і доўгатэрміновае запамінанне.',
+      en: 'An EdTech product — a mobile educational game that transforms biology learning into an interactive adventure. Students explore the cell through visual challenges, mini-games, and progression mechanics that improve understanding and long-term retention.',
+      ru: 'EdTech-продукт — мобильная образовательная игра, которая превращает изучение биологии в интерактивное приключение. Ученики исследуют клетку через визуальные задания, мини-игры и механики прогресса, которые улучшают понимание и долгосрочное запоминание.',
+      be: 'EdTech-прадукт — мабільная адукацыйная гульня, якая ператварае вывучэнне біялогіі ў інтэрактыўную прыгоду. Вучні даследуюць клетку праз візуальныя заданні, міні-гульні і механікі прагрэсу, якія паляпшаюць разуменне і доўгатэрміновае запамінанне.',
     },
     role: {
       en: 'Product Designer — Product Strategy • Learning Experience Design • UX/UI Design • Game Mechanics • Design System • Frontend MVP',
@@ -288,9 +288,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A multilingual portfolio website (English, Russian, Belarusian) that presents my product design work as complete case studies — from problem and role to live MVPs, research boards, mockups and code — and turns visits into contacts and résumé views.',
-      ru: 'Мультиязычный сайт-портфолио (английский, русский, белорусский), который показывает мою продуктовую работу как полноценные кейсы — от проблемы и роли до живых MVP, исследовательских досок, макетов и кода — и превращает визиты в контакты и просмотры резюме.',
-      be: 'Шматмоўны сайт-партфоліа (англійская, руская, беларуская), які паказвае маю прадуктовую працу як паўнавартасныя кейсы — ад праблемы і ролі да жывых MVP, даследчых дошак, макетаў і кода — і ператварае візіты ў кантакты і прагляды рэзюмэ.',
+      en: 'A multilingual portfolio and business card website (English, Russian, Belarusian) that presents my product design work as complete case studies — from problem and role to live MVPs, research boards, mockups and code — and turns visits into contacts and résumé views.',
+      ru: 'Мультиязычный сайт-портфолио и сайт-визитка (английский, русский, белорусский), который показывает мою продуктовую работу как полноценные кейсы — от проблемы и роли до живых MVP, исследовательских досок, макетов и кода — и превращает визиты в контакты и просмотры резюме.',
+      be: 'Шматмоўны сайт-партфоліа і сайт-візітка (англійская, руская, беларуская), які паказвае маю прадуктовую працу як паўнавартасныя кейсы — ад праблемы і ролі да жывых MVP, даследчых дошак, макетаў і кода — і ператварае візіты ў кантакты і прагляды рэзюмэ.',
     },
     role: {
       en: 'Product Designer — Product Discovery • UX/UI Design • Information Architecture • Design System • Frontend Development • SEO & Analytics',
@@ -391,9 +391,9 @@ export const projects: Project[] = [
       },
     },
     overview: {
-      en: 'A multilingual portfolio and booking website for a candid photographer in Belarus (English, Belarusian, Russian). It shows her projects, explains prices and turns visitors into booking requests.',
-      ru: 'Мультиязычный сайт-портфолио и онлайн-запись для репортажного фотографа в Беларуси (английский, белорусский, русский). Сайт показывает её проекты, объясняет цены и превращает посетителей в заявки на съёмку.',
-      be: 'Шматмоўны сайт-партфоліа і анлайн-запіс для рэпартажнага фатографа ў Беларусі (англійская, беларуская, руская). Сайт паказвае яе праекты, тлумачыць цэны і ператварае наведвальнікаў у заяўкі на здымку.',
+      en: 'A multilingual portfolio, business card and booking website for a candid photographer in Belarus (English, Belarusian, Russian). It shows her projects, explains prices and turns visitors into booking requests.',
+      ru: 'Мультиязычный сайт-портфолио и сайт-визитка с онлайн-записью для репортажного фотографа в Беларуси (английский, белорусский, русский). Сайт показывает её проекты, объясняет цены и превращает посетителей в заявки на съёмку.',
+      be: 'Шматмоўны сайт-партфоліа і сайт-візітка з анлайн-запісам для рэпартажнага фатографа ў Беларусі (англійская, беларуская, руская). Сайт паказвае яе праекты, тлумачыць цэны і ператварае наведвальнікаў у заяўкі на здымку.',
     },
     role: {
       en: 'Product Designer — Product Discovery • UX/UI Design • Information Architecture • Design System • Frontend Development • SEO & Analytics',

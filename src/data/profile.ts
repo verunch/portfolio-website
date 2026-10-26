@@ -52,14 +52,17 @@ export const profile: Profile = {
       en: [
         'I enjoy turning complex ideas into products people can actually use. My process combines product discovery, UX/UI design, design systems, and frontend implementation, allowing concepts to quickly become testable MVPs. I believe thoughtful design should not only look good but also make complex workflows feel simple and intuitive.',
         'You can work with me in three ways: design only — research, UX/UI, a design system and a Figma prototype; frontend only — a responsive, accessible React/TypeScript build of your design or mine; or the full cycle — a turnkey product from discovery and design to frontend, launch, SEO and analytics.',
+        'You can order a landing page, a business card website, a portfolio website or a web app from me — I’ll handle the whole range of work: from research and design to frontend development, launch, SEO and analytics setup.',
       ],
       ru: [
         'Мне нравится превращать сложные идеи в продукты, которыми действительно удобно пользоваться. Мой процесс объединяет product discovery, UX/UI-дизайн, дизайн-системы и frontend-разработку, поэтому концепции быстро становятся MVP, готовыми к тестированию. Я считаю, что продуманный дизайн должен не только хорошо выглядеть, но и делать сложные процессы простыми и интуитивными.',
         'Со мной можно работать в трёх форматах: только дизайн — исследование, UX/UI, дизайн-система и прототип в Figma; только вёрстка и frontend — адаптивная и доступная реализация на React/TypeScript по вашему или моему дизайну; или полный цикл — продукт под ключ: от исследования и дизайна до frontend-разработки, запуска, SEO и аналитики.',
+        'Вы можете заказать у меня лендинг, сайт-визитку, сайт-портфолио или веб-приложение — я выполню весь спектр работ: от исследования и дизайна до вёрстки, запуска, SEO и подключения аналитики.',
       ],
       be: [
         'Мне падабаецца ператвараць складаныя ідэі ў прадукты, якімі сапраўды зручна карыстацца. Мой працэс аб’ядноўвае product discovery, UX/UI-дызайн, дызайн-сістэмы і frontend-распрацоўку, таму канцэпцыі хутка становяцца MVP, гатовымі да тэсціравання. Я лічу, што прадуманы дызайн павінен не толькі добра выглядаць, але і рабіць складаныя працэсы простымі і інтуітыўнымі.',
         'Са мной можна працаваць у трох фарматах: толькі дызайн — даследаванне, UX/UI, дызайн-сістэма і прататып у Figma; толькі вёрстка і frontend — адаптыўная і даступная рэалізацыя на React/TypeScript па вашым або маім дызайне; або поўны цыкл — прадукт пад ключ: ад даследавання і дызайну да frontend-распрацоўкі, запуску, SEO і аналітыкі.',
+        'Вы можаце замовіць у мяне лэндынг, сайт-візітку, сайт-партфоліа або вэб-дадатак — я выканаю ўвесь спектр работ: ад даследавання і дызайну да вёрсткі, запуску, SEO і падключэння аналітыкі.',
       ],
     },
   },

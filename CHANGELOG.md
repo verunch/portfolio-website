@@ -17,6 +17,7 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 - Portfolio page: card galleries grouped as "Websites & Apps" and "Cases" (3 per row on desktop), followed by one continuous, numbered list of case studies; text column left, cover right; no click-to-enlarge; uniform full-bleed card covers.
 - Resource tiles: unique color per resource type.
 - Page footer nav: scroll-to-top on the left, page links grouped on the right, no divider above it.
+- SEO copy: app overviews now name them as products (AI SaaS, B2B, EdTech…), portfolio sites as business card websites; meta description and JSON-LD `knowsAbout` updated. About gained a paragraph on what can be ordered (landing page, business card site, portfolio, web app — full range of work).
 
 ## Unreleased
 
