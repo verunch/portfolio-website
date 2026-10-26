@@ -129,6 +129,14 @@ export default function ServicesPage() {
         <div className={styles.contactButtons}>
           <Button
             variant="outline"
+            href={profile.telegram}
+            external
+            onClick={() => trackGoal('contact_click', { channel: 'telegram', place: 'services' })}
+          >
+            Telegram ↗
+          </Button>
+          <Button
+            variant="outline"
             href={`mailto:${profile.email}`}
             onClick={() => trackGoal('contact_click', { channel: 'email', place: 'services' })}
           >

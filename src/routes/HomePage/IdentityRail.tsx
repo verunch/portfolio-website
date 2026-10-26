@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import MailIcon from '../../components/icons/MailIcon';
+import TelegramIcon from '../../components/icons/TelegramIcon';
 import NavLinks from '../../components/nav/NavLinks';
 import LanguageSwitcher from '../../components/nav/LanguageSwitcher';
 import { navConfig } from '../../components/nav/navConfig';
@@ -12,6 +13,7 @@ import styles from './IdentityRail.module.css';
 // — LinkedIn only.
 const socials = [
   { label: 'in', nameKey: 'linkedin', href: profile.linkedin, external: true },
+  { label: 'telegram', nameKey: 'telegram', href: profile.telegram, external: true },
   { label: 'email', nameKey: 'email', href: `mailto:${profile.email}`, external: false },
 ] as const;
 
@@ -38,7 +40,7 @@ export default function IdentityRail() {
               onClick={() => trackGoal('contact_click', { channel: social.nameKey, place: 'rail' })}
               {...(social.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
-              {social.label === 'email' ? <MailIcon /> : social.label}
+              {social.label === 'email' ? <MailIcon /> : social.label === 'telegram' ? <TelegramIcon /> : social.label}
             </a>
           </li>
         ))}

@@ -59,6 +59,9 @@
   background: var(--color-bg-surface);
   color: var(--color-text-primary);
   width: 100%;
+  /* vh fallback for browsers without dynamic viewport units
+     (Safari <15.4, Firefox <101, Chrome <108). */
+  height: 100vh;
   height: 100dvh;
   box-shadow: 0 20px 60px rgba(64, 54, 54, 0.18);
   animation: dialogIn 200ms ease forwards;

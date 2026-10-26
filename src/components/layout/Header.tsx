@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import MailIcon from '../icons/MailIcon';
+import TelegramIcon from '../icons/TelegramIcon';
 import NavLinks from '../nav/NavLinks';
 import LanguageSwitcher from '../nav/LanguageSwitcher';
 import { navConfig } from '../nav/navConfig';
@@ -12,6 +13,7 @@ import styles from './Header.module.css';
 // horizontally since Header covers every route below the rail's breakpoint.
 const socials = [
   { label: 'in', nameKey: 'linkedin', href: profile.linkedin, external: true },
+  { label: 'telegram', nameKey: 'telegram', href: profile.telegram, external: true },
   { label: 'email', nameKey: 'email', href: `mailto:${profile.email}`, external: false },
 ] as const;
 
@@ -35,7 +37,7 @@ function SocialsList({ className }: { className: string }) {
             onClick={() => trackGoal('contact_click', { channel: social.nameKey, place: 'header' })}
             {...(social.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           >
-            {social.label === 'email' ? <MailIcon /> : social.label}
+            {social.label === 'email' ? <MailIcon /> : social.label === 'telegram' ? <TelegramIcon /> : social.label}
           </a>
         </li>
       ))}

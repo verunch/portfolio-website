@@ -28,11 +28,13 @@ const en = {
   },
   socials: {
     linkedin: 'LinkedIn',
+    telegram: 'Telegram',
     email: 'Email',
   },
   home: {
     emailLink: 'email ↗',
     linkedinLink: 'linkedin ↗',
+    telegramLink: 'telegram ↗',
     viewPortfolio: 'View Portfolio',
     orderCta: 'Start a project',
     resume: 'Résumé',
@@ -176,11 +178,13 @@ const ru: Translations = {
   },
   socials: {
     linkedin: 'LinkedIn',
+    telegram: 'Telegram',
     email: 'Почта',
   },
   home: {
     emailLink: 'почта ↗',
     linkedinLink: 'linkedin ↗',
+    telegramLink: 'telegram ↗',
     viewPortfolio: 'Смотреть портфолио',
     orderCta: 'Заказать проект',
     resume: 'Резюме',
@@ -320,11 +324,13 @@ const be: Translations = {
   },
   socials: {
     linkedin: 'LinkedIn',
+    telegram: 'Telegram',
     email: 'Пошта',
   },
   home: {
     emailLink: 'пошта ↗',
     linkedinLink: 'linkedin ↗',
+    telegramLink: 'telegram ↗',
     viewPortfolio: 'Глядзець партфоліа',
     orderCta: 'Замовіць праект',
     resume: 'Рэзюмэ',

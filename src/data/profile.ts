@@ -8,6 +8,7 @@ export type Profile = {
   bio: Localized;
   email: string;
   linkedin: string;
+  telegram: string;
   resumeUrl: string;
   roles: Localized<string[]>;
   location: Localized;
@@ -26,6 +27,7 @@ export const profile: Profile = {
   },
   email: 'verbapho@gmail.com',
   linkedin: 'https://www.linkedin.com/in/vera-bakerava-7a1022a1/',
+  telegram: 'https://t.me/verabakea',
   resumeUrl: '/resume.pdf',
   roles: {
     en: ['Product Designer (UX/UI)', 'Frontend Developer'],

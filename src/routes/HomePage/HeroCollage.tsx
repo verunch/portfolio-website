@@ -36,6 +36,15 @@ export default function HeroCollage() {
           >
             {t.home.linkedinLink}
           </a>
+          <a
+            href={profile.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactLink}
+            onClick={() => trackGoal('contact_click', { channel: 'telegram', place: 'hero' })}
+          >
+            {t.home.telegramLink}
+          </a>
         </div>
       </div>
 
