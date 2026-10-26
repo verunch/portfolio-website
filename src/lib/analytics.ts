@@ -3,9 +3,10 @@ import { track as vercelTrack } from '@vercel/analytics';
 // Yandex Metrica counter ID. Public by nature (it ships in every page's
 // tag), so it lives in code; VITE_YM_ID can still override it per build.
 const YM_ID = Number(import.meta.env.VITE_YM_ID) || 113811749;
-// Only real production builds report — `npm run dev` / preview never
-// pollute the stats.
-const ENABLED = import.meta.env.PROD && YM_ID > 0;
+// Only production builds served from a real host report — `npm run dev`
+// and a local `npm run preview` never pollute the stats.
+const IS_LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const ENABLED = import.meta.env.PROD && !IS_LOCAL && YM_ID > 0;
 
 type YmParams = Record<string, string | number | boolean>;
 type Ym = ((id: number, method: string, ...args: unknown[]) => void) & { a?: unknown[][]; l?: number };
@@ -60,7 +61,7 @@ export function trackPageview(url: string) {
 // Sent to both Metrica (goal) and Vercel (custom event — counted only on
 // Vercel plans that include custom events; a no-op otherwise).
 export function trackGoal(goal: AnalyticsGoal, params?: YmParams) {
-  if (!import.meta.env.PROD) return;
+  if (!import.meta.env.PROD || IS_LOCAL) return;
   if (ENABLED) window.ym?.(YM_ID, 'reachGoal', goal, params);
   vercelTrack(goal, params);
 }
