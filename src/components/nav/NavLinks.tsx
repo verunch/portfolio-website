@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import type { NavItem } from './navConfig';
 import { useResumeModal } from '../resume/ResumeModalContext';
+import { useLocale } from '../../i18n/LocaleContext';
 import styles from './NavLinks.module.css';
 
 type NavLinksProps = {
@@ -19,6 +20,7 @@ export default function NavLinks({
   const location = useLocation();
   const currentPath = activePath ?? location.pathname;
   const { openResumeModal } = useResumeModal();
+  const { t } = useLocale();
 
   return (
     <ul
@@ -38,7 +40,7 @@ export default function NavLinks({
                   onLinkClick?.();
                 }}
               >
-                {item.label}
+                {t.nav[item.labelKey]}
               </a>
             ) : item.external ? (
               <a
@@ -48,7 +50,7 @@ export default function NavLinks({
                 className={styles.link}
                 onClick={onLinkClick}
               >
-                {item.label}
+                {t.nav[item.labelKey]}
               </a>
             ) : (
               <Link
@@ -57,7 +59,7 @@ export default function NavLinks({
                 aria-current={isActive ? 'page' : undefined}
                 onClick={onLinkClick}
               >
-                {item.label}
+                {t.nav[item.labelKey]}
               </Link>
             )}
           </li>

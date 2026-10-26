@@ -14,6 +14,10 @@ None in progress. Milestones 1–3 and 5–8 complete (Milestone 4/Footer and 9�
 
 **Milestone 4 — Footer.** Real dark-panel implementation per Color Foundation §06, mounted in `RootLayout` for every route.
 
+## Latest update (2026-10-26)
+
+Trilingual UI (EN/RU/BE), two new projects plus a renamed one, Portfolio page restructured (Websites & Apps / Cases), collapsible Home projects table, Yandex Metrica + Vercel Analytics/Speed Insights, baseline SEO (robots, sitemap, OG image, JSON-LD). Details in [CHANGELOG.md](CHANGELOG.md); remaining launch steps in [TODO.md](TODO.md).
+
 ## Completed milestones
 
 - Foundation (tokens, `Button`, `SectionLabel`, `Divider`, `ImagePlaceholder`, folder scaffold, routing shell)

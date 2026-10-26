@@ -9,6 +9,13 @@
       content="Portfolio of Vera Bakerava, a Product & UX/UI Designer building AI, MedTech, and EdTech products from idea to MVP through UX/UI design and frontend implementation."
     />
 
+    <meta name="author" content="Vera Bakerava" />
+    <link rel="canonical" href="https://vera-bakerava-portfolio.vercel.app/" />
+    <!-- Search console ownership checks — paste the content values from
+         Google Search Console / Yandex Webmaster, then uncomment. -->
+    <!-- <meta name="google-site-verification" content="" /> -->
+    <!-- <meta name="yandex-verification" content="" /> -->
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vera-bakerava-portfolio.vercel.app/" />
@@ -17,8 +24,12 @@
       property="og:description"
       content="Portfolio of Vera Bakerava, a Product & UX/UI Designer building AI, MedTech, and EdTech products from idea to MVP through UX/UI design and frontend implementation."
     />
-    <!-- TODO: add public/og-image.png (1200x630) — referenced below but not yet created. -->
-    <meta property="og:image" content="https://vera-bakerava-portfolio.vercel.app/og-image.png" />
+    <meta property="og:site_name" content="Vera Bakerava" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale:alternate" content="be_BY" />
+    <meta property="og:image" content="https://vera-bakerava-portfolio.vercel.app/og-image.jpg" />
+    <meta property="og:image:alt" content="Vera Bakerava — Product Designer portfolio" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -29,8 +40,31 @@
       name="twitter:description"
       content="Portfolio of Vera Bakerava, a Product & UX/UI Designer building AI, MedTech, and EdTech products from idea to MVP through UX/UI design and frontend implementation."
     />
-    <!-- TODO: add public/og-image.png (1200x630) — referenced below but not yet created. -->
-    <meta name="twitter:image" content="https://vera-bakerava-portfolio.vercel.app/og-image.png" />
+    <meta name="twitter:image" content="https://vera-bakerava-portfolio.vercel.app/og-image.jpg" />
+
+    <!-- Structured data: lets search engines show a person card -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vera Bakerava",
+        "alternateName": ["Вера Бакерова", "Вера Бакерава"],
+        "jobTitle": "Product Designer (UX/UI)",
+        "url": "https://vera-bakerava-portfolio.vercel.app/",
+        "image": "https://vera-bakerava-portfolio.vercel.app/og-image.jpg",
+        "email": "mailto:verbapho@gmail.com",
+        "address": [
+          { "@type": "PostalAddress", "addressLocality": "Minsk", "addressCountry": "BY" },
+          { "@type": "PostalAddress", "addressLocality": "Batumi", "addressCountry": "GE" }
+        ],
+        "knowsLanguage": ["ru", "be", "en", "de"],
+        "knowsAbout": ["Product Design", "UX/UI Design", "Design Systems", "Frontend Development", "React", "TypeScript"],
+        "sameAs": [
+          "https://www.linkedin.com/in/vera-bakerava-7a1022a1/",
+          "https://github.com/verunch"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

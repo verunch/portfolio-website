@@ -1,11 +1,6 @@
 import type { ProjectStatus } from '../../data/projects';
+import { useLocale } from '../../i18n/LocaleContext';
 import styles from './ProjectStatusBadge.module.css';
-
-const statusLabel: Record<ProjectStatus, string> = {
-  ready: 'Ready',
-  'coming-soon': 'Coming Soon',
-  'mvp-coming-soon': 'MVP Coming Soon',
-};
 
 const statusClass: Record<ProjectStatus, string> = {
   ready: styles.shipped,
@@ -18,5 +13,7 @@ type ProjectStatusBadgeProps = {
 };
 
 export default function ProjectStatusBadge({ status }: ProjectStatusBadgeProps) {
-  return <span className={`${styles.badge} ${statusClass[status]}`}>{statusLabel[status]}</span>;
+  const { t } = useLocale();
+
+  return <span className={`${styles.badge} ${statusClass[status]}`}>{t.status[status]}</span>;
 }

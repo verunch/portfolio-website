@@ -7,6 +7,8 @@ import ChevronRightIcon from '../icons/ChevronRightIcon';
 import { profile } from '../../data/profile';
 import portraitSrc from '../../../assets/images/portrrait5.webp';
 import { useBodyScrollLock } from '../../hooks/useBodyScrollLock';
+import { useLocale } from '../../i18n/LocaleContext';
+import { trackGoal } from '../../lib/analytics';
 import styles from './ResumeModal.module.css';
 
 const FOCUSABLE_SELECTOR =
@@ -28,6 +30,7 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
   const pageWrappersRef = useRef<Map<number, HTMLDivElement>>(new Map());
   const visiblePagesRef = useRef<Set<number>>(new Set());
+  const { t, l } = useLocale();
 
   const [isClosing, setIsClosing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -271,18 +274,18 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
         className={`${styles.dialog} ${isClosing ? styles.dialogClosing : ''}`}
         role="dialog"
         aria-modal="true"
-        aria-label="Résumé"
+        aria-label={t.resumeModal.ariaLabel}
         onClick={(event) => event.stopPropagation()}
         onAnimationEnd={handleAnimationEnd}
       >
         <header className={styles.header}>
-          <h2 className={styles.headerTitle}>Resume</h2>
+          <h2 className={styles.headerTitle}>{t.resumeModal.title}</h2>
           <button
             ref={closeButtonRef}
             type="button"
             className={styles.closeButton}
             onClick={requestClose}
-            aria-label="Close résumé preview"
+            aria-label={t.resumeModal.close}
           >
             ×
           </button>
@@ -292,20 +295,20 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
           <div className={styles.profileSummary}>
             <img src={portraitSrc} alt="" className={styles.avatar} />
             <div className={styles.profileMeta}>
-              <p className={styles.profileName}>{profile.name}</p>
-              <p className={styles.profileRoles}>{profile.roles.join(' · ')}</p>
+              <p className={styles.profileName}>{l(profile.name)}</p>
+              <p className={styles.profileRoles}>{l(profile.roles).join(' · ')}</p>
               <dl className={styles.factGrid}>
                 <div className={styles.fact}>
-                  <dt>Languages</dt>
-                  <dd>{profile.languages}</dd>
+                  <dt>{t.resumeModal.languages}</dt>
+                  <dd>{l(profile.languages)}</dd>
                 </div>
                 <div className={styles.fact}>
-                  <dt>Location</dt>
-                  <dd>{profile.location}</dd>
+                  <dt>{t.resumeModal.location}</dt>
+                  <dd>{l(profile.location)}</dd>
                 </div>
                 <div className={styles.fact}>
-                  <dt>Experience</dt>
-                  <dd>{profile.experienceSummary}</dd>
+                  <dt>{t.resumeModal.experience}</dt>
+                  <dd>{l(profile.experienceSummary)}</dd>
                 </div>
               </dl>
             </div>
@@ -318,7 +321,7 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
                 className={styles.pageNavButton}
                 onClick={goToPrevPage}
                 disabled={currentPage <= 1}
-                aria-label="Previous page"
+                aria-label={t.resumeModal.previousPage}
               >
                 <ChevronLeftIcon />
               </button>
@@ -327,7 +330,7 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
                 className={styles.pageNavButton}
                 onClick={goToNextPage}
                 disabled={numPages === 0 || currentPage >= numPages}
-                aria-label="Next page"
+                aria-label={t.resumeModal.nextPage}
               >
                 <ChevronRightIcon />
               </button>
@@ -339,7 +342,7 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
                 className={styles.zoomButton}
                 onClick={zoomOut}
                 disabled={scale <= MIN_SCALE}
-                aria-label="Zoom out"
+                aria-label={t.resumeModal.zoomOut}
               >
                 −
               </button>
@@ -348,18 +351,18 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
                 className={styles.zoomButton}
                 onClick={zoomIn}
                 disabled={scale >= MAX_SCALE}
-                aria-label="Zoom in"
+                aria-label={t.resumeModal.zoomIn}
               >
                 +
               </button>
             </div>
 
-            {isLoading && <p className={styles.viewerStatus}>Loading résumé…</p>}
+            {isLoading && <p className={styles.viewerStatus}>{t.resumeModal.loading}</p>}
             {loadError && (
               <p className={styles.viewerStatus}>
-                Couldn't load the preview.{' '}
+                {t.resumeModal.loadError}{' '}
                 <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
-                  Open the PDF directly
+                  {t.resumeModal.openPdf}
                 </a>
                 .
               </p>
@@ -373,16 +376,17 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
         <footer className={styles.footer}>
           {supportsFullscreen && (
             <Button variant="primary" onClick={handleFullscreen} className={styles.footerButton}>
-              Open Full Screen
+              {t.resumeModal.fullscreen}
             </Button>
           )}
           <Button
             variant="outline"
             href={profile.resumeUrl}
             download="Vera-Bakerava-Resume.pdf"
+            onClick={() => trackGoal('resume_download')}
             className={styles.footerButton}
           >
-            Download PDF
+            {t.resumeModal.download}
           </Button>
         </footer>
       </div>

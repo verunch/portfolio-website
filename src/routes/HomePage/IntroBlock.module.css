@@ -5,77 +5,6 @@
   margin-top: var(--space-5);
 }
 
-.bioCluster {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  max-width: 480px;
-}
-
-/* Literal per-breakpoint values from the approved wireframe (Home (A),
-   detailed) — resolves the sizing question in DECISIONS.md in favor of the
-   wireframe over ARCHITECTURE.md §15's broader range. */
-.name {
-  margin: 0;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.05;
-  font-size: 21px;
-  color: var(--color-text-primary);
-}
-
-@media (min-width: 768px) {
-  .name {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .name {
-    font-size: 25px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .name {
-    font-size: 30px;
-  }
-}
-
-.bio {
-  margin: 0;
-  font-family: var(--font-editorial);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--color-text-secondary);
-}
-
-.contacts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-5);
-}
-
-.contactLink {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-}
-
-.contactLink:hover {
-  color: var(--color-brand-hover);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.contactLink:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--focus-ring);
-}
-
 .ctaRow {
   display: flex;
   flex-direction: column;
@@ -128,18 +57,12 @@
   }
 }
 
-/* Approved desktop composition (Home (A) — desktop breakpoint): bio cluster
-   left, CTA row right, bottom-aligned, both in one row instead of stacked. */
+/* Desktop: the bio now lives in HeroCollage's panel — the CTA row sits
+   alone, right-aligned under the hero. */
 @media (min-width: 1024px) {
   .intro {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: var(--space-6);
-  }
-
-  .bioCluster {
-    max-width: 330px;
+    justify-content: flex-end;
   }
 
   .ctaRow > a,

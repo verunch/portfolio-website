@@ -4,3 +4,7 @@
   gap: var(--space-5);
   margin-top: 83px;
 }
+
+.toggle {
+  align-self: center;
+}

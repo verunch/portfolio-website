@@ -41,3 +41,12 @@
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
 }
+
+.disabled,
+.disabled:hover,
+.disabled:active {
+  background: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}

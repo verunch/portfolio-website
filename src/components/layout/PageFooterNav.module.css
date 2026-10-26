@@ -12,6 +12,7 @@
 
 .sideEnd {
   justify-content: flex-end;
+  gap: var(--space-4);
 }
 
 .pageLink {
@@ -82,4 +83,10 @@
 .topButton:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* No hairline here — a generous gap separates the nav from the content
+   above instead. */
+.noDivider {
+  margin-top: var(--space-20);
 }

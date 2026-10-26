@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
 import type { Project } from '../../data/projects';
 import SectionLabel from '../../components/ui/SectionLabel';
 import ImagePlaceholder from '../../components/ui/ImagePlaceholder';
-import ImageLightbox from '../../components/ui/ImageLightbox';
 import ProjectStatusBadge from '../../components/project/ProjectStatusBadge';
 import ProjectResources from '../../components/project/ProjectResources';
+import { useLocale } from '../../i18n/LocaleContext';
 import styles from './CaseStudySection.module.css';
 
 type CaseStudySectionProps = {
@@ -12,46 +11,42 @@ type CaseStudySectionProps = {
   index: number;
 };
 
-// Lightbox is desktop-only (>=1200px) — matches the layout breakpoint where
-// the cover image sits in its own column at natural viewing size.
-const LIGHTBOX_QUERY = '(min-width: 1200px)';
-
 export default function CaseStudySection({ project, index }: CaseStudySectionProps) {
-  const indexLabel = `Project ${String(index).padStart(2, '0')}`;
-  const [isDesktop, setIsDesktop] = useState(() => window.matchMedia(LIGHTBOX_QUERY).matches);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const coverTriggerRef = useRef<HTMLButtonElement>(null);
+  const { t, l } = useLocale();
+  const indexLabel = `${t.portfolio.projectIndex} ${String(index).padStart(2, '0')}`;
+  const title = l(project.title);
+  const imageAlt = l(project.cover.imageAlt);
+  // Case studies without copy yet show a placeholder in each field.
+  const fieldText = (value: Project['overview']) => (value ? l(value) : t.portfolio.placeholderText);
+  const showSolution = Boolean(project.solution) || (!project.product && !project.design);
+  const detailLists = [
+    { key: 'product', label: t.portfolio.product, items: project.product },
+    { key: 'design', label: t.portfolio.design, items: project.design },
+  ] as const;
+  const hasDetails = Boolean(project.product || project.design || project.metrics);
 
-  useEffect(() => {
-    const mql = window.matchMedia(LIGHTBOX_QUERY);
-    const onChange = (event: MediaQueryListEvent) => setIsDesktop(event.matches);
-    mql.addEventListener('change', onChange);
-    return () => mql.removeEventListener('change', onChange);
-  }, []);
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-    coverTriggerRef.current?.focus();
-  };
-
-  // detailSrc (when present) is a case-study-only illustration, distinct
-  // from the Portfolio Gallery thumbnail (`src`) — e.g. Ascendra Workspaces.
+  // Case-study-only images, distinct from the Portfolio Gallery thumbnail
+  // (`src`): a stacked set (detailStack) or a single detailSrc.
   const detailImageSrc = project.cover.detailSrc ?? project.cover.src;
+  const detailImages = project.cover.detailStack ?? (detailImageSrc ? [detailImageSrc] : []);
 
-  // Animated HTML embed (DocAssistant) is never wrapped in the lightbox
-  // trigger — the lightbox is designed for viewing static images larger,
-  // which doesn't apply to an auto-playing embed.
+  // Static covers only — no click-to-enlarge, same as the gallery cards.
+  const renderImage = (src: string) => <img key={src} src={src} alt={imageAlt} className={styles.heroImage} />;
+
+  // Animated HTML embed (DocAssistant) takes precedence over images.
   const cover = project.cover.embedUrl ? (
     <iframe
       src={project.cover.embedUrl}
-      title={project.cover.imageAlt}
+      title={imageAlt}
       className={`${styles.heroImage} ${styles.heroEmbed}`}
       loading="lazy"
     />
-  ) : detailImageSrc ? (
-    <img src={detailImageSrc} alt={project.cover.imageAlt} className={styles.heroImage} />
+  ) : detailImages.length > 1 ? (
+    <div className={styles.coverStack}>{detailImages.map(renderImage)}</div>
+  ) : detailImages.length === 1 ? (
+    renderImage(detailImages[0])
   ) : (
-    <ImagePlaceholder label={project.cover.imageAlt} aspectRatio="16 / 8" className={styles.heroImage} decorative />
+    <ImagePlaceholder label={imageAlt} aspectRatio="16 / 8" className={styles.heroImage} decorative />
   );
 
   return (
@@ -61,54 +56,63 @@ export default function CaseStudySection({ project, index }: CaseStudySectionPro
           <SectionLabel>{indexLabel}</SectionLabel>
           <ProjectStatusBadge status={project.status} />
         </div>
-        <h2 className={styles.title}>{project.title}</h2>
+        <h3 className={styles.title}>{title}</h3>
       </div>
 
       <div className={styles.introGrid}>
-        <div className={styles.mediaContainer}>
-          {isDesktop && !project.cover.embedUrl ? (
-            <button
-              ref={coverTriggerRef}
-              type="button"
-              className={styles.coverButton}
-              onClick={() => setLightboxOpen(true)}
-              aria-label={`View larger image — ${project.cover.imageAlt}`}
-            >
-              {cover}
-            </button>
-          ) : (
-            cover
-          )}
-        </div>
+        <div className={styles.mediaContainer}>{cover}</div>
 
         <div className={styles.overviewGrid}>
           <div className={styles.field}>
-            <SectionLabel>Overview</SectionLabel>
-            <p>{project.overview}</p>
+            <SectionLabel>{t.portfolio.overview}</SectionLabel>
+            <p>{fieldText(project.overview)}</p>
           </div>
 
           <div className={styles.field}>
-            <SectionLabel>Role</SectionLabel>
-            <p>{project.role}</p>
+            <SectionLabel>{t.portfolio.role}</SectionLabel>
+            <p>{fieldText(project.role)}</p>
           </div>
 
           <div className={styles.field}>
-            <SectionLabel>Problem</SectionLabel>
-            <p>{project.problem}</p>
+            <SectionLabel>{t.portfolio.problem}</SectionLabel>
+            <p>{fieldText(project.problem)}</p>
           </div>
 
-          <div className={styles.field}>
-            <SectionLabel>Solution</SectionLabel>
-            <p>{project.solution}</p>
-          </div>
+          {showSolution && (
+            <div className={styles.field}>
+              <SectionLabel>{t.portfolio.solution}</SectionLabel>
+              <p>{fieldText(project.solution)}</p>
+            </div>
+          )}
         </div>
       </div>
 
-      <ProjectResources resources={project.resources} projectTitle={project.title} />
-
-      {lightboxOpen && detailImageSrc && (
-        <ImageLightbox src={detailImageSrc} alt={project.cover.imageAlt} onClose={closeLightbox} />
+      {hasDetails && (
+        <div className={styles.detailsGrid}>
+          {detailLists.map(
+            ({ key, label, items }) =>
+              items && (
+                <div key={key} className={styles.field}>
+                  <SectionLabel>{label}</SectionLabel>
+                  <ul className={styles.detailList}>
+                    {l(items).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ),
+          )}
+          {project.metrics && (
+            <div className={styles.field}>
+              <SectionLabel>{t.portfolio.metrics}</SectionLabel>
+              <p>{l(project.metrics)}</p>
+            </div>
+          )}
+        </div>
       )}
+
+      <ProjectResources resources={project.resources} projectTitle={title} projectSlug={project.slug} />
+
     </section>
   );
 }

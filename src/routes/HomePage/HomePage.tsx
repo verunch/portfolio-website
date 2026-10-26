@@ -14,7 +14,7 @@ export default function HomePage() {
       <StackSection />
       <AboutSection />
       <SelectedProjectsSection />
-      <PageFooterNav currentPath="/" />
+      <PageFooterNav currentPath="/" divider={false} />
     </div>
   );
 }

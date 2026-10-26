@@ -25,3 +25,44 @@ svg {
 #root {
   min-height: 100vh;
 }
+
+/* Lightweight hover/focus tooltip: set data-tooltip="text" on any element.
+   Centered above by default; data-tooltip-align="end" right-aligns it (for
+   controls at the right edge of a layout). */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: max-content;
+  max-width: 220px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--color-text-primary);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  pointer-events: none;
+  display: none;
+}
+
+[data-tooltip][data-tooltip-align='end']::after {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  display: block;
+}

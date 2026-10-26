@@ -97,3 +97,12 @@
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
 }
+
+/* Pinned to the bottom of the rail together with the socials. */
+.languageSwitcher {
+  margin-top: auto;
+}
+
+.languageSwitcher + .socials {
+  margin-top: 0;
+}

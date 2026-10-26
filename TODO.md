@@ -19,6 +19,14 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 - [ ] **Milestone 9** — Accessibility + SEO pass
 - [ ] **Milestone 10** — Responsive QA sweep
 
+## Launch follow-ups
+
+- [ ] Vercel: enable Analytics and Speed Insights; set `VITE_YM_ID` and redeploy.
+- [ ] Yandex Metrica: create the 6 JavaScript-event goals listed in `src/lib/analytics.ts`.
+- [ ] Google Search Console / Yandex Webmaster: verify ownership (meta tags reserved in `index.html`), submit `sitemap.xml`.
+- [ ] Per-locale URLs (`/ru`, `/be`) if RU/BE search traffic matters — language currently switches client-side on one URL.
+- [ ] Remove the now-unused `ImageLightbox` component, or reuse it.
+
 ## Technical debt
 
 - No `useContainerBreakpoint` hook (`useScrollToHash` now exists in `src/hooks/`).

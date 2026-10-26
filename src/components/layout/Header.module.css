@@ -58,10 +58,14 @@
   }
 }
 
-/* Nav is always visible on every route — no hamburger toggle. */
+/* Nav is always visible on every route — no hamburger toggle. Wraps on
+   narrow screens so the language switcher drops below the links instead of
+   overflowing. */
 .nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  row-gap: var(--space-2);
   padding-bottom: var(--space-4);
 }
 
@@ -141,4 +145,16 @@
 .socialLink:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Sits at the right end of the nav row, just before the socials (>=478px)
+   or alone at the far right (<478px, where socials move up to the bar). */
+.languageSwitcher {
+  margin-left: auto;
+}
+
+@media (min-width: 478px) {
+  .socialsNav {
+    margin-left: var(--space-4);
+  }
 }

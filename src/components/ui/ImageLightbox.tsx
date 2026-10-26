@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { useLocale } from '../../i18n/LocaleContext';
 import styles from './ImageLightbox.module.css';
 
 type ImageLightboxProps = {
@@ -10,6 +11,7 @@ type ImageLightboxProps = {
 
 export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const { t } = useLocale();
 
   useEffect(() => {
     closeButtonRef.current?.focus();
@@ -30,7 +32,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
         aria-label={alt}
         onClick={(event) => event.stopPropagation()}
       >
-        <button ref={closeButtonRef} type="button" className={styles.closeButton} onClick={onClose} aria-label="Close image">
+        <button ref={closeButtonRef} type="button" className={styles.closeButton} onClick={onClose} aria-label={t.lightbox.close}>
           ×
         </button>
         <img src={src} alt={alt} className={styles.image} />

@@ -13,6 +13,9 @@ import '@fontsource/ibm-plex-sans/700.css';
 import './styles/tokens.css';
 import './styles/global.css';
 import App from './App';
+import { initAnalytics } from './lib/analytics';
+
+initAnalytics();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

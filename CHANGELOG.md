@@ -2,6 +2,22 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-10-26 — Localization, new projects, analytics & SEO
+
+### Added
+- **Localization (EN / RU / BE)**: `src/i18n/` (`locales.ts`, `translations.ts`, `LocaleContext.tsx`) — typed UI dictionary, `Localized<T>` values in `data/projects.ts` / `data/profile.ts`, browser-language detection with a remembered choice, `<html lang>` + document title per locale. `LanguageSwitcher` in `Header` and `IdentityRail`. Name localized as Вера Бакерова (RU) / Вера Бакерава (BE).
+- **New projects**: Photographer Portfolio Website, Motion Design Showcase (architecture studio hero concept); Portfolio Website renamed Product Designer Portfolio Website — all with covers and case-study copy.
+- **Projects table**: Live Page (animatic) and Web Site columns; Case Study column labelled "(Notion)"; collapsed to 4 featured rows (Social Radar, Bio Quest, Photographer Portfolio, Ascendra) with a centered "Show all" toggle.
+- **Case studies**: optional Product / Design / Metrics blocks; `detailStack` for multi-image covers (Ascendra); GitHub resources shown disabled with an "access on request" tooltip (`onRequest` flag).
+- **Analytics**: `src/lib/analytics.ts` — Yandex Metrica (via `VITE_YM_ID`, production only) with goals (`resume_open`, `resume_download`, `view_portfolio_click`, `project_resource_click`, `contact_click`, `language_change`), Vercel Analytics and Speed Insights.
+- **SEO**: `public/robots.txt`, `public/sitemap.xml`, `public/og-image.jpg`, canonical link, Person JSON-LD, `.env.example`.
+
+### Changed
+- Home hero: name, bio and contacts moved into the panel beside the portrait; featured-project caption removed; the Social Radar band links to /portfolio. Bio and About now describe work formats (design, frontend, full cycle).
+- Portfolio page: card galleries grouped as "Websites & Apps" and "Cases" (3 per row on desktop), followed by one continuous, numbered list of case studies; text column left, cover right; no click-to-enlarge; uniform full-bleed card covers.
+- Resource tiles: unique color per resource type.
+- Page footer nav: scroll-to-top on the left, page links grouped on the right, no divider above it.
+
 ## Unreleased
 
 ### Added

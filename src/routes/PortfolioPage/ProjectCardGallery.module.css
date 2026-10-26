@@ -15,6 +15,13 @@
   }
 }
 
+/* Desktop: three cards per row. */
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -40,13 +47,15 @@
   background: var(--color-bg-surface);
 }
 
+/* Fills the whole 16:10 frame edge to edge so every card looks the same —
+   covers with another aspect ratio are cropped, never letterboxed. Anchored
+   to the top so page screenshots keep their header. */
 .cover {
   display: block;
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* Animated HTML embed (DocAssistant) — fills the white coverContainer;

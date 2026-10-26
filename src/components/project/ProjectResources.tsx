@@ -2,33 +2,42 @@ import type { CSSProperties } from 'react';
 import type { Project, ProjectResourceLink } from '../../data/projects';
 import SectionLabel from '../ui/SectionLabel';
 import { adjustTileColor } from '../../lib/color';
+import { useLocale } from '../../i18n/LocaleContext';
+import { trackGoal } from '../../lib/analytics';
 import styles from './ProjectResources.module.css';
 
-const RESOURCE_META: Array<{ key: keyof Project['resources']; label: string; platform: string; background: string }> = [
-  { key: 'caseStudy', label: 'Case Study', platform: 'Notion', background: '#F0F3F3' },
-  { key: 'uxResearch', label: 'UX Research', platform: 'Miro', background: '#FCF1D0' },
-  { key: 'uiMockups', label: 'UI Mockups', platform: 'Figma', background: '#F2DAC4' },
-  { key: 'mvp', label: 'MVP', platform: 'Live app', background: '#F2CB57' },
-  { key: 'landingPage', label: 'Landing Page', platform: 'Live page', background: '#FCF1D0' },
-  { key: 'github', label: 'GitHub', platform: 'Repo', background: '#A4BFBA' },
+// Tile label/platform text comes from the active locale (`t.resources`).
+// Every resource type has its own unique background color.
+const RESOURCE_META: Array<{ key: keyof Project['resources']; background: string }> = [
+  { key: 'caseStudy', background: '#F0F3F3' },
+  { key: 'uxResearch', background: '#FCF1D0' },
+  { key: 'uiMockups', background: '#F2DAC4' },
+  { key: 'mvp', background: '#F2CB57' },
+  { key: 'landingPage', background: '#E4ECDA' },
+  { key: 'livePage', background: '#E2DCEF' },
+  { key: 'website', background: '#D9E6EE' },
+  { key: 'github', background: '#A4BFBA' },
 ];
 
 type ProjectResourcesProps = {
   resources: Project['resources'];
   projectTitle: string;
+  projectSlug: string;
 };
 
-export default function ProjectResources({ resources, projectTitle }: ProjectResourcesProps) {
+export default function ProjectResources({ resources, projectTitle, projectSlug }: ProjectResourcesProps) {
+  const { t } = useLocale();
   const available = RESOURCE_META.filter(({ key }) => resources[key]);
 
   if (available.length === 0) return null;
 
   return (
     <div className={styles.resources}>
-      <SectionLabel>Project Resources</SectionLabel>
+      <SectionLabel>{t.portfolio.projectResources}</SectionLabel>
       <div className={styles.grid}>
-        {available.map(({ key, label, platform, background }) => {
+        {available.map(({ key, background }) => {
           const resource = resources[key] as ProjectResourceLink;
+          const { tile: label, platform } = t.resources[key];
           const isAccent = resource.accent;
 
           // Hover/active are derived from each tile's own background — more
@@ -43,6 +52,23 @@ export default function ProjectResources({ resources, projectTitle }: ProjectRes
                 '--tile-bg-active': adjustTileColor(background, 20, 10),
               } as CSSProperties);
 
+          if (resource.onRequest) {
+            return (
+              <div
+                key={key}
+                role="link"
+                aria-disabled="true"
+                tabIndex={0}
+                className={`${styles.tile} ${styles.tileDisabled}`}
+                aria-label={`${label} — ${projectTitle} — ${t.access.onRequest}`}
+                data-tooltip={t.access.onRequest}
+              >
+                <span className={styles.tileLabel}>{label}</span>
+                <span className={styles.tilePlatform}>{t.access.onRequestShort}</span>
+              </div>
+            );
+          }
+
           return (
             <a
               key={key}
@@ -52,6 +78,9 @@ export default function ProjectResources({ resources, projectTitle }: ProjectRes
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${label} — ${projectTitle}`}
+              onClick={() =>
+                trackGoal('project_resource_click', { project: projectSlug, resource: key, place: 'case_study' })
+              }
             >
               <span className={styles.tileLabel}>{label}</span>
               <span className={styles.tilePlatform}>{platform} ↗</span>

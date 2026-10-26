@@ -111,14 +111,15 @@
 
 /* 768px+: tablet & desktop share one content-driven grid — the project
    column takes the remaining space, Status sizes to its badge, and each
-   resource column sizes to its 40px Action Button. */
+   resource column sizes to its header label, wrapping the label onto
+   several lines (down to its longest word) when space runs short. */
 @media (min-width: 768px) {
   .table {
     display: grid;
     grid-template-columns:
-      minmax(220px, 2fr)
+      minmax(160px, 2fr)
       fit-content(120px)
-      repeat(6, max-content);
+      repeat(8, minmax(min-content, max-content));
     column-gap: var(--space-2);
     row-gap: 0;
     align-items: stretch;
@@ -159,6 +160,10 @@
    back out without reintroducing equal-width columns. */
 @media (min-width: 1200px) {
   .table {
+    grid-template-columns:
+      minmax(220px, 2fr)
+      fit-content(120px)
+      repeat(8, minmax(min-content, max-content));
     column-gap: var(--space-4);
   }
 }

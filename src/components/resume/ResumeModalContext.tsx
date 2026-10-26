@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
 import ResumeModal from './ResumeModal';
+import { trackGoal } from '../../lib/analytics';
 
 type ResumeModalContextValue = {
   openResumeModal: () => void;
@@ -10,7 +11,10 @@ const ResumeModalContext = createContext<ResumeModalContextValue | null>(null);
 export function ResumeModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openResumeModal = useCallback(() => setIsOpen(true), []);
+  const openResumeModal = useCallback(() => {
+    setIsOpen(true);
+    trackGoal('resume_open');
+  }, []);
   const closeResumeModal = useCallback(() => setIsOpen(false), []);
 
   const value = useMemo(() => ({ openResumeModal }), [openResumeModal]);

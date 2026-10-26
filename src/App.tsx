@@ -3,6 +3,9 @@ import RootLayout from './components/layout/RootLayout';
 import HomePage from './routes/HomePage/HomePage';
 import PortfolioPage from './routes/PortfolioPage/PortfolioPage';
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { LocaleProvider } from './i18n/LocaleContext';
 
 const router = createBrowserRouter([
   {
@@ -16,5 +19,13 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <LocaleProvider>
+      <RouterProvider router={router} />
+      {/* Vercel Web Analytics + Core Web Vitals — both need enabling once in
+          the Vercel project dashboard; they're inert in local dev. */}
+      <Analytics />
+      <SpeedInsights />
+    </LocaleProvider>
+  );
 }
