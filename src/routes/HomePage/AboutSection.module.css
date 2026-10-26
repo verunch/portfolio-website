@@ -28,3 +28,10 @@
     align-items: start;
   }
 }
+
+/* Phones: tighter section rhythm than the desktop 83px. */
+@media (max-width: 767.98px) {
+  .about {
+    margin-top: var(--space-10);
+  }
+}

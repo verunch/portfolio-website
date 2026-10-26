@@ -8,3 +8,22 @@
 .toggle {
   align-self: center;
 }
+
+/* Phones only: "Start a project" above the table, full width. */
+.orderButton {
+  display: none !important;
+}
+
+@media (max-width: 767.98px) {
+  .orderButton {
+    display: inline-flex !important;
+    width: 100%;
+  }
+}
+
+/* Phones: tighter section rhythm than the desktop 83px. */
+@media (max-width: 767.98px) {
+  .section {
+    margin-top: var(--space-10);
+  }
+}

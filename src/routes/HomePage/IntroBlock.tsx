@@ -15,7 +15,14 @@ export default function IntroBlock() {
         <Button variant="primary" href="/portfolio" onClick={() => trackGoal('view_portfolio_click')}>
           {t.home.viewPortfolio}
         </Button>
-        <Button variant="primary" href="/services" onClick={() => trackGoal('order_cta_click')}>
+        {/* Hidden on phones — there it sits above the projects table instead
+            (see SelectedProjectsSection). */}
+        <Button
+          variant="primary"
+          href="/services"
+          className={styles.orderButton}
+          onClick={() => trackGoal('order_cta_click', { place: 'hero' })}
+        >
           {t.home.orderCta}
         </Button>
         <Button

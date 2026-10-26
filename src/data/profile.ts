@@ -21,9 +21,9 @@ export const profile: Profile = {
   name: { en: 'Vera Bakerava', ru: 'Вера Бакерова', be: 'Вера Бакерава' },
   initials: { en: 'VB', ru: 'ВБ', be: 'ВБ' },
   bio: {
-    en: 'Product Designer building thoughtful digital products from idea to MVP. I take on requests for design, frontend development and full-cycle projects — from discovery to a launched product.',
-    ru: 'Продуктовый дизайнер: создаю продуманные цифровые продукты от идеи до MVP. Беру в работу заявки на дизайн, вёрстку и frontend-разработку, а также проекты полного цикла — от исследования до запущенного продукта.',
-    be: 'Прадуктовы дызайнер: ствараю прадуманыя лічбавыя прадукты ад ідэі да MVP. Бяру ў працу заяўкі на дызайн, вёрстку і frontend-распрацоўку, а таксама праекты поўнага цыкла — ад даследавання да запушчанага прадукту.',
+    en: 'I build thoughtful digital products from idea to MVP. I take on requests for design, frontend development and full-cycle projects — from discovery to a launched product.',
+    ru: 'Создаю продуманные цифровые продукты от идеи до MVP. Беру в работу заявки на дизайн, вёрстку и frontend-разработку, а также проекты полного цикла — от исследования до запущенного продукта.',
+    be: 'Ствараю прадуманыя лічбавыя прадукты ад ідэі да MVP. Бяру ў працу заяўкі на дызайн, вёрстку і frontend-распрацоўку, а таксама праекты поўнага цыкла — ад даследавання да запушчанага прадукту.',
   },
   email: 'verbapho@gmail.com',
   linkedin: 'https://www.linkedin.com/in/vera-bakerava-7a1022a1/',

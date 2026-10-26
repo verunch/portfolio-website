@@ -4,6 +4,7 @@ import Button from '../../components/ui/Button';
 import ProjectsTable from '../../components/project/ProjectsTable';
 import { projects, type Project } from '../../data/projects';
 import { useLocale } from '../../i18n/LocaleContext';
+import { trackGoal } from '../../lib/analytics';
 import styles from './SelectedProjectsSection.module.css';
 
 // Rows shown while the table is collapsed, in this order. "Show all" adds
@@ -21,6 +22,15 @@ export default function SelectedProjectsSection() {
 
   return (
     <section aria-label={t.home.selectedProjectsLabel} className={styles.section}>
+      {/* Phones only — the hero's "Start a project" button moves here. */}
+      <Button
+        variant="primary"
+        href="/services"
+        className={styles.orderButton}
+        onClick={() => trackGoal('order_cta_click', { place: 'projects' })}
+      >
+        {t.home.orderCta}
+      </Button>
       <SectionLabel>{t.home.selectedProjectsLabel}</SectionLabel>
       <div id="selected-projects-table">
         <ProjectsTable projects={expanded ? [...featured, ...rest] : featured} />

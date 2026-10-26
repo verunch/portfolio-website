@@ -30,6 +30,14 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 ### Changed
 - `Button` renders `mailto:` links in place (no new tab). Mobile nav tightened so four items fit. `vercel.json` SPA rewrite no longer catches `/api/*`.
 
+## 2026-10-27 — Hero heading and mobile layout
+
+### Changed
+- Home hero card: "Product Designer" is now the main heading (h1, serif, 34/38/44px) with the name as an uppercase label beneath; bio no longer repeats the role.
+- Phones (<768px): header hides name/role; Home order is bio card → CTA buttons → portrait → Social Radar band; "Start a project" moves above the Selected Projects heading; section gaps 83px → 40px; language switcher shares a row with the socials (left vs right).
+- CTA row moved inside `HeroCollage`'s grid so it can be reordered on phones.
+- Ascendra case-study cover: login screenshot trimmed to its content. Product Designer Portfolio covers refreshed.
+
 ## Unreleased
 
 ### Added

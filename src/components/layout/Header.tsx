@@ -60,7 +60,9 @@ export default function Header({ collapseOnRail = false }: HeaderProps) {
         <Link to="/" className={styles.wordmark}>
           {l(profile.name)}
         </Link>
-        {/* <478px only — see .socialsBar */}
+        {/* <478px only — language switcher on the left, socials on the right
+            of the top row (see .switcherBar / .socialsBar) */}
+        <LanguageSwitcher className={styles.switcherBar} />
         <SocialsList className={styles.socialsBar} />
         <Link to="/" className={`${styles.wordmark} ${styles.tagline}`}>
           {t.header.tagline}

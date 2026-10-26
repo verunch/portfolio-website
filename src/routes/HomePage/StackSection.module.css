@@ -18,3 +18,11 @@
   font-size: 13px;
   color: var(--color-text-muted);
 }
+
+/* Phones: the hero ends on the Social Radar photo, so a smaller gap reads
+   better than the desktop 83px. */
+@media (max-width: 767.98px) {
+  .section {
+    margin-top: var(--space-10);
+  }
+}

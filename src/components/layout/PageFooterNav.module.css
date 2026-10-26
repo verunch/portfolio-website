@@ -90,3 +90,9 @@
 .noDivider {
   margin-top: var(--space-20);
 }
+
+@media (max-width: 767.98px) {
+  .noDivider {
+    margin-top: var(--space-12);
+  }
+}

@@ -37,37 +37,53 @@
   border-radius: var(--radius-card);
 }
 
-/* Literal per-breakpoint values from the approved wireframe (Home (A),
-   detailed) — resolves the sizing question in DECISIONS.md in favor of the
-   wireframe over ARCHITECTURE.md §15's broader range. */
-.name {
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Main heading: the role ("Product Designer") in the serif display face,
+   with the name beneath it as an uppercase sans line. The Header's tagline
+   is hidden on desktop Home (IdentityRail replaces the Header), so the role
+   leads here. */
+.role {
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.05;
-  font-size: 21px;
+  line-height: 1.1;
+  font-size: 34px;
   color: var(--color-text-primary);
 }
 
 @media (min-width: 768px) {
-  .name {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .name {
-    font-size: 25px;
+  .role {
+    font-size: 38px;
   }
 }
 
 @media (min-width: 1440px) {
-  .name {
-    font-size: 30px;
+  .role {
+    font-size: 44px;
   }
 }
 
-.bio {
+.name {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-brand-700);
+}
+
+@media (min-width: 1440px) {
+  .name {
+    font-size: 19px;
+  }
+}.bio {
   margin: 0;
   max-width: 420px;
   font-family: var(--font-editorial);
@@ -131,4 +147,21 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* CTA row spans the full grid width under the band. */
+.cta {
+  grid-column: 1 / -1;
+}
+
+/* Single-column layout (<768px): bio card first, then the CTA buttons, then
+   the portrait and the band. */
+@media (max-width: 767.98px) {
+  .bioPanel {
+    order: -2;
+  }
+
+  .cta {
+    order: -1;
+  }
 }
