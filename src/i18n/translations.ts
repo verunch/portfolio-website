@@ -107,7 +107,7 @@ const en = {
   },
   services: {
     title: 'Services & prices',
-    subtitle: 'Landing pages, business card websites, portfolios and web apps — design only, development only or the full cycle, from brief to a launched website with SEO and analytics.',
+    subtitle: 'Landing pages, business card websites, portfolios, web and mobile apps — design only, development only or the full cycle, from brief to a launched website with SEO and analytics.',
     packagesLabel: 'Packages',
     currencyNote: 'Prices in USD. The final cost depends on scope and is confirmed after a short brief.',
     priceFrom: 'from',
@@ -255,7 +255,7 @@ const ru: Translations = {
   },
   services: {
     title: 'Услуги и цены',
-    subtitle: 'Лендинги, сайты-визитки, сайты-портфолио и веб-приложения — только дизайн, только вёрстка или полный цикл: от брифа до запущенного сайта с SEO и аналитикой.',
+    subtitle: 'Лендинги, сайты-визитки, сайты-портфолио, веб- и мобильные приложения — только дизайн, только вёрстка или полный цикл: от брифа до запущенного сайта с SEO и аналитикой.',
     packagesLabel: 'Пакеты',
     currencyNote: 'Цены в долларах США. Итоговая стоимость зависит от объёма и фиксируется после короткого брифа.',
     priceFrom: 'от',
@@ -401,7 +401,7 @@ const be: Translations = {
   },
   services: {
     title: 'Паслугі і цэны',
-    subtitle: 'Лэндынгі, сайты-візіткі, сайты-партфоліа і вэб-праграмы — толькі дызайн, толькі вёрстка або поўны цыкл: ад брыфа да запушчанага сайта з SEO і аналітыкай.',
+    subtitle: 'Лэндынгі, сайты-візіткі, сайты-партфоліа, вэб- і мабільныя праграмы — толькі дызайн, толькі вёрстка або поўны цыкл: ад брыфа да запушчанага сайта з SEO і аналітыкай.',
     packagesLabel: 'Пакеты',
     currencyNote: 'Цэны ў доларах ЗША. Канчатковы кошт залежыць ад аб’ёму і фіксуецца пасля кароткага брыфа.',
     priceFrom: 'ад',

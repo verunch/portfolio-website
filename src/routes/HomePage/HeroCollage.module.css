@@ -83,7 +83,9 @@
   .name {
     font-size: 19px;
   }
-}.bio {
+}
+
+.bio {
   margin: 0;
   max-width: 420px;
   font-family: var(--font-editorial);
@@ -91,6 +93,12 @@
   font-size: 16px;
   line-height: 1.65;
   color: var(--color-text-secondary);
+}
+
+/* Services line: its own paragraph with a little extra air above and before the links. */
+.services {
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 
 .contacts {

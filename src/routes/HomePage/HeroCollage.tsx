@@ -23,6 +23,7 @@ export default function HeroCollage() {
           <p className={styles.name}>{l(profile.name)}</p>
         </div>
         <p className={styles.bio}>{l(profile.bio)}</p>
+        <p className={`${styles.bio} ${styles.services}`}>{l(profile.services)}</p>
 
         <div className={styles.contacts}>
           <a
