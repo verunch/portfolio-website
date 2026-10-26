@@ -14,5 +14,6 @@ export type NavItem = {
 export const navConfig: NavItem[] = [
   { labelKey: 'home', path: '/' },
   { labelKey: 'portfolio', path: '/portfolio' },
+  { labelKey: 'services', path: '/services' },
   { labelKey: 'resume', path: '/resume.pdf', external: true, action: 'resumeModal' },
 ];

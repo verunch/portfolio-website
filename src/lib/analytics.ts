@@ -23,6 +23,8 @@ export type AnalyticsGoal =
   | 'resume_open'
   | 'resume_download'
   | 'view_portfolio_click'
+  | 'order_cta_click'
+  | 'order_request'
   | 'project_resource_click'
   | 'contact_click'
   | 'language_change';

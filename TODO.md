@@ -26,6 +26,8 @@ Actionable task list. Milestone sequencing and rationale live in [docs/reviews/1
 - [ ] Google Search Console / Yandex Webmaster: verify ownership (meta tags reserved in `index.html`), submit `sitemap.xml`.
 - [ ] Per-locale URLs (`/ru`, `/be`) if RU/BE search traffic matters — language currently switches client-side on one URL.
 - [ ] Remove the now-unused `ImageLightbox` component, or reuse it.
+- [ ] Order form: verify a real submission reaches Telegram and email; clean up duplicate Vercel env vars (keep the four `*_VB_PD2`).
+- [ ] Add the user's Telegram channel link (waiting for URL) and Metrica goals `order_cta_click`, `order_request`.
 
 ## Technical debt
 

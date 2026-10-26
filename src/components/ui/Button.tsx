@@ -41,16 +41,18 @@ export default function Button({
       href: string;
     };
 
-    // External destinations (résumé PDF, third-party links) get a plain <a>;
-    // internal routes use react-router's Link so navigation stays client-side.
-    if (external) {
+    // External destinations (résumé PDF, third-party links) get a plain <a>
+    // in a new tab; mailto: links get a plain <a> in place (an email draft,
+    // not a page); internal routes use react-router's Link so navigation
+    // stays client-side.
+    const isMailto = href.startsWith('mailto:');
+    if (external || isMailto) {
       return (
         <a
           {...anchorProps}
           href={href}
           className={classes}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(isMailto ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
         >
           {children}
         </a>

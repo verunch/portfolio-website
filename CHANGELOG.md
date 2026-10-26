@@ -19,6 +19,17 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 - Page footer nav: scroll-to-top on the left, page links grouped on the right, no divider above it.
 - SEO copy: app overviews now name them as products (AI SaaS, B2B, EdTech…), portfolio sites as business card websites; meta description and JSON-LD `knowsAbout` updated. About gained a paragraph on what can be ordered (landing page, business card site, portfolio, web app — full range of work).
 
+## 2026-10-26 — Services page and order form
+
+### Added
+- **Services & prices page** (`/services`, `routes/ServicesPage/`, data in `data/services.ts`): package cards with "from" prices chosen by site language (EN → international list, RU/BE → Belarus list), "on request" block for apps/SaaS/design systems, process steps, terms, own SEO title; listed in nav, footer nav and `sitemap.xml`.
+- **Order form** (`OrderForm`) posting to a Vercel function `api/order.ts` that forwards to Telegram (bot) and email (Resend); honeypot, success/error states with email fallback. Package "Order" buttons scroll to the form and preselect the service.
+- Home: "Start a project" CTA next to "View Portfolio", linking to /services.
+- Metrica goals `order_cta_click`, `order_request`; Metrica counter ID baked into code (env override kept), analytics skipped on localhost.
+
+### Changed
+- `Button` renders `mailto:` links in place (no new tab). Mobile nav tightened so four items fit. `vercel.json` SPA rewrite no longer catches `/api/*`.
+
 ## Unreleased
 
 ### Added

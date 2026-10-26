@@ -1,0 +1,119 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 640px;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.input {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-editorial);
+  font-size: 15px;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--color-brand-700);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.note {
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.error {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #a33a2b;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  width: 100%;
+  max-width: 640px;
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-card);
+}
+
+.resultTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-text-primary);
+}
+
+.resultText {
+  margin: 0;
+  font-family: var(--font-editorial);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+}

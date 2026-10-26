@@ -11,6 +11,7 @@ import styles from './PageFooterNav.module.css';
 const PAGES = [
   { path: '/', labelKey: 'home' },
   { path: '/portfolio', labelKey: 'portfolio' },
+  { path: '/services', labelKey: 'services' },
 ] as const;
 
 type PageFooterNavProps = {

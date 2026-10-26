@@ -7,8 +7,23 @@
 
 .horizontal {
   flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--space-6);
   align-items: center;
+}
+
+/* Phones: four items must fit in ~280px — tighter gap and padding, and the
+   list may still wrap rather than overflow. */
+@media (max-width: 477.98px) {
+  .horizontal {
+    column-gap: var(--space-2);
+    row-gap: 0;
+  }
+
+  .horizontal .link {
+    padding: var(--space-2) var(--space-1);
+    font-size: 13px;
+  }
 }
 
 .horizontal .link {

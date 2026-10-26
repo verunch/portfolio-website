@@ -15,6 +15,9 @@ export default function IntroBlock() {
         <Button variant="primary" href="/portfolio" onClick={() => trackGoal('view_portfolio_click')}>
           {t.home.viewPortfolio}
         </Button>
+        <Button variant="primary" href="/services" onClick={() => trackGoal('order_cta_click')}>
+          {t.home.orderCta}
+        </Button>
         <Button
           variant="outline"
           href={profile.resumeUrl}

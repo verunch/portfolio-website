@@ -45,7 +45,6 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale;
-    document.title = translations[locale].meta.title;
   }, [locale]);
 
   const value = useMemo<LocaleContextValue>(
