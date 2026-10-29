@@ -7,6 +7,7 @@ Notable changes to the portfolio website, most recent first. Format loosely foll
 ### Added
 - **New project YourCleanBot** (renamed; real name, demo bot and documents on request): a Telegram bot taking dry-cleaning orders in small district towns — case study in EN/RU/BE with cover (`cleanbot_card.webp`, `cleanbot_desc.webp`), 5th featured row in the Home projects table.
 - `ProjectResourceLink.tableOnly` (hide a resource tile in the case study) and `tile` (custom tile label/platform) — the case study shows only "Landing Page 1" (proposal) and "Landing Page 2" (calculator); Case Study, MVP and GitHub are on request in the table.
+- Portfolio order: Bio Quest, YourCleanBot, DocAssistant, Social Radar, Ascendra, Photographer Portfolio, Product Designer Portfolio. Ascendra overview notes the fintech-like statistics/dashboard work.
 
 ## 2026-10-26 — Localization, new projects, analytics & SEO
 
