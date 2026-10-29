@@ -9,7 +9,7 @@ import styles from './SelectedProjectsSection.module.css';
 
 // Rows shown while the table is collapsed, in this order. "Show all" adds
 // the remaining projects after them in data order.
-const FEATURED_SLUGS = ['social-radar', 'bioquest', 'photographer-portfolio', 'ascendra'];
+const FEATURED_SLUGS = ['social-radar', 'bioquest', 'photographer-portfolio', 'ascendra', 'yourcleanbot'];
 
 const featured = FEATURED_SLUGS.map((slug) => projects.find((project) => project.slug === slug)).filter(
   (project): project is Project => Boolean(project),

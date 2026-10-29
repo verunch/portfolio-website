@@ -10,6 +10,8 @@ import motionDesignCover from '../../assets/images/motion_design_showcase.webp';
 import motionDesignCardCover from '../../assets/images/motion_design_showcase_card.webp';
 import photographerCover from '../../assets/images/photographer_portfolio.webp';
 import photographerCardCover from '../../assets/images/photographer_portfolio_card.webp';
+import cleanBotCardCover from '../../assets/images/cleanbot_card.webp';
+import cleanBotDetailCover from '../../assets/images/cleanbot_desc.webp';
 import docAssistantMascot from '../../assets/images/mascot-floating-v2.html?url';
 import docAssistantMascotGallery from '../../assets/images/mascot-floating-v2-gallery.html?url';
 import type { Localized } from '../i18n/locales';
@@ -29,6 +31,11 @@ export type ProjectResourceLink = {
   // Private resource: shown disabled with an "access on request" tooltip
   // instead of linking out (all GitHub repos, per product decision).
   onRequest?: boolean;
+  // Home Projects Table only — not shown as a tile in the case study's
+  // project resources.
+  tableOnly?: boolean;
+  // Case-study tile text override (e.g. two landing pages on one project).
+  tile?: { label: Localized; platform: Localized };
 };
 
 // Key order here doesn't matter — display order lives in ProjectsTable's
@@ -171,6 +178,132 @@ export const projects: Project[] = [
     resources: {
       mvp: { href: 'https://verunch.github.io/ascendra-workspaces/' },
       github: { href: 'https://github.com/verunch/ascendra-workspaces', onRequest: true },
+    },
+    showOnPortfolioPage: true,
+  },
+  {
+    slug: 'yourcleanbot',
+    title: 'YourCleanBot',
+    category: 'Telegram Bot · B2B',
+    status: 'ready',
+    group: 'saas',
+    cover: {
+      src: cleanBotCardCover,
+      detailSrc: cleanBotDetailCover,
+      imageAlt: {
+        en: 'YourCleanBot cover',
+        ru: 'Обложка YourCleanBot',
+        be: 'Вокладка YourCleanBot',
+      },
+    },
+    overview: {
+      en: 'A Telegram chatbot that takes dry-cleaning orders in small district towns of Belarus, with a pilot in Staryya Darohi (about 10,700 residents). October 2026, about 2.5 weeks; the project is in negotiations with dry cleaners. The project name has been changed — the real name, the demo bot and the full document package are available on request.',
+      ru: 'Чат-бот в Telegram для приёма заказов в химчистку в небольших райцентрах Беларуси, пилот — в Старых Дорогах (около 10 700 жителей). Октябрь 2026, около 2,5 недель; проект в стадии переговоров с химчистками. Название проекта изменено — настоящее название, демо-бот и полный пакет документов предоставляются по запросу.',
+      be: 'Чат-бот у Telegram для прыёму заказаў у хімчыстку ў невялікіх райцэнтрах Беларусі, пілот — у Старых Дарогах (каля 10 700 жыхароў). Кастрычнік 2026, каля 2,5 тыдня; праект на стадыі перамоў з хімчысткамі. Назва праекта зменена — сапраўдная назва, дэма-бот і поўны пакет дакументаў даюцца па запыце.',
+    },
+    role: {
+      en: 'Idea author, Product Manager, UX Researcher, Business Analyst — the demo bot code was written together with AI (Claude Code)',
+      ru: 'Автор идеи, продакт-менеджер, UX-исследователь, бизнес-аналитик — код демо-бота написан вместе с AI (Claude Code)',
+      be: 'Аўтар ідэі, прадакт-менеджар, UX-даследчык, бізнес-аналітык — код дэма-бота напісаны разам з AI (Claude Code)',
+    },
+    problem: {
+      en: 'Small towns have no dry cleaner, so people have to take their clothes to Minsk themselves.',
+      ru: 'В небольших городах нет химчистки, и людям приходится самим возить вещи в Минск.',
+      be: 'У невялікіх гарадах няма хімчысткі, і людзям даводзіцца самім вазіць рэчы ў Мінск.',
+    },
+    solution: {
+      en: 'I came up with a three-part service: a Telegram bot for ordering, a drop-off point in the district town and a partner dry cleaner in Minsk. The dry cleaner’s van carries the items once a week.',
+      ru: 'Я придумала сервис из трёх частей: Telegram-бот для заказа, пункт приёма в райцентре и химчистка-партнёр в Минске. Вещи возит машина химчистки раз в неделю.',
+      be: 'Я прыдумала сэрвіс з трох частак: Telegram-бот для заказу, пункт прыёму ў райцэнтры і хімчыстка-партнёр у Мінску. Рэчы возіць машына хімчысткі раз на тыдзень.',
+    },
+    product: {
+      en: [
+        'Ran a poll in a local Telegram channel (about 5,200 members): 601 people voted, 83% said a drop-off point is needed.',
+        'Did UX research: competitors, personas (including elderly users), metrics, seasonality.',
+        'Calculated dry-cleaning economics and chose where to expand: the Minsk region, the van route, regional centres.',
+        'Designed three packages — “Optimisation” (the bot at city drop-off points), “Expansion” (a turnkey district point) and “Combo”. The price is a percentage of bot orders, with a minimum and a cap.',
+        'Made a commercial proposal — a web page and a 12-page PDF — plus an interactive savings calculator for the dry cleaner; both are published on GitHub Pages.',
+        'Prepared a negotiation pack: letters to private and state dry cleaners, a call and meeting script, an offer agreement.',
+        'Wrote the spec, an 11-stage MVP plan and design prompts (CJM, information architecture, dialogues).',
+        'Logged 45 decisions with dates and reasons and 30 open questions.',
+      ],
+      ru: [
+        'Провела опрос в местном Telegram-канале (около 5 200 участников). Проголосовал 601 человек, 83% ответили, что пункт приёма нужен.',
+        'Сделала UX-исследование: конкуренты, персоны (в том числе пожилые пользователи), метрики, сезонность.',
+        'Посчитала экономику химчисток и выбрала, куда расширяться: Минская область, маршрут рейса, областные центры.',
+        'Сделала три пакета: «Оптимизация» (бот в городских пунктах), «Расширение» (районный пункт под ключ) и «Комбо». Цена — процент с заказов через бот, с минимумом и потолком.',
+        'Сделала коммерческое предложение: веб-страницу и PDF на 12 страниц. Ещё есть интерактивный калькулятор выгоды для химчистки, оба опубликованы на GitHub Pages.',
+        'Подготовила пакет для переговоров: письма частным и государственным химчисткам, скрипт звонков и встречи, оферту.',
+        'Написала ТЗ, план MVP из 11 этапов и промпты для проектирования (CJM, информационная архитектура, диалоги).',
+        'Записала 45 решений с датами и причинами и 30 открытых вопросов.',
+      ],
+      be: [
+        'Правяла апытанне ў мясцовым Telegram-канале (каля 5 200 удзельнікаў). Прагаласаваў 601 чалавек, 83% адказалі, што пункт прыёму патрэбны.',
+        'Зрабіла UX-даследаванне: канкурэнты, персоны (у тым ліку пажылыя карыстальнікі), метрыкі, сезоннасць.',
+        'Палічыла эканоміку хімчыстак і выбрала, куды пашырацца: Мінская вобласць, маршрут рэйса, абласныя цэнтры.',
+        'Зрабіла тры пакеты: «Аптымізацыя» (бот у гарадскіх пунктах), «Пашырэнне» (раённы пункт пад ключ) і «Комба». Цана — працэнт з заказаў праз бот, з мінімумам і столлю.',
+        'Зрабіла камерцыйную прапанову: вэб-старонку і PDF на 12 старонак. Яшчэ ёсць інтэрактыўны калькулятар выгады для хімчысткі, абодва апублікаваны на GitHub Pages.',
+        'Падрыхтавала пакет для перамоў: лісты прыватным і дзяржаўным хімчысткам, скрыпт званкоў і сустрэчы, афэрту.',
+        'Напісала ТЗ, план MVP з 11 этапаў і промпты для праектавання (CJM, інфармацыйная архітэктура, дыялогі).',
+        'Запісала 45 рашэнняў з датамі і прычынамі і 30 адкрытых пытанняў.',
+      ],
+    },
+    design: {
+      en: [
+        'Two-step payment: the client prepays by the price list and pays the rest after the master’s assessment. If the client disagrees with the price, the item isn’t cleaned and the money is refunded.',
+        'A versioned e-receipt filled in turn by the client, the receiver and the master. Changes are highlighted and the client confirms them with a button.',
+        '16 order statuses and every transition between them, including refusal, refund, timeouts and disputes.',
+        'Three ways to hand over an item, switched on in settings: via the district point, in person at the dry cleaner, or through a relative by order number.',
+        'Real-world constraints: every point has its own schedule, payments don’t work around the clock, and confirmation timers pause for that time.',
+        'A web simulator on React and Vite for negotiations: all four roles on one screen (client in a phone frame, receiver, master, admin), with package switching and time “fast-forward”.',
+        'A Telegram bot on grammY on the same core: button-based questionnaire, photos, test payment, a QR-code tag, receipt printing on 58 mm tape and Excel export.',
+        '8 ready-made scenarios — from a “no surprises” order to a client refusal and a payment failure — and 111 automated tests. Rates and settings live in a config, so the bot can be launched for a new dry cleaner without code changes.',
+      ],
+      ru: [
+        'Придумала двухступенчатую оплату. Клиент платит предоплату по прайсу, а доплату — после оценки мастером. Если клиент не согласен с ценой, вещь не чистят и деньги возвращают.',
+        'Сделала электронную квитанцию с версиями. Её по очереди дополняют клиент, приёмщик и мастер. Изменения выделяются, и клиент подтверждает их кнопкой.',
+        'Описала 16 статусов заказа и все переходы между ними, включая отказ, возврат, тайм-ауты и спор.',
+        'Предусмотрела три способа сдать вещь, они включаются в настройках: через пункт в райцентре, самому в химчистке или через родственника по номеру заказа.',
+        'Учла ограничения: график приёма у каждого пункта свой, оплата работает не круглосуточно, и на это время таймеры подтверждения останавливаются.',
+        'Демо-прототип для переговоров — веб-симулятор на React и Vite: на одном экране все четыре роли (клиент в рамке телефона, приёмщик, мастер, админ). Можно переключать пакеты и «перематывать» время.',
+        'Telegram-бот на grammY на том же ядре. В нём есть анкета на кнопках, фото, тестовая оплата, бирка с QR-кодом, печать квитанции на ленту 58 мм и выгрузка в Excel.',
+        '8 готовых сценариев: от заказа «без сюрпризов» до отказа клиента и сбоя оплаты. Написано 111 автотестов. Тарифы и настройки вынесены в конфиг — бота можно запустить под новую химчистку без изменения кода.',
+      ],
+      be: [
+        'Прыдумала двухступеньчатую аплату. Кліент плаціць перадаплату па прайсе, а даплату — пасля ацэнкі майстрам. Калі кліент не згодны з цаной, рэч не чысцяць і грошы вяртаюць.',
+        'Зрабіла электронную квітанцыю з версіямі. Яе па чарзе дапаўняюць кліент, прыёмшчык і майстар. Змены вылучаюцца, і кліент пацвярджае іх кнопкай.',
+        'Апісала 16 статусаў заказу і ўсе пераходы паміж імі, уключаючы адмову, вяртанне, тайм-аўты і спрэчку.',
+        'Прадугледзела тры спосабы здаць рэч, яны ўключаюцца ў наладах: праз пункт у райцэнтры, самому ў хімчыстцы або праз сваяка па нумары заказу.',
+        'Улічыла абмежаванні: графік прыёму ў кожнага пункта свой, аплата працуе не кругласутачна, і на гэты час таймеры пацвярджэння спыняюцца.',
+        'Дэма-прататып для перамоў — вэб-сімулятар на React і Vite: на адным экране ўсе чатыры ролі (кліент у рамцы тэлефона, прыёмшчык, майстар, адмін). Можна пераключаць пакеты і «перамотваць» час.',
+        'Telegram-бот на grammY на тым жа ядры. У ім ёсць анкета на кнопках, фота, тэставая аплата, бірка з QR-кодам, друк квітанцыі на стужку 58 мм і выгрузка ў Excel.',
+        '8 гатовых сцэнарыяў: ад заказу «без сюрпрызаў» да адмовы кліента і збою аплаты. Напісана 111 аўтатэстаў. Тарыфы і налады вынесены ў канфіг — бота можна запусціць пад новую хімчыстку без змены кода.',
+      ],
+    },
+    metrics: {
+      en: 'Demand was confirmed by the poll: 83% of 601 voters are in favour of a drop-off point. The demo bot works and is ready to be shown to a dry cleaner. The commercial proposal and the calculator are published, and the first letters to dry cleaners have been sent. Skills: product & UX research · CJM and state machine · writing specs · unit economics and pricing · commercial proposals · TypeScript, React, Telegram Bot API · AI-assisted development (Claude Code) · decision log.',
+      ru: 'Спрос подтвердил опрос: 83% из 601 проголосовавшего — за пункт. Демо-бот работает и готов к показу химчистке. Коммерческое предложение и калькулятор опубликованы, первые письма химчисткам отправлены. Навыки: продуктовое и UX-исследование · CJM и state machine · написание ТЗ · юнит-экономика и ценообразование · коммерческие предложения · TypeScript, React, Telegram Bot API · разработка с AI (Claude Code) · ведение решений (decision log).',
+      be: 'Попыт пацвердзіла апытанне: 83% з 601 прагаласаваўшага — за пункт. Дэма-бот працуе і гатовы да паказу хімчыстцы. Камерцыйная прапанова і калькулятар апублікаваны, першыя лісты хімчысткам адпраўлены. Навыкі: прадуктовае і UX-даследаванне · CJM і state machine · напісанне ТЗ · юніт-эканоміка і цэнаўтварэнне · камерцыйныя прапановы · TypeScript, React, Telegram Bot API · распрацоўка з AI (Claude Code) · вядзенне рашэнняў (decision log).',
+    },
+    resources: {
+      caseStudy: { href: 'https://www.notion.so/', onRequest: true, tableOnly: true },
+      mvp: { href: 'https://t.me/', onRequest: true, tableOnly: true },
+      landingPage: {
+        href: 'https://verunch.github.io/belcleanbot-calculator/kp/',
+        accent: true,
+        tile: {
+          label: { en: 'Landing Page 1', ru: 'Лендинг 1', be: 'Лэндынг 1' },
+          platform: { en: 'Proposal', ru: 'КП', be: 'КП' },
+        },
+      },
+      website: {
+        href: 'https://verunch.github.io/belcleanbot-calculator/',
+        tile: {
+          label: { en: 'Landing Page 2', ru: 'Лендинг 2', be: 'Лэндынг 2' },
+          platform: { en: 'Calculator', ru: 'Калькулятор', be: 'Калькулятар' },
+        },
+      },
+      github: { href: 'https://github.com/verunch/belcleanbot', onRequest: true, tableOnly: true },
     },
     showOnPortfolioPage: true,
   },

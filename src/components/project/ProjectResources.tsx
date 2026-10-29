@@ -26,8 +26,8 @@ type ProjectResourcesProps = {
 };
 
 export default function ProjectResources({ resources, projectTitle, projectSlug }: ProjectResourcesProps) {
-  const { t } = useLocale();
-  const available = RESOURCE_META.filter(({ key }) => resources[key]);
+  const { t, l } = useLocale();
+  const available = RESOURCE_META.filter(({ key }) => resources[key] && !resources[key].tableOnly);
 
   if (available.length === 0) return null;
 
@@ -37,7 +37,8 @@ export default function ProjectResources({ resources, projectTitle, projectSlug 
       <div className={styles.grid}>
         {available.map(({ key, background }) => {
           const resource = resources[key] as ProjectResourceLink;
-          const { tile: label, platform } = t.resources[key];
+          const label = resource.tile ? l(resource.tile.label) : t.resources[key].tile;
+          const platform = resource.tile ? l(resource.tile.platform) : t.resources[key].platform;
           const isAccent = resource.accent;
 
           // Hover/active are derived from each tile's own background — more
