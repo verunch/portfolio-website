@@ -5,6 +5,8 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--space-8) var(--space-10);
+  /* More air between the site header and the page title. */
+  padding-top: var(--space-12);
 }
 
 @media (min-width: 1280px) {
@@ -21,11 +23,17 @@
   }
 }
 
+/* The hero's "click a card" helper belongs to the galleries — keep the first
+   one close to it (32px instead of the page's 64px section gap). */
+.page > section:first-of-type {
+  margin-top: calc(var(--space-8) - var(--space-16));
+}
+
 /* Gallery subsection: title sits close to its cards. */
 .cardsGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 .groupTitle {

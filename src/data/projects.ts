@@ -142,6 +142,16 @@ const allProjects: Project[] = [
       ru: 'Спроектировала геймифицированный учебный опыт с исследованием, визуальными ассоциациями, системой прогресса, достижениями и совместными режимами игры, которые делают обучение увлекательным и запоминающимся.',
       be: 'Спраектавала гейміфікаваны навучальны досвед з даследаваннем, візуальнымі асацыяцыямі, сістэмай прагрэсу, дасягненнямі і сумеснымі рэжымамі гульні, якія робяць навучанне захапляльным і запамінальным.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       caseStudy: {
         href: 'https://app.notion.com/p/Bio-Quest-Cell-Adventure-EdTech-Project-3700a2e6e1d7802baec9d444fcac6f8d?source=copy_link',
@@ -239,34 +249,19 @@ const allProjects: Project[] = [
     },
     extraDetails: [
       {
-        label: { en: 'Testing and Claude Code', ru: 'Тестирование и Claude Code', be: 'Тэсціраванне і Claude Code' },
-        items: {
-          en: [
-            'I made up for missing frontend and backend knowledge with Claude Code.',
-            'With it I built the live MVP, the Figma mockups and the English version.',
-            'Field validation and screen reader accessibility in the MVP were implemented by Claude Code.',
-            'Browser autotests were also written with Claude Code. They check that the prototype works, not that it is easy to use.',
-          ],
-          ru: [
-            'Недостающие знания во фронтенд- и бэкенд-разработке я компенсировала Claude Code.',
-            'С ним собраны живой MVP, макеты для Figma и английская версия.',
-            'Валидацию полей и доступность для скринридера в MVP реализовал Claude Code.',
-            'Автотесты в браузере тоже написаны с Claude Code. Они проверяют, что прототип работает, но не что он удобен.',
-          ],
-          be: [
-            'Недахоп ведаў у фронтэнд- і бэкэнд-распрацоўцы я кампенсавала Claude Code.',
-            'З ім сабраны жывы MVP, макеты для Figma і англійская версія.',
-            'Валідацыю палёў і даступнасць для скрынрыдара ў MVP рэалізаваў Claude Code.',
-            'Аўтатэсты ў браўзеры таксама напісаны з Claude Code. Яны правяраюць, што прататып працуе, але не тое, што ён зручны.',
-          ],
-        },
-      },
-      {
         label: { en: 'Next', ru: 'Дальше', be: 'Далей' },
         items: {
           en: ['A usability test with 3–5 operators: check whether payments are found faster and whether the tooltips are clear.'],
           ru: ['Юзабилити-тест с 3–5 операторами: проверить, быстрее ли находится платёж и понятны ли тултипы.'],
           be: ['Юзабіліці-тэст з 3–5 аператарамі: праверыць, ці хутчэй знаходзіцца плацёж і ці зразумелыя тултыпы.'],
+        },
+      },
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
         },
       },
     ],
@@ -385,10 +380,78 @@ const allProjects: Project[] = [
       ],
     },
     metrics: {
-      en: 'Demand was confirmed by the poll: 83% of 601 voters are in favour of a drop-off point. The demo bot works and is ready to be shown to a dry cleaner. The commercial proposal and the calculator are published, and the first letters to dry cleaners have been sent. Skills: product & UX research · CJM and state machine · writing specs · unit economics and pricing · commercial proposals · TypeScript, React, Telegram Bot API · AI-assisted development (Claude Code) · decision log.',
-      ru: 'Спрос подтвердил опрос: 83% из 601 проголосовавшего — за пункт. Демо-бот работает и готов к показу химчистке. Коммерческое предложение и калькулятор опубликованы, первые письма химчисткам отправлены. Навыки: продуктовое и UX-исследование · CJM и state machine · написание ТЗ · юнит-экономика и ценообразование · коммерческие предложения · TypeScript, React, Telegram Bot API · разработка с AI (Claude Code) · ведение решений (decision log).',
-      be: 'Попыт пацвердзіла апытанне: 83% з 601 прагаласаваўшага — за пункт. Дэма-бот працуе і гатовы да паказу хімчыстцы. Камерцыйная прапанова і калькулятар апублікаваны, першыя лісты хімчысткам адпраўлены. Навыкі: прадуктовае і UX-даследаванне · CJM і state machine · напісанне ТЗ · юніт-эканоміка і цэнаўтварэнне · камерцыйныя прапановы · TypeScript, React, Telegram Bot API · распрацоўка з AI (Claude Code) · вядзенне рашэнняў (decision log).',
+      en: [
+        'Demand confirmed by the poll: 83% of 601 voters are in favour of a drop-off point',
+        'The demo bot works and is ready to be shown to a dry cleaner',
+        'The commercial proposal and the calculator are published',
+        'The first letters to dry cleaners have been sent',
+      ],
+      ru: [
+        'Спрос подтвердил опрос: 83 % из 601 проголосовавшего — за пункт приёма',
+        'Демо-бот работает и готов к показу химчистке',
+        'Коммерческое предложение и калькулятор опубликованы',
+        'Первые письма химчисткам отправлены',
+      ],
+      be: [
+        'Попыт пацвердзіла апытанне: 83 % з 601 прагаласаваўшага — за пункт прыёму',
+        'Дэма-бот працуе і гатовы да паказу хімчыстцы',
+        'Камерцыйная прапанова і калькулятар апублікаваны',
+        'Першыя лісты хімчысткам адпраўлены',
+      ],
     },
+    extraDetails: [
+      {
+        label: { en: 'Next', ru: 'Дальше', be: 'Далей' },
+        items: {
+          en: ['Negotiations with dry cleaners and a pilot in Staryya Darohi.'],
+          ru: ['Переговоры с химчистками и запуск пилота в Старых Дорогах.'],
+          be: ['Перамовы з хімчысткамі і запуск пілота ў Старых Дарогах.'],
+        },
+      },
+      {
+        label: { en: 'Skills', ru: 'Навыки', be: 'Навыкі' },
+        items: {
+          en: [
+            'Product and UX research',
+            'CJM and state machine',
+            'Writing specs',
+            'Unit economics and pricing',
+            'Commercial proposals',
+            'TypeScript, React, Telegram Bot API',
+            'AI-assisted development (Claude Code)',
+            'Decision log',
+          ],
+          ru: [
+            'Продуктовое и UX-исследование',
+            'CJM и state machine',
+            'Написание ТЗ',
+            'Юнит-экономика и ценообразование',
+            'Коммерческие предложения',
+            'TypeScript, React, Telegram Bot API',
+            'Разработка с AI (Claude Code)',
+            'Ведение решений (decision log)',
+          ],
+          be: [
+            'Прадуктовае і UX-даследаванне',
+            'CJM і state machine',
+            'Напісанне ТЗ',
+            'Юніт-эканоміка і цэнаўтварэнне',
+            'Камерцыйныя прапановы',
+            'TypeScript, React, Telegram Bot API',
+            'Распрацоўка з AI (Claude Code)',
+            'Вядзенне рашэнняў (decision log)',
+          ],
+        },
+      },
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       caseStudy: { href: 'https://www.notion.so/', onRequest: true, tableOnly: true },
       mvp: { href: 'https://t.me/', onRequest: true, tableOnly: true },
@@ -450,6 +513,16 @@ const allProjects: Project[] = [
       ru: 'Спроектировала продукт, построенный на взаимном обнаружении, мэтчинге по интересам, настройках приватности и ненавязчивом взаимодействии, чтобы люди естественно знакомились офлайн.',
       be: 'Спраектавала прадукт, пабудаваны на ўзаемным выяўленні, мэтчынгу па інтарэсах, наладах прыватнасці і ненавязлівым узаемадзеянні, каб людзі натуральна знаёміліся афлайн.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       caseStudy: {
         href: 'https://app.notion.com/p/Social-Radar-Product-Case-36c0a2e6e1d7800b902dfcbe6c2b1f76?source=copy_link',
@@ -503,6 +576,16 @@ const allProjects: Project[] = [
       ru: 'Спроектировала современный опыт работы с акцентом на ясность, масштабируемые дашборды, упрощённое управление инфраструктурой и удобную навигацию.',
       be: 'Спраектавала сучасны досвед працы з акцэнтам на яснасць, маштабаваныя дашборды, спрошчанае кіраванне інфраструктурай і зручную навігацыю.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       mvp: { href: 'https://verunch.github.io/ascendra-workspaces/' },
       github: { href: 'https://github.com/verunch/ascendra-workspaces', onRequest: true },
@@ -550,6 +633,16 @@ const allProjects: Project[] = [
       ru: 'Спроектировала сквозной сценарий: загрузка документов, создание базы знаний, тестирование ответов AI, публикация виджетов на сайте и управление проектами через удобный дашборд.',
       be: 'Спраектавала скразны сцэнар: загрузка дакументаў, стварэнне базы ведаў, тэсціраванне адказаў AI, публікацыя віджэтаў на сайце і кіраванне праектамі праз зручны дашборд.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       caseStudy: {
         href: 'https://app.notion.com/p/Embeddable-Chatbot-Builder-3850a2e6e1d780ae99bcf0501af7eed9?source=copy_link',
@@ -571,9 +664,9 @@ const allProjects: Project[] = [
       be: 'Сайт-партфоліа фатографа',
     },
     cardType: {
-      en: 'Photographer portfolio website with online booking',
-      ru: 'Сайт-портфолио фотографа с онлайн-записью',
-      be: 'Сайт-партфоліа фатографа з анлайн-запісам',
+      en: 'Photographer portfolio website',
+      ru: 'Сайт-портфолио фотографа',
+      be: 'Сайт-партфоліа фатографа',
     },
     category: 'Portfolio',
     status: 'ready',
@@ -662,6 +755,16 @@ const allProjects: Project[] = [
       ru: 'Сайт измеряет весь путь до заявки в Яндекс Метрике и Vercel Analytics: визиты по языку и источнику, клики по кнопкам записи (с учётом места на сайте), клики по контактам и отправленные формы — так видно, какие страницы и предложения действительно приводят клиентов. Производительность отслеживается по Core Web Vitals.',
       be: 'Сайт вымярае ўвесь шлях да заяўкі ў Яндэкс Метрыцы і Vercel Analytics: візіты па мове і крыніцы, клікі па кнопках запісу (з улікам месца на сайце), клікі па кантактах і адпраўленыя формы — так відаць, якія старонкі і прапановы сапраўды прыводзяць кліентаў. Прадукцыйнасць адсочваецца па Core Web Vitals.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       website: { href: 'https://photographer-portfolio-vera-bakerava.vercel.app/' },
       github: { href: 'https://github.com/verunch/photographer-portfolio', onRequest: true },
@@ -770,6 +873,16 @@ const allProjects: Project[] = [
       ru: 'Сайт измеряет весь путь до контакта в Яндекс Метрике и Vercel Analytics: визиты по языку и источнику, открытия и скачивания резюме, клики по материалам проектов (с учётом проекта, типа ресурса и места на сайте), клики по контактам и переключения языка — так видно, какие проекты и артефакты действительно интересуют рекрутеров. Производительность отслеживается по Core Web Vitals в Vercel Speed Insights.',
       be: 'Сайт вымярае ўвесь шлях да кантакту ў Яндэкс Метрыцы і Vercel Analytics: візіты па мове і крыніцы, адкрыцці і спампоўванні рэзюмэ, клікі па матэрыялах праектаў (з улікам праекта, тыпу рэсурсу і месца на сайце), клікі па кантактах і пераключэнні мовы — так відаць, якія праекты і артэфакты сапраўды цікавяць рэкрутараў. Прадукцыйнасць адсочваецца па Core Web Vitals у Vercel Speed Insights.',
     },
+    extraDetails: [
+      {
+        label: 'AI',
+        items: {
+          en: ['I used Claude Code to speed up the work and where my own knowledge fell short.'],
+          ru: ['Для ускорения работы и там, где не хватало собственных знаний, использовала Claude Code.'],
+          be: ['Для паскарэння працы і там, дзе не хапала ўласных ведаў, выкарыстоўвала Claude Code.'],
+        },
+      },
+    ],
     resources: {
       website: { href: 'https://vera-bakerava-portfolio.vercel.app/' },
       github: { href: 'https://github.com/verunch/portfolio-website', onRequest: true },

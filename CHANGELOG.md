@@ -2,6 +2,19 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-04 — Collapsible case studies
+
+### Added
+- Case studies collapse to the text beside the cover, with a "Show full description ↓ / Collapse ↑" text link (right-aligned, never below the cover's bottom edge; "Collapse" at the end of the expanded description). Resource tiles always stay visible.
+- Project type shown as a lighter line above the case title (24px / 32px on desktop), skipped when it repeats the title.
+- An "AI" line in every case (Claude Code used to speed up work and fill knowledge gaps); in cases without list blocks it continues the text beside the cover.
+
+### Changed
+- Expanded case studies: the cover floats right and all blocks flow on right after the text, widening once the cover ends; labels share one column width.
+- Problem stays next to Role/Solution beside the cover (moves down only with a list-style Solution).
+- Fintech and YourCleanBot: metrics as lists, Next/Skills blocks; detailed Claude Code blocks replaced by the single AI line. Photographer type shortened.
+- Portfolio page: more space above the title, the first gallery group closer to the helper text, more space between the group title and cards.
+
 ## 2026-11-03 — Case study layout, project types
 
 ### Added

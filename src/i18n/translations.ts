@@ -84,6 +84,8 @@ const en = {
     metrics: 'Metrics',
     projectResources: 'Project Resources',
     placeholderText: 'Description coming soon.',
+    showFullDescription: 'Show full description',
+    hideFullDescription: 'Collapse',
   },
   resumeModal: {
     title: 'Resume',
@@ -232,6 +234,8 @@ const ru: Translations = {
     metrics: 'Метрики',
     projectResources: 'Материалы проекта',
     placeholderText: 'Описание скоро появится.',
+    showFullDescription: 'Показать полное описание',
+    hideFullDescription: 'Свернуть',
   },
   resumeModal: {
     title: 'Резюме',
@@ -378,6 +382,8 @@ const be: Translations = {
     metrics: 'Метрыкі',
     projectResources: 'Матэрыялы праекта',
     placeholderText: 'Апісанне хутка з’явіцца.',
+    showFullDescription: 'Паказаць поўнае апісанне',
+    hideFullDescription: 'Згарнуць',
   },
   resumeModal: {
     title: 'Рэзюмэ',

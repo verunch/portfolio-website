@@ -86,7 +86,7 @@
 
   /* Text column first, cover second (right) — mobile keeps the cover on
      top, so the swap is visual-only via `order`. */
-  .overviewGrid {
+  .textColumn {
     order: -1;
   }
 
@@ -105,16 +105,6 @@
   gap: var(--space-3);
 }
 
-/* Project type (same as the gallery card) — shown above the title. */
-.type {
-  margin: 0 0 calc(-1 * var(--space-2));
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.4;
-  color: var(--color-text-muted);
-}
-
 .title {
   margin: 0;
   font-family: var(--font-heading);
@@ -127,6 +117,22 @@
 @media (min-width: 1024px) {
   .title {
     font-size: 32px;
+  }
+}
+
+/* Project type on its own line above the title — body font, lighter color;
+   smaller than the title on desktop (24px vs 32px). */
+.titleType {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 1024px) {
+  .titleType {
+    font-size: 24px;
   }
 }
 
@@ -158,7 +164,7 @@
    is exactly as tall as the image it wraps. */
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .mediaContainer,
-  .overviewGrid {
+  .textColumn {
     min-height: 382px;
   }
 }
@@ -166,26 +172,57 @@
 /* Fields stay packed at the top with their regular gap — a tall cover in
    the other column never stretches the spacing between them. */
 
-/* Optional Solution / Product / Design / Metrics blocks — full width below
-   the intro grid, one block per row; on desktop the label sits to the left
-   of its text. */
+/* Optional Solution / Product / Design / Metrics blocks — shown only when
+   expanded, one block per row. */
 .detailsGrid {
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
 }
 
-/* Desktop: one shared grid — the label column is as wide as the longest
-   single word among the labels (min-content), so labels line up. */
-@media (min-width: 1024px) {
-  .detailsGrid {
-    display: grid;
-    grid-template-columns: min-content minmax(0, 1fr);
-    column-gap: var(--space-8);
+/* Expanded, from tablet up: the cover floats right and everything flows
+   around it — the blocks follow straight on from the text beside the cover
+   and take the full width once the cover ends. Each row is its own grid
+   (a grid sits beside a float rather than under it), with the label column
+   width shared via --label-width (set in CaseStudySection). */
+@media (min-width: 768px) {
+  .expanded .introGrid {
+    display: flow-root;
   }
 
-  .detailsGrid .field {
-    display: contents;
+  .expanded .mediaContainer {
+    float: right;
+    width: 48%;
+    height: auto;
+    min-height: 0;
+    margin: 0 0 var(--space-6) var(--space-8);
+  }
+
+  .expanded .textColumn,
+  .expanded .overviewGrid {
+    display: block;
+    min-height: 0;
+  }
+
+  .expanded .overviewGrid > .field + .field {
+    margin-top: var(--space-5);
+  }
+
+  .expanded .detailsGrid {
+    display: block;
+    margin-top: var(--space-8);
+  }
+
+  .expanded .detailsGrid > .field + .field {
+    margin-top: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expanded .detailsGrid > .field {
+    display: grid;
+    grid-template-columns: var(--label-width, max-content) minmax(0, 1fr);
+    column-gap: var(--space-8);
   }
 }
 
@@ -204,4 +241,70 @@
   flex-direction: column;
   gap: var(--space-2);
   padding-left: 1.1em;
+}
+
+/* Collapsed case study: only what fits beside the cover is shown, faded at
+   the bottom; "Show full description" reveals the rest. Below 768px (cover
+   on top) the text is capped at a fixed height instead. */
+.collapsed .overviewGrid {
+  max-height: 22rem;
+  overflow: hidden;
+}
+
+.collapsed .faded {
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+
+@media (min-width: 768px) {
+  /* contain: size — the text column adds no height of its own, so the grid
+     row takes the cover's height; the text is cut to what is left above the
+     toggle, which therefore never goes below the cover's bottom edge. */
+  .collapsed .textColumn {
+    contain: size;
+  }
+
+  /* Shrinks to fit when the text is longer than the cover, but never grows —
+     so with short text the toggle sits right under it, not at the cover's
+     bottom. */
+  .collapsed .overviewGrid {
+    flex: 0 1 auto;
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+/* Text column = the fields + the "Show full description" link under them,
+   right-aligned. */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.toggle {
+  align-self: flex-end;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  text-decoration-color: currentColor;
+}
+
+.toggle:focus-visible {
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
