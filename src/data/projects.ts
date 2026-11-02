@@ -12,6 +12,8 @@ import photographerCover from '../../assets/images/photographer_portfolio.webp';
 import photographerCardCover from '../../assets/images/photographer_portfolio_card.webp';
 import cleanBotCardCover from '../../assets/images/cleanbot_card.webp';
 import cleanBotDetailCover from '../../assets/images/cleanbot_desc.webp';
+import fintechCardCover from '../../assets/images/fintech_case_card.webp';
+import fintechDetailCover from '../../assets/images/fintech_case_desc.webp';
 import docAssistantMascot from '../../assets/images/mascot-floating-v2.html?url';
 import docAssistantMascotGallery from '../../assets/images/mascot-floating-v2-gallery.html?url';
 import type { Localized } from '../i18n/locales';
@@ -88,9 +90,11 @@ export type Project = {
   resources: ProjectResources;
   // false = Home Projects Table only, no dedicated Portfolio case study page.
   showOnPortfolioPage: boolean;
+  // Temporarily hidden everywhere (table and Portfolio) without deleting.
+  hidden?: boolean;
 };
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     slug: 'bioquest',
     title: 'Bio Quest',
@@ -135,6 +139,78 @@ export const projects: Project[] = [
       uiMockups: {
         href: 'https://www.figma.com/design/vHrtUuymPJOj6lvPfEpp5i/Bio-Quest--Cell-Adventure?node-id=0-1&t=cAMUv4hAdPHS2fH8-1',
       },
+    },
+    showOnPortfolioPage: true,
+  },
+  {
+    slug: 'fintech-ops-console',
+    title: {
+      en: 'Fintech Case: Payment System Back Office Refactoring',
+      ru: 'Финтех-кейс: рефакторинг бэкофиса платёжной системы',
+      be: 'Фінтэх-кейс: рэфактарынг бэкофіса плацежнай сістэмы',
+    },
+    category: 'Fintech',
+    status: 'ready',
+    group: 'saas',
+    cover: {
+      src: fintechCardCover,
+      detailSrc: fintechDetailCover,
+      imageAlt: {
+        en: 'Fintech case cover — payment operations search form',
+        ru: 'Обложка финтех-кейса — форма поиска платёжных операций',
+        be: 'Вокладка фінтэх-кейса — форма пошуку плацежных аперацый',
+      },
+    },
+    overview: {
+      en: 'I refactored the back office of a payment system, starting with its main screen — transaction search. All 27 fields are kept, the form is 17–19% shorter, and the search now fits on one screen together with the results. The product is a payment operations console for support operators, administrators, accountants and merchants. Artifacts: a live MVP (RU/EN), 116 Figma-ready mockups, a design system, IA and flows in Miro.',
+      ru: 'Я провела рефакторинг бэкофиса платёжной системы, начиная с главного экрана — поиска транзакций. Все 27 полей сохранены, форма стала ниже на 17–19 %, и поиск помещается на экран вместе с результатами. Продукт — консоль платёжных операций для операторов поддержки, администраторов, бухгалтерии и мерчантов. Артефакты: живой MVP (RU/EN), 116 макетов для Figma, дизайн-система, ИА и флоу в Miro.',
+      be: 'Я правяла рэфактарынг бэкофіса плацежнай сістэмы, пачынаючы з галоўнага экрана — пошуку транзакцый. Усе 27 палёў захаваны, форма стала ніжэйшай на 17–19 %, і пошук змяшчаецца на экран разам з вынікамі. Прадукт — кансоль плацежных аперацый для аператараў падтрымкі, адміністратараў, бухгалтэрыі і мерчантаў. Артэфакты: жывы MVP (RU/EN), 116 макетаў для Figma, дызайн-сістэма, ІА і флоу ў Miro.',
+    },
+    role: {
+      en: 'UX/UI Design • Frontend of the live MVP',
+      ru: 'UX/UI-дизайн • Фронтенд живого MVP',
+      be: 'UX/UI-дызайн • Фронтэнд жывога MVP',
+    },
+    problem: {
+      en: 'An operator searches for a transaction using a fragment of data from a complaint and works in iterations: refine a filter, check the results. Spec constraints: keep every field — up to 27 in the administrator’s advanced search; search and results must fit on one screen, with no room for labels above the fields; two roles (administrator and client) and two modes (simple and advanced); the client’s rule — the card mask and time zone have a permanent tooltip, other fields show one only when filled. The hard part: without a label, a field loses its name as soon as text appears in it.',
+      ru: 'Оператор ищет операцию по обрывку данных из жалобы и работает итерациями: уточнил фильтр, посмотрел выдачу. Ограничения ТЗ: сохранить все поля — до 27 в расширенном поиске администратора; поиск и результаты должны помещаться на одном экране, места под подписи над полями нет; две роли (администратор и клиент) и два режима (простой и расширенный); правило заказчика — у маски карты и временной зоны тултип постоянный, у остальных полей он появляется, только когда поле заполнено. Сложность в том, что без подписи поле теряет имя, как только в нём появляется текст.',
+      be: 'Аператар шукае аперацыю па абрыўку даных са скаргі і працуе ітэрацыямі: удакладніў фільтр, паглядзеў выдачу. Абмежаванні ТЗ: захаваць усе палі — да 27 у пашыраным пошуку адміністратара; пошук і вынікі павінны змяшчацца на адным экране, месца пад подпісы над палямі няма; дзве ролі (адміністратар і кліент) і два рэжымы (просты і пашыраны); правіла заказчыка — у маскі карты і часавой зоны тултып пастаянны, у астатніх палёў ён з’яўляецца, толькі калі поле запоўнена. Складанасць у тым, што без подпісу поле губляе імя, як толькі ў ім з’яўляецца тэкст.',
+    },
+    design: {
+      en: [
+        'Groups instead of labels: five titled groups — transaction, card, payer, date, fraud. Grouping and field order are based on usage-frequency metrics for each field. Field width matches the value length, and rows don’t shift when the mode changes.',
+        'The placeholder is the field’s full name, so an empty field needs no label.',
+        'A tooltip brings the name back once the field is filled. Fields with a format (mask, time zone, 4 digits) always show the format hint. Tooltips also open on keyboard focus.',
+        'One form for all roles and modes: shared components and grid, values are kept when switching.',
+        'Validation: input masks, an error under the field, a banner with an error count, focus on the first invalid field.',
+        'Accessibility: aria-label with the field’s full name, aria-describedby for the format, 4.7:1 placeholder contrast.',
+      ],
+      ru: [
+        'Группы вместо подписей. Пять групп с заголовками: операция, карта, плательщик, дата, фрод. Группировка и порядок полей опираются на метрики частоты использования каждого поля. Ширина поля соответствует длине значения, ряды не сдвигаются при смене режима.',
+        'Плейсхолдер — полное имя поля, поэтому пустому полю подпись не нужна.',
+        'Тултип возвращает имя, когда поле заполнено. У полей с форматом (маска, зона, 4 цифры) подсказка формата показывается всегда. Тултип срабатывает и по фокусу с клавиатуры.',
+        'Одна форма для всех ролей и режимов: общие компоненты и сетка, значения сохраняются при переключении.',
+        'Валидация: маски ввода, ошибка под полем, баннер со счётчиком ошибок, фокус на первом ошибочном поле.',
+        'Доступность: aria-label с полным именем поля, aria-describedby для формата, контраст плейсхолдера 4,7:1.',
+      ],
+      be: [
+        'Групы замест подпісаў. Пяць груп з загалоўкамі: аперацыя, карта, плацельшчык, дата, фрод. Групоўка і парадак палёў абапіраюцца на метрыкі частаты выкарыстання кожнага поля. Шырыня поля адпавядае даўжыні значэння, рады не зрушваюцца пры змене рэжыму.',
+        'Плэйсхолдар — поўнае імя поля, таму пустому полю подпіс не патрэбны.',
+        'Тултып вяртае імя, калі поле запоўнена. У палёў з фарматам (маска, зона, 4 лічбы) падказка фармату паказваецца заўсёды. Тултып спрацоўвае і па фокусе з клавіятуры.',
+        'Адна форма для ўсіх роляў і рэжымаў: агульныя кампаненты і сетка, значэнні захоўваюцца пры пераключэнні.',
+        'Валідацыя: маскі ўводу, памылка пад полем, банер з лічыльнікам памылак, фокус на першым памылковым полі.',
+        'Даступнасць: aria-label з поўным імем поля, aria-describedby для фармату, кантраст плэйсхолдара 4,7:1.',
+      ],
+    },
+    metrics: {
+      en: 'Measured in the MVP at 1440 px width against the same form with labels above the fields: administrator, advanced (27 fields) — 995 → 806 px (−19%); client, advanced (25 fields) — 841 → 694 px (−17%); administrator, simple (20 fields) — 679 → 553 px (−19%). Simple search fits on a 1440×900 screen together with the start of the table. The solution is verified by 48 end-to-end scenarios, and the English version has no untranslated strings. Next: a usability test with 3–5 operators, saved filters, optional labels above fields for newcomers.',
+      ru: 'Замер в MVP при ширине 1440 px, сравнение с той же формой с подписями над полями: администратор, расширенный (27 полей) — 995 → 806 px (−19 %); клиент, расширенный (25 полей) — 841 → 694 px (−17 %); администратор, простой (20 полей) — 679 → 553 px (−19 %). Простой поиск помещается на экран 1440×900 вместе с началом таблицы. Решение проверено 48 сквозными сценариями, в английской версии нет непереведённых строк. Дальше: юзабилити-тест с 3–5 операторами, сохранённые фильтры, опциональные подписи над полями для новичков.',
+      be: 'Замер у MVP пры шырыні 1440 px, параўнанне з той жа формай з подпісамі над палямі: адміністратар, пашыраны (27 палёў) — 995 → 806 px (−19 %); кліент, пашыраны (25 палёў) — 841 → 694 px (−17 %); адміністратар, просты (20 палёў) — 679 → 553 px (−19 %). Просты пошук змяшчаецца на экран 1440×900 разам з пачаткам табліцы. Рашэнне праверана 48 скразнымі сцэнарыямі, у англійскай версіі няма неперакладзеных радкоў. Далей: юзабіліці-тэст з 3–5 аператарамі, захаваныя фільтры, апцыянальныя подпісы над палямі для пачаткоўцаў.',
+    },
+    resources: {
+      uxResearch: { href: 'https://miro.com/app/board/uXjVHMdVl74=/?moveToWidget=3458764689133524864' },
+      mvp: { href: 'https://paid-ops-console.vercel.app/', accent: true },
+      github: { href: 'https://github.com/verunch/paid-ops-console', onRequest: true },
     },
     showOnPortfolioPage: true,
   },
@@ -650,6 +726,7 @@ export const projects: Project[] = [
       livePage: { href: 'https://verunch.github.io/mono_hero_animatic/' },
     },
     showOnPortfolioPage: true,
+    hidden: true,
   },
   {
     slug: 'cell-culture-monitoring-workspace',
@@ -688,3 +765,5 @@ export const projects: Project[] = [
     showOnPortfolioPage: false,
   },
 ];
+
+export const projects = allProjects.filter((project) => !project.hidden);

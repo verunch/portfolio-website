@@ -2,6 +2,15 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-02 — Fintech case, hidden showcase
+
+### Added
+- **New project: Fintech Case — Payment System Back Office Refactoring** (`fintech-ops-console`): transaction search with 27 fields and no labels, form 17–19% shorter; case study in EN/RU/BE with cover (`fintech_case_card.webp`, `fintech_case_desc.webp`, client name removed from the cover label), MVP, Miro and GitHub (on request). Second on the Portfolio page after Bio Quest.
+- `Project.hidden` — hides a project from the Home table and Portfolio without deleting it (`projects` now exports only visible ones).
+
+### Changed
+- Motion Design Showcase hidden, so the "Cases" section is not shown for now.
+
 ## 2026-10-29 — YourCleanBot case
 
 ### Added
