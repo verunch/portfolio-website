@@ -22,7 +22,14 @@
   }
 }
 
+/* Cards in a row share the tallest card's height (grid items stretch; the
+   card fills its list item). */
+.gallery > li {
+  display: flex;
+}
+
 .card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border-base);

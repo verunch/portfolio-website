@@ -18,12 +18,25 @@ export default function CaseStudySection({ project, index }: CaseStudySectionPro
   const imageAlt = l(project.cover.imageAlt);
   // Case studies without copy yet show a placeholder in each field.
   const fieldText = (value: Project['overview']) => (value ? l(value) : t.portfolio.placeholderText);
-  const showSolution = Boolean(project.solution) || (!project.product && !project.design);
+  const showSolution =
+    Boolean(project.solution) || (!project.product && !project.design && !project.solutionDetails);
   const detailLists = [
+    { key: 'solution', label: t.portfolio.solution, items: project.solutionDetails },
     { key: 'product', label: t.portfolio.product, items: project.product },
     { key: 'design', label: t.portfolio.design, items: project.design },
   ] as const;
-  const hasDetails = Boolean(project.product || project.design || project.metrics);
+  // With list blocks below the cover, Problem moves down into those rows so
+  // the text beside the cover stays about as tall as the cover itself.
+  const hasDetailLists = Boolean(project.product || project.design || project.solutionDetails);
+  const hasDetails = hasDetailLists || Boolean(project.metrics || project.extraDetails);
+  const metrics = project.metrics ? l(project.metrics) : undefined;
+  const renderList = (items: string[]) => (
+    <ul className={styles.detailList}>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
 
   // Case-study-only images, distinct from the Portfolio Gallery thumbnail
   // (`src`): a stacked set (detailStack) or a single detailSrc.
@@ -56,6 +69,7 @@ export default function CaseStudySection({ project, index }: CaseStudySectionPro
           <SectionLabel>{indexLabel}</SectionLabel>
           <ProjectStatusBadge status={project.status} />
         </div>
+        {project.cardType && <p className={styles.type}>{l(project.cardType)}</p>}
         <h3 className={styles.title}>{title}</h3>
       </div>
 
@@ -73,10 +87,12 @@ export default function CaseStudySection({ project, index }: CaseStudySectionPro
             <p>{fieldText(project.role)}</p>
           </div>
 
-          <div className={styles.field}>
-            <SectionLabel>{t.portfolio.problem}</SectionLabel>
-            <p>{fieldText(project.problem)}</p>
-          </div>
+          {!hasDetailLists && (
+            <div className={styles.field}>
+              <SectionLabel>{t.portfolio.problem}</SectionLabel>
+              <p>{fieldText(project.problem)}</p>
+            </div>
+          )}
 
           {showSolution && (
             <div className={styles.field}>
@@ -89,25 +105,33 @@ export default function CaseStudySection({ project, index }: CaseStudySectionPro
 
       {hasDetails && (
         <div className={styles.detailsGrid}>
+          {hasDetailLists && (
+            <div className={styles.field}>
+              <SectionLabel>{t.portfolio.problem}</SectionLabel>
+              <p>{fieldText(project.problem)}</p>
+            </div>
+          )}
           {detailLists.map(
             ({ key, label, items }) =>
               items && (
                 <div key={key} className={styles.field}>
                   <SectionLabel>{label}</SectionLabel>
-                  <ul className={styles.detailList}>
-                    {l(items).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  {renderList(l(items))}
                 </div>
               ),
           )}
-          {project.metrics && (
+          {metrics && (
             <div className={styles.field}>
               <SectionLabel>{t.portfolio.metrics}</SectionLabel>
-              <p>{l(project.metrics)}</p>
+              {Array.isArray(metrics) ? renderList(metrics) : <p>{metrics}</p>}
             </div>
           )}
+          {project.extraDetails?.map(({ label, items }) => (
+            <div key={l(label)} className={styles.field}>
+              <SectionLabel>{l(label)}</SectionLabel>
+              {renderList(l(items))}
+            </div>
+          ))}
         </div>
       )}
 

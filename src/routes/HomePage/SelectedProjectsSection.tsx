@@ -2,19 +2,17 @@ import { useState } from 'react';
 import SectionLabel from '../../components/ui/SectionLabel';
 import Button from '../../components/ui/Button';
 import ProjectsTable from '../../components/project/ProjectsTable';
-import { projects, type Project } from '../../data/projects';
+import { projects } from '../../data/projects';
 import { useLocale } from '../../i18n/LocaleContext';
 import { trackGoal } from '../../lib/analytics';
 import styles from './SelectedProjectsSection.module.css';
 
-// Rows shown while the table is collapsed, in this order. "Show all" adds
-// the remaining projects after them in data order.
-const FEATURED_SLUGS = ['social-radar', 'bioquest', 'photographer-portfolio', 'ascendra', 'yourcleanbot'];
+// Rows follow data order — the same as the Portfolio cards. The first
+// FEATURED_COUNT are shown while the table is collapsed.
+const FEATURED_COUNT = 5;
 
-const featured = FEATURED_SLUGS.map((slug) => projects.find((project) => project.slug === slug)).filter(
-  (project): project is Project => Boolean(project),
-);
-const rest = projects.filter((project) => !FEATURED_SLUGS.includes(project.slug));
+const featured = projects.slice(0, FEATURED_COUNT);
+const rest = projects.slice(FEATURED_COUNT);
 
 export default function SelectedProjectsSection() {
   const { t } = useLocale();

@@ -105,6 +105,16 @@
   gap: var(--space-3);
 }
 
+/* Project type (same as the gallery card) — shown above the title. */
+.type {
+  margin: 0 0 calc(-1 * var(--space-2));
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
 .title {
   margin: 0;
   font-family: var(--font-heading);
@@ -156,17 +166,26 @@
 /* Fields stay packed at the top with their regular gap — a tall cover in
    the other column never stretches the spacing between them. */
 
-/* Optional Product / Design / Metrics blocks — full width below the intro
-   grid; three columns on desktop. */
+/* Optional Solution / Product / Design / Metrics blocks — full width below
+   the intro grid, one block per row; on desktop the label sits to the left
+   of its text. */
 .detailsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-8);
 }
 
+/* Desktop: one shared grid — the label column is as wide as the longest
+   single word among the labels (min-content), so labels line up. */
 @media (min-width: 1024px) {
   .detailsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: min-content minmax(0, 1fr);
+    column-gap: var(--space-8);
+  }
+
+  .detailsGrid .field {
+    display: contents;
   }
 }
 

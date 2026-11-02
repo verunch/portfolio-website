@@ -2,6 +2,17 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-03 — Case study layout, project types
+
+### Added
+- `cardType` — short project type shown on Portfolio cards instead of the name, and above the title in each case study.
+- Case-study blocks: `solutionDetails` (Solution as a list), list-style `metrics`, `extraDetails` (custom titled lists). Fintech case: Figma link, rewritten copy with Testing & Claude Code and Next blocks.
+
+### Changed
+- Case studies with list blocks: Problem, Solution, Product, Design, Metrics etc. are full-width rows below the cover, label column as wide as the longest label word.
+- Portfolio order: Bio Quest, Fintech, YourCleanBot, Social Radar, Ascendra, DocAssistant, Photographer, Product Designer; Home table follows the same order (first 5 shown collapsed).
+- Portfolio cards in a row share the same height.
+
 ## 2026-11-02 — Fintech case, hidden showcase
 
 ### Added

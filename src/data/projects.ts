@@ -56,6 +56,9 @@ export type ProjectResources = {
 export type Project = {
   slug: string;
   title: Localized;
+  // Portfolio card gallery only — short project type shown instead of the
+  // title (falls back to `title`).
+  cardType?: Localized;
   category: string;
   status: ProjectStatus;
   group: ProjectGroup;
@@ -86,7 +89,12 @@ export type Project = {
   // Solution field is dropped instead of showing a placeholder.
   product?: Localized<string[]>;
   design?: Localized<string[]>;
-  metrics?: Localized;
+  // Solution as a full-width list, in place of the short `solution` text.
+  solutionDetails?: Localized<string[]>;
+  // A paragraph, or a list of points.
+  metrics?: Localized<string | string[]>;
+  // Extra titled list blocks after Metrics (e.g. testing, next steps).
+  extraDetails?: Array<{ label: Localized; items: Localized<string[]> }>;
   resources: ProjectResources;
   // false = Home Projects Table only, no dedicated Portfolio case study page.
   showOnPortfolioPage: boolean;
@@ -98,6 +106,11 @@ const allProjects: Project[] = [
   {
     slug: 'bioquest',
     title: 'Bio Quest',
+    cardType: {
+      en: 'Mobile educational game (EdTech)',
+      ru: 'Мобильная образовательная игра (EdTech)',
+      be: 'Мабільная адукацыйная гульня (EdTech)',
+    },
     category: 'EdTech',
     status: 'mvp-coming-soon',
     group: 'saas',
@@ -149,6 +162,11 @@ const allProjects: Project[] = [
       ru: 'Финтех-кейс: рефакторинг бэкофиса платёжной системы',
       be: 'Фінтэх-кейс: рэфактарынг бэкофіса плацежнай сістэмы',
     },
+    cardType: {
+      en: 'Payment system back office (fintech)',
+      ru: 'Бэкофис платёжной системы (финтех)',
+      be: 'Бэкофіс плацежнай сістэмы (фінтэх)',
+    },
     category: 'Fintech',
     status: 'ready',
     group: 'saas',
@@ -162,52 +180,100 @@ const allProjects: Project[] = [
       },
     },
     overview: {
-      en: 'I refactored the back office of a payment system, starting with its main screen — transaction search. All 27 fields are kept, the form is 17–19% shorter, and the search now fits on one screen together with the results. The product is a payment operations console for support operators, administrators, accountants and merchants. Artifacts: a live MVP (RU/EN), 116 Figma-ready mockups, a design system, IA and flows in Miro.',
-      ru: 'Я провела рефакторинг бэкофиса платёжной системы, начиная с главного экрана — поиска транзакций. Все 27 полей сохранены, форма стала ниже на 17–19 %, и поиск помещается на экран вместе с результатами. Продукт — консоль платёжных операций для операторов поддержки, администраторов, бухгалтерии и мерчантов. Артефакты: живой MVP (RU/EN), 116 макетов для Figma, дизайн-система, ИА и флоу в Miro.',
-      be: 'Я правяла рэфактарынг бэкофіса плацежнай сістэмы, пачынаючы з галоўнага экрана — пошуку транзакцый. Усе 27 палёў захаваны, форма стала ніжэйшай на 17–19 %, і пошук змяшчаецца на экран разам з вынікамі. Прадукт — кансоль плацежных аперацый для аператараў падтрымкі, адміністратараў, бухгалтэрыі і мерчантаў. Артэфакты: жывы MVP (RU/EN), 116 макетаў для Figma, дызайн-сістэма, ІА і флоу ў Miro.',
+      en: 'Refactoring the back office of a payment system, starting with its main screen — transaction search. A console for support operators, administrators, accountants and merchants. All 27 fields are kept, the form is 17–19% shorter, and search and results fit on one screen.',
+      ru: 'Рефакторинг бэкофиса платёжной системы, начиная с главного экрана — поиска транзакций. Консоль для операторов поддержки, администраторов, бухгалтерии и мерчантов. Все 27 полей сохранены, форма стала ниже на 17–19 %, поиск и результаты помещаются на один экран.',
+      be: 'Рэфактарынг бэкофіса плацежнай сістэмы, пачынаючы з галоўнага экрана — пошуку транзакцый. Кансоль для аператараў падтрымкі, адміністратараў, бухгалтэрыі і мерчантаў. Усе 27 палёў захаваны, форма стала ніжэйшай на 17–19 %, пошук і вынікі змяшчаюцца на адзін экран.',
     },
     role: {
-      en: 'UX/UI Design • Frontend of the live MVP',
-      ru: 'UX/UI-дизайн • Фронтенд живого MVP',
-      be: 'UX/UI-дызайн • Фронтэнд жывога MVP',
+      en: 'UX/UI Design • Frontend of the live MVP • Live MVP (RU/EN), 116 Figma-ready mockups, design system, IA and flows in Miro',
+      ru: 'UX/UI-дизайн • Фронтенд живого MVP • Живой MVP (RU/EN), 116 макетов для Figma, дизайн-система, ИА и флоу в Miro',
+      be: 'UX/UI-дызайн • Фронтэнд жывога MVP • Жывы MVP (RU/EN), 116 макетаў для Figma, дызайн-сістэма, ІА і флоу ў Miro',
     },
     problem: {
-      en: 'An operator searches for a transaction using a fragment of data from a complaint and works in iterations: refine a filter, check the results. Spec constraints: keep every field — up to 27 in the administrator’s advanced search; search and results must fit on one screen, with no room for labels above the fields; two roles (administrator and client) and two modes (simple and advanced); the client’s rule — the card mask and time zone have a permanent tooltip, other fields show one only when filled. The hard part: without a label, a field loses its name as soon as text appears in it.',
-      ru: 'Оператор ищет операцию по обрывку данных из жалобы и работает итерациями: уточнил фильтр, посмотрел выдачу. Ограничения ТЗ: сохранить все поля — до 27 в расширенном поиске администратора; поиск и результаты должны помещаться на одном экране, места под подписи над полями нет; две роли (администратор и клиент) и два режима (простой и расширенный); правило заказчика — у маски карты и временной зоны тултип постоянный, у остальных полей он появляется, только когда поле заполнено. Сложность в том, что без подписи поле теряет имя, как только в нём появляется текст.',
-      be: 'Аператар шукае аперацыю па абрыўку даных са скаргі і працуе ітэрацыямі: удакладніў фільтр, паглядзеў выдачу. Абмежаванні ТЗ: захаваць усе палі — да 27 у пашыраным пошуку адміністратара; пошук і вынікі павінны змяшчацца на адным экране, месца пад подпісы над палямі няма; дзве ролі (адміністратар і кліент) і два рэжымы (просты і пашыраны); правіла заказчыка — у маскі карты і часавой зоны тултып пастаянны, у астатніх палёў ён з’яўляецца, толькі калі поле запоўнена. Складанасць у тым, што без подпісу поле губляе імя, як толькі ў ім з’яўляецца тэкст.',
+      en: 'An internal payment operations console, the payment search screen. Two roles (administrator and client), two search modes each. The largest form has 27 fields. Every field had to stay, and there is no room for labels above the fields.',
+      ru: 'Внутренняя консоль платёжных операций, экран поиска платежей. Две роли (администратор и клиент), по два режима поиска. В самой большой форме 27 полей. Все поля нужно сохранить, а места для подписей над полями нет.',
+      be: 'Унутраная кансоль плацежных аперацый, экран пошуку плацяжоў. Дзве ролі (адміністратар і кліент), па два рэжымы пошуку. У самай вялікай форме 27 палёў. Усе палі трэба захаваць, а месца для подпісаў над палямі няма.',
     },
-    design: {
+    solutionDetails: {
       en: [
-        'Groups instead of labels: five titled groups — transaction, card, payer, date, fraud. Grouping and field order are based on usage-frequency metrics for each field. Field width matches the value length, and rows don’t shift when the mode changes.',
-        'The placeholder is the field’s full name, so an empty field needs no label.',
-        'A tooltip brings the name back once the field is filled. Fields with a format (mask, time zone, 4 digits) always show the format hint. Tooltips also open on keyboard focus.',
-        'One form for all roles and modes: shared components and grid, values are kept when switching.',
-        'Validation: input masks, an error under the field, a banner with an error count, focus on the first invalid field.',
-        'Accessibility: aria-label with the field’s full name, aria-describedby for the format, 4.7:1 placeholder contrast.',
+        'Titled groups. Fields are split into five groups: transaction, card, payer, date, fraud. The group title sets the context for all its fields.',
+        'The placeholder is the full field name. While a field is empty, its name is visible inside it.',
+        'Tooltips by the client’s rule. A filled field shows its name on hover. The card mask, time zone and last 4 card digits always show a format hint.',
+        'One logic for both roles. The tooltip rule and components are the same for client and administrator; only the set of fields differs.',
       ],
       ru: [
-        'Группы вместо подписей. Пять групп с заголовками: операция, карта, плательщик, дата, фрод. Группировка и порядок полей опираются на метрики частоты использования каждого поля. Ширина поля соответствует длине значения, ряды не сдвигаются при смене режима.',
-        'Плейсхолдер — полное имя поля, поэтому пустому полю подпись не нужна.',
-        'Тултип возвращает имя, когда поле заполнено. У полей с форматом (маска, зона, 4 цифры) подсказка формата показывается всегда. Тултип срабатывает и по фокусу с клавиатуры.',
-        'Одна форма для всех ролей и режимов: общие компоненты и сетка, значения сохраняются при переключении.',
-        'Валидация: маски ввода, ошибка под полем, баннер со счётчиком ошибок, фокус на первом ошибочном поле.',
-        'Доступность: aria-label с полным именем поля, aria-describedby для формата, контраст плейсхолдера 4,7:1.',
+        'Группы с заголовками. Поля разбиты на пять групп: операция, карта, плательщик, дата, фрод. Заголовок группы задаёт контекст для всех её полей.',
+        'Плейсхолдер — полное имя поля. Пока поле пустое, его название видно внутри поля.',
+        'Тултип по правилу заказчика. У заполненного поля по наведению показывается его имя. У маски карты, временной зоны и 4 цифр карты подсказка формата видна всегда.',
+        'Одна логика для обеих ролей. Правило тултипов и компоненты одинаковы у клиента и администратора, различается только набор полей.',
       ],
       be: [
-        'Групы замест подпісаў. Пяць груп з загалоўкамі: аперацыя, карта, плацельшчык, дата, фрод. Групоўка і парадак палёў абапіраюцца на метрыкі частаты выкарыстання кожнага поля. Шырыня поля адпавядае даўжыні значэння, рады не зрушваюцца пры змене рэжыму.',
-        'Плэйсхолдар — поўнае імя поля, таму пустому полю подпіс не патрэбны.',
-        'Тултып вяртае імя, калі поле запоўнена. У палёў з фарматам (маска, зона, 4 лічбы) падказка фармату паказваецца заўсёды. Тултып спрацоўвае і па фокусе з клавіятуры.',
-        'Адна форма для ўсіх роляў і рэжымаў: агульныя кампаненты і сетка, значэнні захоўваюцца пры пераключэнні.',
-        'Валідацыя: маскі ўводу, памылка пад полем, банер з лічыльнікам памылак, фокус на першым памылковым полі.',
-        'Даступнасць: aria-label з поўным імем поля, aria-describedby для фармату, кантраст плэйсхолдара 4,7:1.',
+        'Групы з загалоўкамі. Палі разбіты на пяць груп: аперацыя, карта, плацельшчык, дата, фрод. Загаловак групы задае кантэкст для ўсіх яе палёў.',
+        'Плэйсхолдар — поўнае імя поля. Пакуль поле пустое, яго назва бачная ўнутры поля.',
+        'Тултып па правіле заказчыка. У запоўненага поля пры навядзенні паказваецца яго імя. У маскі карты, часавой зоны і 4 лічбаў карты падказка фармату бачная заўсёды.',
+        'Адна логіка для абедзвюх роляў. Правіла тултыпаў і кампаненты аднолькавыя ў кліента і адміністратара, адрозніваецца толькі набор палёў.',
       ],
     },
     metrics: {
-      en: 'Measured in the MVP at 1440 px width against the same form with labels above the fields: administrator, advanced (27 fields) — 995 → 806 px (−19%); client, advanced (25 fields) — 841 → 694 px (−17%); administrator, simple (20 fields) — 679 → 553 px (−19%). Simple search fits on a 1440×900 screen together with the start of the table. The solution is verified by 48 end-to-end scenarios, and the English version has no untranslated strings. Next: a usability test with 3–5 operators, saved filters, optional labels above fields for newcomers.',
-      ru: 'Замер в MVP при ширине 1440 px, сравнение с той же формой с подписями над полями: администратор, расширенный (27 полей) — 995 → 806 px (−19 %); клиент, расширенный (25 полей) — 841 → 694 px (−17 %); администратор, простой (20 полей) — 679 → 553 px (−19 %). Простой поиск помещается на экран 1440×900 вместе с началом таблицы. Решение проверено 48 сквозными сценариями, в английской версии нет непереведённых строк. Дальше: юзабилити-тест с 3–5 операторами, сохранённые фильтры, опциональные подписи над полями для новичков.',
-      be: 'Замер у MVP пры шырыні 1440 px, параўнанне з той жа формай з подпісамі над палямі: адміністратар, пашыраны (27 палёў) — 995 → 806 px (−19 %); кліент, пашыраны (25 палёў) — 841 → 694 px (−17 %); адміністратар, просты (20 палёў) — 679 → 553 px (−19 %). Просты пошук змяшчаецца на экран 1440×900 разам з пачаткам табліцы. Рашэнне праверана 48 скразнымі сцэнарыямі, у англійскай версіі няма неперакладзеных радкоў. Далей: юзабіліці-тэст з 3–5 аператарамі, захаваныя фільтры, апцыянальныя подпісы над палямі для пачаткоўцаў.',
+      en: [
+        'Admin, advanced search (27 fields): −19% form height',
+        'Client, advanced search (25 fields): −17%',
+        'Admin, simple search (20 fields): −19%',
+        'Simple search fits a 1440×900 screen together with the table',
+        'Compared with the same form with labels above the fields. Measured by Claude Code in the browser — this is space saving, not usability.',
+      ],
+      ru: [
+        'Админ, расширенный поиск (27 полей): −19 % высоты формы',
+        'Клиент, расширенный поиск (25 полей): −17 %',
+        'Админ, простой поиск (20 полей): −19 %',
+        'Простой поиск помещается на экран 1440×900 вместе с таблицей',
+        'Сравнение с той же формой, но с подписями над полями. Замер выполнил Claude Code в браузере — это экономия места, а не удобство.',
+      ],
+      be: [
+        'Адмін, пашыраны пошук (27 палёў): −19 % вышыні формы',
+        'Кліент, пашыраны пошук (25 палёў): −17 %',
+        'Адмін, просты пошук (20 палёў): −19 %',
+        'Просты пошук змяшчаецца на экран 1440×900 разам з табліцай',
+        'Параўнанне з той жа формай, але з подпісамі над палямі. Замер выканаў Claude Code у браўзеры — гэта эканомія месца, а не зручнасць.',
+      ],
     },
+    extraDetails: [
+      {
+        label: { en: 'Testing and Claude Code', ru: 'Тестирование и Claude Code', be: 'Тэсціраванне і Claude Code' },
+        items: {
+          en: [
+            'I made up for missing frontend and backend knowledge with Claude Code.',
+            'With it I built the live MVP, the Figma mockups and the English version.',
+            'Field validation and screen reader accessibility in the MVP were implemented by Claude Code.',
+            'Browser autotests were also written with Claude Code. They check that the prototype works, not that it is easy to use.',
+          ],
+          ru: [
+            'Недостающие знания во фронтенд- и бэкенд-разработке я компенсировала Claude Code.',
+            'С ним собраны живой MVP, макеты для Figma и английская версия.',
+            'Валидацию полей и доступность для скринридера в MVP реализовал Claude Code.',
+            'Автотесты в браузере тоже написаны с Claude Code. Они проверяют, что прототип работает, но не что он удобен.',
+          ],
+          be: [
+            'Недахоп ведаў у фронтэнд- і бэкэнд-распрацоўцы я кампенсавала Claude Code.',
+            'З ім сабраны жывы MVP, макеты для Figma і англійская версія.',
+            'Валідацыю палёў і даступнасць для скрынрыдара ў MVP рэалізаваў Claude Code.',
+            'Аўтатэсты ў браўзеры таксама напісаны з Claude Code. Яны правяраюць, што прататып працуе, але не тое, што ён зручны.',
+          ],
+        },
+      },
+      {
+        label: { en: 'Next', ru: 'Дальше', be: 'Далей' },
+        items: {
+          en: ['A usability test with 3–5 operators: check whether payments are found faster and whether the tooltips are clear.'],
+          ru: ['Юзабилити-тест с 3–5 операторами: проверить, быстрее ли находится платёж и понятны ли тултипы.'],
+          be: ['Юзабіліці-тэст з 3–5 аператарамі: праверыць, ці хутчэй знаходзіцца плацёж і ці зразумелыя тултыпы.'],
+        },
+      },
+    ],
     resources: {
+      uiMockups: {
+        href: 'https://www.figma.com/design/2hKSHTHF4Z5OplCx5R0zZ9/bePaid-%E2%80%94-Internal-Payment-Operations-Console?node-id=0-1&t=Y2HhmuB1lMTAZ3c6-1',
+      },
       uxResearch: { href: 'https://miro.com/app/board/uXjVHMdVl74=/?moveToWidget=3458764689133524864' },
       mvp: { href: 'https://paid-ops-console.vercel.app/', accent: true },
       github: { href: 'https://github.com/verunch/paid-ops-console', onRequest: true },
@@ -217,6 +283,11 @@ const allProjects: Project[] = [
   {
     slug: 'yourcleanbot',
     title: 'YourCleanBot',
+    cardType: {
+      en: 'Telegram bot and service for dry cleaning',
+      ru: 'Telegram-бот и сервис для химчистки',
+      be: 'Telegram-бот і сэрвіс для хімчысткі',
+    },
     category: 'Telegram Bot · B2B',
     status: 'ready',
     group: 'saas',
@@ -341,57 +412,13 @@ const allProjects: Project[] = [
     showOnPortfolioPage: true,
   },
   {
-    slug: 'docassistant',
-    title: 'DocAssistant',
-    category: 'AI SaaS',
-    status: 'ready',
-    group: 'saas',
-    cover: {
-      src: docAssistantCover,
-      embedUrl: docAssistantMascot,
-      galleryEmbedUrl: docAssistantMascotGallery,
-      imageAlt: {
-        en: 'DocAssistant cover',
-        ru: 'Обложка DocAssistant',
-        be: 'Вокладка DocAssistant',
-      },
-    },
-    overview: {
-      en: 'An AI SaaS product that enables companies to transform documents and knowledge bases into AI-powered customer assistants and embeddable website widgets. The product simplifies document management, chatbot configuration, testing, and publishing.',
-      ru: 'AI SaaS-продукт, который позволяет компаниям превращать документы и базы знаний в AI-ассистентов для клиентов и встраиваемые виджеты для сайта. Продукт упрощает управление документами, настройку чат-бота, тестирование и публикацию.',
-      be: 'AI SaaS-прадукт, які дазваляе кампаніям ператвараць дакументы і базы ведаў у AI-асістэнтаў для кліентаў і ўбудаваныя віджэты для сайта. Прадукт спрашчае кіраванне дакументамі, наладу чат-бота, тэсціраванне і публікацыю.',
-    },
-    role: {
-      en: 'Product Designer — Product Discovery • UX/UI Design • Information Architecture • Design System • Landing Page • Frontend MVP',
-      ru: 'Продуктовый дизайнер — Product Discovery • UX/UI-дизайн • Информационная архитектура • Дизайн-система • Лендинг • Frontend MVP',
-      be: 'Прадуктовы дызайнер — Product Discovery • UX/UI-дызайн • Інфармацыйная архітэктура • Дызайн-сістэма • Лэндынг • Frontend MVP',
-    },
-    problem: {
-      en: 'Companies often struggle to make internal documentation accessible and useful for customers without expensive custom chatbot implementations.',
-      ru: 'Компаниям часто сложно сделать внутреннюю документацию доступной и полезной для клиентов без дорогой разработки собственного чат-бота.',
-      be: 'Кампаніям часта складана зрабіць унутраную дакументацыю даступнай і карыснай для кліентаў без дарагой распрацоўкі ўласнага чат-бота.',
-    },
-    solution: {
-      en: 'Designed an end-to-end workflow for uploading documents, building a knowledge base, testing AI responses, publishing website widgets, and managing projects through a streamlined dashboard.',
-      ru: 'Спроектировала сквозной сценарий: загрузка документов, создание базы знаний, тестирование ответов AI, публикация виджетов на сайте и управление проектами через удобный дашборд.',
-      be: 'Спраектавала скразны сцэнар: загрузка дакументаў, стварэнне базы ведаў, тэсціраванне адказаў AI, публікацыя віджэтаў на сайце і кіраванне праектамі праз зручны дашборд.',
-    },
-    resources: {
-      caseStudy: {
-        href: 'https://app.notion.com/p/Embeddable-Chatbot-Builder-3850a2e6e1d780ae99bcf0501af7eed9?source=copy_link',
-      },
-      landingPage: { href: 'https://verunch.github.io/DocAssistant/' },
-      mvp: {
-        href: 'https://verunch.github.io/DocAssistant/chatBuilderApp.html',
-        accent: true,
-      },
-      github: { href: 'https://github.com/verunch/DocAssistant', onRequest: true },
-    },
-    showOnPortfolioPage: true,
-  },
-  {
     slug: 'social-radar',
     title: 'Social Radar',
+    cardType: {
+      en: 'Social app for meeting people nearby',
+      ru: 'Социальное приложение для знакомств поблизости',
+      be: 'Сацыяльная праграма для знаёмстваў побач',
+    },
     category: 'Social Product',
     status: 'mvp-coming-soon',
     group: 'saas',
@@ -439,6 +466,11 @@ const allProjects: Project[] = [
   {
     slug: 'ascendra',
     title: 'Ascendra Workspaces',
+    cardType: {
+      en: 'High-load B2B interface: user roles, dashboards, statistics',
+      ru: 'Высоконагруженный B2B-интерфейс: роли пользователей, дашборды, статистика',
+      be: 'Высоканагружаны B2B-інтэрфейс: ролі карыстальнікаў, дашборды, статыстыка',
+    },
     category: 'Cloud Platform',
     status: 'ready',
     group: 'saas',
@@ -478,11 +510,70 @@ const allProjects: Project[] = [
     showOnPortfolioPage: true,
   },
   {
+    slug: 'docassistant',
+    title: 'DocAssistant',
+    cardType: {
+      en: 'AI SaaS: a chatbot built on company documents',
+      ru: 'AI SaaS: чат-бот на основе документов компании',
+      be: 'AI SaaS: чат-бот на аснове дакументаў кампаніі',
+    },
+    category: 'AI SaaS',
+    status: 'ready',
+    group: 'saas',
+    cover: {
+      src: docAssistantCover,
+      embedUrl: docAssistantMascot,
+      galleryEmbedUrl: docAssistantMascotGallery,
+      imageAlt: {
+        en: 'DocAssistant cover',
+        ru: 'Обложка DocAssistant',
+        be: 'Вокладка DocAssistant',
+      },
+    },
+    overview: {
+      en: 'An AI SaaS product that enables companies to transform documents and knowledge bases into AI-powered customer assistants and embeddable website widgets. The product simplifies document management, chatbot configuration, testing, and publishing.',
+      ru: 'AI SaaS-продукт, который позволяет компаниям превращать документы и базы знаний в AI-ассистентов для клиентов и встраиваемые виджеты для сайта. Продукт упрощает управление документами, настройку чат-бота, тестирование и публикацию.',
+      be: 'AI SaaS-прадукт, які дазваляе кампаніям ператвараць дакументы і базы ведаў у AI-асістэнтаў для кліентаў і ўбудаваныя віджэты для сайта. Прадукт спрашчае кіраванне дакументамі, наладу чат-бота, тэсціраванне і публікацыю.',
+    },
+    role: {
+      en: 'Product Designer — Product Discovery • UX/UI Design • Information Architecture • Design System • Landing Page • Frontend MVP',
+      ru: 'Продуктовый дизайнер — Product Discovery • UX/UI-дизайн • Информационная архитектура • Дизайн-система • Лендинг • Frontend MVP',
+      be: 'Прадуктовы дызайнер — Product Discovery • UX/UI-дызайн • Інфармацыйная архітэктура • Дызайн-сістэма • Лэндынг • Frontend MVP',
+    },
+    problem: {
+      en: 'Companies often struggle to make internal documentation accessible and useful for customers without expensive custom chatbot implementations.',
+      ru: 'Компаниям часто сложно сделать внутреннюю документацию доступной и полезной для клиентов без дорогой разработки собственного чат-бота.',
+      be: 'Кампаніям часта складана зрабіць унутраную дакументацыю даступнай і карыснай для кліентаў без дарагой распрацоўкі ўласнага чат-бота.',
+    },
+    solution: {
+      en: 'Designed an end-to-end workflow for uploading documents, building a knowledge base, testing AI responses, publishing website widgets, and managing projects through a streamlined dashboard.',
+      ru: 'Спроектировала сквозной сценарий: загрузка документов, создание базы знаний, тестирование ответов AI, публикация виджетов на сайте и управление проектами через удобный дашборд.',
+      be: 'Спраектавала скразны сцэнар: загрузка дакументаў, стварэнне базы ведаў, тэсціраванне адказаў AI, публікацыя віджэтаў на сайце і кіраванне праектамі праз зручны дашборд.',
+    },
+    resources: {
+      caseStudy: {
+        href: 'https://app.notion.com/p/Embeddable-Chatbot-Builder-3850a2e6e1d780ae99bcf0501af7eed9?source=copy_link',
+      },
+      landingPage: { href: 'https://verunch.github.io/DocAssistant/' },
+      mvp: {
+        href: 'https://verunch.github.io/DocAssistant/chatBuilderApp.html',
+        accent: true,
+      },
+      github: { href: 'https://github.com/verunch/DocAssistant', onRequest: true },
+    },
+    showOnPortfolioPage: true,
+  },
+  {
     slug: 'photographer-portfolio',
     title: {
       en: 'Photographer Portfolio Website',
       ru: 'Сайт-портфолио фотографа',
       be: 'Сайт-партфоліа фатографа',
+    },
+    cardType: {
+      en: 'Photographer portfolio website with online booking',
+      ru: 'Сайт-портфолио фотографа с онлайн-записью',
+      be: 'Сайт-партфоліа фатографа з анлайн-запісам',
     },
     category: 'Portfolio',
     status: 'ready',
@@ -581,6 +672,11 @@ const allProjects: Project[] = [
     slug: 'portfolio-website',
     title: {
       en: 'Product Designer Portfolio Website',
+      ru: 'Сайт-портфолио продуктового дизайнера',
+      be: 'Сайт-партфоліа прадуктовага дызайнера',
+    },
+    cardType: {
+      en: 'Product designer portfolio website',
       ru: 'Сайт-портфолио продуктового дизайнера',
       be: 'Сайт-партфоліа прадуктовага дызайнера',
     },

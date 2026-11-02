@@ -31,8 +31,8 @@ export default function ProjectCardGallery({ projects }: ProjectCardGalleryProps
               )}
             </div>
             <div className={styles.cardBody}>
-              <span className={styles.cardTitle}>{l(project.title)}</span>
-              <span className={styles.cardSlug}>#{project.slug} →</span>
+              <span className={styles.cardTitle}>{l(project.cardType ?? project.title)}</span>
+              <span className={styles.cardSlug}>{project.category} →</span>
             </div>
           </a>
         </li>
