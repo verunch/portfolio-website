@@ -4,7 +4,7 @@ import type { Locale } from './locales';
 // `ru`/`be` are typed against it, so a missing key fails the build.
 const en = {
   meta: {
-    title: 'Vera Bakerava — Product & UX/UI Designer',
+    title: 'Vera Bakerava — Product Designer',
     servicesTitle: 'Website & product design services and prices — Vera Bakerava',
   },
   languageSwitcher: {
@@ -156,7 +156,7 @@ export type Translations = typeof en;
 
 const ru: Translations = {
   meta: {
-    title: 'Вера Бакерова — продуктовый и UX/UI-дизайнер',
+    title: 'Вера Бакерова — продуктовый дизайнер',
     servicesTitle: 'Услуги и цены: создание сайтов, лендингов и сайтов-визиток — Вера Бакерова',
   },
   languageSwitcher: {
@@ -304,7 +304,7 @@ const ru: Translations = {
 
 const be: Translations = {
   meta: {
-    title: 'Вера Бакерава — прадуктовы і UX/UI-дызайнер',
+    title: 'Вера Бакерава — прадуктовы дызайнер',
     servicesTitle: 'Паслугі і цэны: стварэнне сайтаў, лэндынгаў і сайтаў-візітак — Вера Бакерава',
   },
   languageSwitcher: {

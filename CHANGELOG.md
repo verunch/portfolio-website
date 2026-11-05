@@ -2,6 +2,17 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-05 — Link previews match the first screen
+
+### Added
+- `/portfolio` is served as its own static HTML with its own title, description, og:url and canonical, so messenger previews of the Portfolio link describe the case studies.
+- `docs/flow-log.md` — decision log, starting with the link preview fix.
+
+### Changed
+- Open Graph / Twitter tags, `<title>` and meta description now repeat the English first screen: "Vera Bakerava — Product Designer" plus the hero bio and services line.
+- New preview image `og-image-en.jpg` (1200×630) in the hero style; the old `og-image.jpg` is removed.
+- Page title in all three languages matches the hero role ("Product Designer" instead of "Product & UX/UI Designer").
+
 ## 2026-11-04 — Collapsible case studies
 
 ### Added
