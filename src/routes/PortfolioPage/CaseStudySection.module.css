@@ -120,20 +120,18 @@
   }
 }
 
-/* Project type on its own line above the title — body font, lighter color;
-   smaller than the title on desktop (24px vs 32px). */
+/* Project type on its own line above the title — set like the "Project 01"
+   label (SectionLabel), but in the title's color. */
 .titleType {
   display: block;
   margin-bottom: var(--space-2);
   font-family: var(--font-body);
-  font-weight: 500;
-  color: var(--color-text-secondary);
-}
-
-@media (min-width: 1024px) {
-  .titleType {
-    font-size: 24px;
-  }
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
 }
 
 .overviewGrid {

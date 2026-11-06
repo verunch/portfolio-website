@@ -2,6 +2,11 @@
 
 Notable changes to the portfolio website, most recent first. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## 2026-11-06 — Case title type line
+
+### Changed
+- The project type line above a case title is now set like the "Project 01" label (small uppercase, letter-spaced) in the title's color, instead of a 24px lighter line.
+
 ## 2026-11-05 — Link previews match the first screen
 
 ### Added
